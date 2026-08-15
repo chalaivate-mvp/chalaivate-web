@@ -1,86 +1,134 @@
 {
-  "status": "sample",
+  "status": "live",
   "updatedAt": "2026-08-15",
   "items": [
     {
-      "id": "news-2026-08-14-fable-context",
-      "title": "Anthropic ขยาย context window ของ Claude Fable 5 เป็น 1M tokens ให้ผู้ใช้ทุกระดับ",
-      "summary": "จากเดิมที่จำกัดเฉพาะลูกค้าองค์กร ตอนนี้เปิดให้ใช้งานผ่าน API ทั่วไป พร้อมปรับราคาส่วนที่เกิน 200K tokens แยกเป็นอีกอัตรา",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news",
+      "id": "news-2026-08-14-co-blog-state-of-open-models-summer-2026",
+      "title": "รายงานสถานะ Open Models ฤดูร้อน 2026 จาก Hugging Face",
+      "summary": "Hugging Face เผยแพร่บทสังเกตการณ์สถานะของ open models ประจำกลางปี 2026 ซึ่งช่วยให้เห็นภาพรวมความเคลื่อนไหวของโมเดล open source ในวงการ AI",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/state-of-open-models-summer-2026",
       "publishedAt": "2026-08-14",
-      "category": "product",
-      "relatedModels": ["claude-fable-5", "claude-opus-5"]
+      "category": "research",
+      "relatedModels": []
     },
     {
-      "id": "news-2026-08-13-swebench-pro",
-      "title": "SWE-bench Pro เพิ่มชุดทดสอบใหม่ 300 issue จากโปรเจกต์ enterprise",
-      "summary": "ชุดทดสอบใหม่เน้น codebase ขนาดใหญ่ที่มี dependency ซับซ้อน ทำให้คะแนนของทุกโมเดลลดลงเฉลี่ย 12 จุดเทียบกับ SWE-bench Verified",
-      "source": "SWE-bench",
-      "url": "https://www.swebench.com/",
+      "id": "news-2026-08-13-enai-com-index-builders-guide-to-gpt-5-6",
+      "title": "OpenAI ออกคู่มือนักพัฒนาสำหรับ GPT-5.6",
+      "summary": "OpenAI เผยแพร่คู่มือแนะนำวิธีที่ startup ใช้ GPT-5.6 สร้าง AI agents ได้เร็วขึ้นและคุ้มค่ากว่าเดิม ด้วยการเลือกโมเดลอย่างชาญฉลาดและความสามารถใหม่ของ Responses API",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/builders-guide-to-gpt-5-6",
+      "publishedAt": "2026-08-13",
+      "category": "product",
+      "relatedModels": [
+        "gpt-5-6-sol"
+      ]
+    },
+    {
+      "id": "news-2026-08-13-ps-openai-com-index-previewing-ultrafast",
+      "title": "OpenAI พรีวิว Ultrafast mode รัน GPT-5.6 Sol เร็วขึ้นถึง 14 เท่า",
+      "summary": "OpenAI เปิดพรีวิว service tier ใหม่ชื่อ Ultrafast ที่รัน GPT-5.6 Sol ได้เร็วขึ้นถึง 14 เท่า โดยใช้ฮาร์ดแวร์ของ Cerebras และให้ความเร็วสูงสุดถึง 750 output tokens ต่อวินาที",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/previewing-ultrafast",
+      "publishedAt": "2026-08-13",
+      "category": "product",
+      "relatedModels": [
+        "gpt-5-6-sol"
+      ]
+    },
+    {
+      "id": "news-2026-08-13-m-index-dali-rajic-chief-revenue-officer",
+      "title": "OpenAI ตั้ง Dali Rajic เป็น Chief Revenue Officer",
+      "summary": "OpenAI แต่งตั้ง Dali Rajic ขึ้นเป็น Chief Revenue Officer เพื่อดูแลองค์กรด้านรายได้ระดับโลก และช่วยให้ธุรกิจต่าง ๆ ใช้ประโยชน์จาก AI ได้เต็มที่",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/dali-rajic-chief-revenue-officer",
+      "publishedAt": "2026-08-13",
+      "category": "business",
+      "relatedModels": [
+        "gpt-5-6-sol"
+      ]
+    },
+    {
+      "id": "news-2026-08-13-oogle-blog-introducing-gemini-3-7-flash-",
+      "title": "Google DeepMind เปิดตัว Gemini 3.7 Flash",
+      "summary": "Google DeepMind ประกาศเปิดตัว Gemini 3.7 Flash ซึ่งเป็นโมเดลรุ่นใหม่ในตระกูล Gemini",
+      "source": "Google DeepMind",
+      "url": "https://deepmind.google/blog/introducing-gemini-3-7-flash/",
+      "publishedAt": "2026-08-13",
+      "category": "model-release",
+      "relatedModels": []
+    },
+    {
+      "id": "news-2026-08-13-azon-strands-lerobot-streaming-data-loop",
+      "title": "บันทึก เทรน และ deploy หุ่นยนต์ได้ในที่เดียวด้วย Strands Agents, LeRobot และ Hugging Face Storage Buckets",
+      "summary": "Hugging Face แนะนำการทำงานร่วมกันระหว่าง Strands Agents, LeRobot และ Hugging Face Storage Buckets ที่ให้ผู้ใช้บันทึกข้อมูล เทรนโมเดล และ deploy ได้จากแพลตฟอร์มเดียว",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/amazon/strands-lerobot-streaming-data-loop",
+      "publishedAt": "2026-08-13",
+      "category": "product",
+      "relatedModels": []
+    },
+    {
+      "id": "news-2026-08-13-ace-co-blog-icml-2026-open-reproductions",
+      "title": "บทเรียนจากการทำซ้ำงานวิจัย 2,200 ชิ้นจาก ICML",
+      "summary": "Hugging Face แบ่งปันสิ่งที่ได้เรียนรู้จากการ reproduce งานวิจัยจากงานประชุม ICML จำนวน 2,200 ชิ้น ซึ่งสะท้อนประเด็นเรื่องความสามารถในการทำซ้ำ (reproducibility) ของงานวิจัย AI",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/icml-2026-open-reproductions",
       "publishedAt": "2026-08-13",
       "category": "research",
-      "relatedModels": ["claude-opus-5", "gpt-5-6-sol", "gemini-3-1-pro"]
+      "relatedModels": []
     },
     {
-      "id": "news-2026-08-12-gemini-price",
-      "title": "Google ลดราคา Gemini 3.1 Pro ลง 20% สำหรับงาน batch",
-      "summary": "โหมด batch processing ที่ไม่ต้องการผลลัพธ์ทันทีจะได้ส่วนลด 20% จากราคาปกติ มีผลกับงานประเภทสรุปเอกสารและ classification จำนวนมาก",
-      "source": "Google DeepMind",
-      "url": "https://deepmind.google/",
+      "id": "news-2026-08-12-com-index-how-enterprises-put-ai-to-work",
+      "title": "OpenAI เผยงานวิจัย: องค์กรขยับจาก AI ผู้ช่วยสู่ AI ที่ลงมือทำงานจริง",
+      "summary": "งานวิจัยของ OpenAI ชี้ให้เห็นว่าองค์กรต่าง ๆ เริ่มนำ agentic AI มาใช้งานผ่าน ChatGPT และ Codex อย่างไร และบริษัทกลุ่ม frontier กำลังนำหน้าในการนำ AI ไปใช้",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/how-enterprises-put-ai-to-work",
+      "publishedAt": "2026-08-12",
+      "category": "research",
+      "relatedModels": [
+        "gpt-5-6-sol"
+      ]
+    },
+    {
+      "id": "news-2026-08-12-https-openai-com-index-ringcentral",
+      "title": "RingCentral สร้างการทำงานแบบ AI-native ตั้งแต่ฝ่าย engineering ถึง operations",
+      "summary": "กรณีศึกษาการที่ RingCentral ใช้ ChatGPT Work และ Codex เร่งการพัฒนาผลิตภัณฑ์ AI และรวมศูนย์ข้อมูลเชิงปฏิบัติการทั้งฝ่าย engineering และ operations",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/ringcentral",
       "publishedAt": "2026-08-12",
       "category": "business",
-      "relatedModels": ["gemini-3-1-pro"]
+      "relatedModels": []
     },
     {
-      "id": "news-2026-08-11-qwen-thai",
-      "title": "Alibaba ปล่อย Qwen3.5 เวอร์ชันปรับแต่งสำหรับภาษาไทยและภาษาในอาเซียน",
-      "summary": "โมเดลได้รับการ fine-tune เพิ่มเติมบนคลังข้อมูลภาษาไทย ลาว เขมร และเวียดนาม โดยยังคงสัญญาอนุญาต Apache 2.0 เหมือนรุ่นหลัก",
-      "source": "Alibaba Cloud",
-      "url": "https://www.alibabacloud.com/",
-      "publishedAt": "2026-08-11",
+      "id": "news-2026-08-12-tting-sign-language-ai-into-users-hands-",
+      "title": "Google DeepMind เปิดตัวโมเดลแปลภาษามือเป็นข้อความ SL2T",
+      "summary": "Google DeepMind เปิดตัวโมเดล sign-language-to-text (SL2T) ที่ใช้ขับเคลื่อนฟีเจอร์ภาษามือใหม่สำหรับผู้ใช้ที่หูหนวกและมีปัญหาการได้ยิน",
+      "source": "Google DeepMind",
+      "url": "https://deepmind.google/blog/putting-sign-language-ai-into-users-hands/",
+      "publishedAt": "2026-08-12",
       "category": "model-release",
-      "relatedModels": ["qwen3-5", "qwen3-7-max"]
+      "relatedModels": []
     },
     {
-      "id": "news-2026-08-09-mcp-standard",
-      "title": "MCP กลายเป็นมาตรฐานกลาง หลังผู้ให้บริการรายใหญ่ประกาศรองรับครบ",
-      "summary": "Model Context Protocol ได้รับการรองรับแบบ native จากผู้ให้บริการโมเดลรายใหญ่เกือบทั้งหมดแล้ว ทำให้การย้ายเครื่องมือระหว่างโมเดลทำได้โดยไม่ต้องเขียนโค้ดใหม่",
-      "source": "Model Context Protocol",
-      "url": "https://modelcontextprotocol.io/",
-      "publishedAt": "2026-08-09",
-      "category": "policy",
-      "relatedModels": ["claude-opus-5", "gpt-5-6-sol", "qwen3-7-max"]
+      "id": "news-2026-08-12-ace-co-blog-allenai-olmoearth-embeddings",
+      "title": "เปิดตัว OlmoEarth embeddings ส่งออก embedding แบบกำหนดเองจาก OlmoEarth Studio",
+      "summary": "OlmoEarth เพิ่มความสามารถส่งออก custom embeddings จาก OlmoEarth Studio เพื่อนำไปวิเคราะห์ต่อในงาน downstream",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/allenai/olmoearth-embeddings",
+      "publishedAt": "2026-08-12",
+      "category": "product",
+      "relatedModels": []
     },
     {
-      "id": "news-2026-08-07-kimi-k3-weights",
-      "title": "Moonshot AI เปิด weights ของ Kimi K3 พร้อมสัญญาอนุญาตแบบแก้ไข MIT",
-      "summary": "โมเดล context 2M tokens เปิดให้ดาวน์โหลดไปรันเองได้ โดยมีเงื่อนไขเพิ่มเติมสำหรับผู้ให้บริการที่มีผู้ใช้เกิน 100 ล้านคนต่อเดือน",
-      "source": "Moonshot AI",
-      "url": "https://www.moonshot.ai/",
-      "publishedAt": "2026-08-07",
+      "id": "news-2026-08-12-uggingface-co-blog-LiquidAI-lfm2-5-vl-3b",
+      "title": "LFM2.5-VL-3B โมเดล vision สำหรับงาน edge ที่ดีขึ้นและเร็วขึ้น",
+      "summary": "มีการเปิดตัว LFM2.5-VL-3B โมเดล vision-language ที่เน้นความสามารถด้านภาพที่ดีขึ้นและทำงานเร็วขึ้นบนอุปกรณ์ edge",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-vl-3b",
+      "publishedAt": "2026-08-12",
       "category": "model-release",
-      "relatedModels": ["kimi-k3"]
-    },
-    {
-      "id": "news-2026-08-05-hle-saturation",
-      "title": "นักวิจัยเตือน Humanity's Last Exam กำลังเข้าใกล้จุดอิ่มตัว",
-      "summary": "คะแนนสูงสุดขยับจาก 26% เป็น 44% ภายในหนึ่งปี ทำให้เกิดข้อเสนอให้ออกแบบชุดทดสอบใหม่ที่วัดการให้เหตุผลระยะยาวแทนความรู้เชิงข้อเท็จจริง",
-      "source": "Artificial Analysis",
-      "url": "https://artificialanalysis.ai/",
-      "publishedAt": "2026-08-05",
-      "category": "research",
-      "relatedModels": ["gpt-5-6-sol", "claude-fable-5"]
-    },
-    {
-      "id": "news-2026-08-03-glm5-mit",
-      "title": "Z.ai ปล่อย GLM-5 ภายใต้สัญญาอนุญาต MIT เต็มรูปแบบ",
-      "summary": "เป็นโมเดลระดับใกล้เคียง flagship ตัวแรกที่ใช้ MIT โดยไม่มีข้อจำกัดเชิงพาณิชย์ ราคา API ตั้งไว้ต่ำกว่าคู่แข่งตะวันตกราว 10 เท่า",
-      "source": "Z.ai",
-      "url": "https://z.ai/",
-      "publishedAt": "2026-08-03",
-      "category": "model-release",
-      "relatedModels": ["glm-5"]
+      "relatedModels": []
     }
   ]
 }

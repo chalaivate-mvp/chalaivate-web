@@ -1,6 +1,18 @@
 {
   "status": "sample",
   "updatedAt": "2026-08-15",
+  "provenance": {
+    "fetchedAt": "2026-08-15T23:41:11.607Z",
+    "ok": [
+      "OpenRouter",
+      "Artificial Analysis"
+    ],
+    "failed": [],
+    "filled": {
+      "actual": 37,
+      "expected": 50
+    }
+  },
   "benchmarkMeta": [
     {
       "key": "mmlu",
@@ -59,16 +71,26 @@
       "license": null,
       "contextWindow": 1000000,
       "maxOutputTokens": 128000,
-      "pricing": { "input": 8, "output": 40 },
-      "benchmarks": {
-        "mmlu": 92.4,
-        "gpqa": 93.8,
-        "sweBenchVerified": 95.0,
-        "aime": 97.2,
-        "hle": 42.5
+      "pricing": {
+        "input": 10,
+        "output": 50
       },
-      "indices": { "intelligence": 82, "coding": 86, "agentic": 84 },
-      "speed": { "tokensPerSecond": 48, "firstTokenSeconds": 2.4 },
+      "benchmarks": {
+        "mmlu": null,
+        "gpqa": 92.6,
+        "sweBenchVerified": null,
+        "aime": null,
+        "hle": 55.5
+      },
+      "indices": {
+        "intelligence": 62.1,
+        "coding": 76.5,
+        "agentic": null
+      },
+      "speed": {
+        "tokensPerSecond": 57.448,
+        "firstTokenSeconds": 58.037
+      },
       "features": {
         "multimodal": true,
         "toolUse": true,
@@ -103,16 +125,26 @@
       "license": null,
       "contextWindow": 1000000,
       "maxOutputTokens": 128000,
-      "pricing": { "input": 5, "output": 25 },
-      "benchmarks": {
-        "mmlu": 91.8,
-        "gpqa": 92.6,
-        "sweBenchVerified": 96.5,
-        "aime": 96.0,
-        "hle": 40.1
+      "pricing": {
+        "input": 5,
+        "output": 25
       },
-      "indices": { "intelligence": 80, "coding": 88, "agentic": 85 },
-      "speed": { "tokensPerSecond": 55, "firstTokenSeconds": 2.1 },
+      "benchmarks": {
+        "mmlu": null,
+        "gpqa": 93.2,
+        "sweBenchVerified": null,
+        "aime": null,
+        "hle": 54.9
+      },
+      "indices": {
+        "intelligence": 63.1,
+        "coding": 78,
+        "agentic": null
+      },
+      "speed": {
+        "tokensPerSecond": 47.292,
+        "firstTokenSeconds": 28.534
+      },
       "features": {
         "multimodal": true,
         "toolUse": true,
@@ -146,17 +178,27 @@
       "openWeights": false,
       "license": null,
       "contextWindow": 1000000,
-      "maxOutputTokens": 64000,
-      "pricing": { "input": 3, "output": 15 },
-      "benchmarks": {
-        "mmlu": 89.6,
-        "gpqa": 87.3,
-        "sweBenchVerified": 92.1,
-        "aime": 91.4,
-        "hle": 31.8
+      "maxOutputTokens": 128000,
+      "pricing": {
+        "input": 2,
+        "output": 10
       },
-      "indices": { "intelligence": 73, "coding": 79, "agentic": 76 },
-      "speed": { "tokensPerSecond": 92, "firstTokenSeconds": 1.2 },
+      "benchmarks": {
+        "mmlu": null,
+        "gpqa": 91.1,
+        "sweBenchVerified": null,
+        "aime": null,
+        "hle": 41.3
+      },
+      "indices": {
+        "intelligence": 55.3,
+        "coding": 71.5,
+        "agentic": null
+      },
+      "speed": {
+        "tokensPerSecond": 73.519,
+        "firstTokenSeconds": 128.307
+      },
       "features": {
         "multimodal": true,
         "toolUse": true,
@@ -191,16 +233,26 @@
       "license": null,
       "contextWindow": 1050000,
       "maxOutputTokens": 128000,
-      "pricing": { "input": 5, "output": 30 },
-      "benchmarks": {
-        "mmlu": 92.1,
-        "gpqa": 94.1,
-        "sweBenchVerified": 96.2,
-        "aime": 98.1,
-        "hle": 44.0
+      "pricing": {
+        "input": 5,
+        "output": 30
       },
-      "indices": { "intelligence": 83, "coding": 87, "agentic": 82 },
-      "speed": { "tokensPerSecond": 61, "firstTokenSeconds": 2.8 },
+      "benchmarks": {
+        "mmlu": null,
+        "gpqa": 94.1,
+        "sweBenchVerified": null,
+        "aime": null,
+        "hle": 49.5
+      },
+      "indices": {
+        "intelligence": 60.9,
+        "coding": 77.4,
+        "agentic": null
+      },
+      "speed": {
+        "tokensPerSecond": 61.457,
+        "firstTokenSeconds": 81.039
+      },
       "features": {
         "multimodal": true,
         "toolUse": true,
@@ -233,18 +285,28 @@
       "releaseDate": "2026-05-14",
       "openWeights": false,
       "license": null,
-      "contextWindow": 1000000,
-      "maxOutputTokens": 65536,
-      "pricing": { "input": 2, "output": 12 },
-      "benchmarks": {
-        "mmlu": 90.9,
-        "gpqa": 91.2,
-        "sweBenchVerified": 89.4,
-        "aime": 94.3,
-        "hle": 37.2
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "pricing": {
+        "input": null,
+        "output": null
       },
-      "indices": { "intelligence": 78, "coding": 76, "agentic": 74 },
-      "speed": { "tokensPerSecond": 128, "firstTokenSeconds": 0.9 },
+      "benchmarks": {
+        "mmlu": null,
+        "gpqa": null,
+        "sweBenchVerified": null,
+        "aime": null,
+        "hle": null
+      },
+      "indices": {
+        "intelligence": null,
+        "coding": null,
+        "agentic": null
+      },
+      "speed": {
+        "tokensPerSecond": null,
+        "firstTokenSeconds": null
+      },
       "features": {
         "multimodal": true,
         "toolUse": true,
@@ -277,18 +339,28 @@
       "releaseDate": "2026-03-28",
       "openWeights": true,
       "license": "Modified MIT",
-      "contextWindow": 2000000,
-      "maxOutputTokens": 32768,
-      "pricing": { "input": 0.6, "output": 2.5 },
-      "benchmarks": {
-        "mmlu": 88.2,
-        "gpqa": 84.5,
-        "sweBenchVerified": 84.7,
-        "aime": 90.2,
-        "hle": 26.4
+      "contextWindow": 1048576,
+      "maxOutputTokens": null,
+      "pricing": {
+        "input": 3,
+        "output": 15
       },
-      "indices": { "intelligence": 68, "coding": 71, "agentic": 66 },
-      "speed": { "tokensPerSecond": 84, "firstTokenSeconds": 1.5 },
+      "benchmarks": {
+        "mmlu": null,
+        "gpqa": 93.5,
+        "sweBenchVerified": null,
+        "aime": null,
+        "hle": 46.9
+      },
+      "indices": {
+        "intelligence": 59.7,
+        "coding": 76.2,
+        "agentic": null
+      },
+      "speed": {
+        "tokensPerSecond": 36.666,
+        "firstTokenSeconds": 2.255
+      },
       "features": {
         "multimodal": true,
         "toolUse": true,
@@ -321,18 +393,28 @@
       "releaseDate": "2026-02-17",
       "openWeights": false,
       "license": null,
-      "contextWindow": 512000,
-      "maxOutputTokens": 32768,
-      "pricing": { "input": 3, "output": 15 },
-      "benchmarks": {
-        "mmlu": 89.1,
-        "gpqa": 88.9,
-        "sweBenchVerified": 86.3,
-        "aime": 93.1,
-        "hle": 33.6
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "pricing": {
+        "input": null,
+        "output": null
       },
-      "indices": { "intelligence": 74, "coding": 73, "agentic": 70 },
-      "speed": { "tokensPerSecond": 97, "firstTokenSeconds": 1.1 },
+      "benchmarks": {
+        "mmlu": null,
+        "gpqa": null,
+        "sweBenchVerified": null,
+        "aime": null,
+        "hle": null
+      },
+      "indices": {
+        "intelligence": null,
+        "coding": null,
+        "agentic": null
+      },
+      "speed": {
+        "tokensPerSecond": null,
+        "firstTokenSeconds": null
+      },
       "features": {
         "multimodal": true,
         "toolUse": true,
@@ -365,18 +447,28 @@
       "releaseDate": "2026-04-25",
       "openWeights": true,
       "license": "MIT",
-      "contextWindow": 256000,
-      "maxOutputTokens": 32768,
-      "pricing": { "input": 0.4, "output": 1.8 },
-      "benchmarks": {
-        "mmlu": 86.7,
-        "gpqa": 81.4,
-        "sweBenchVerified": 82.9,
-        "aime": 88.6,
-        "hle": 22.1
+      "contextWindow": 204800,
+      "maxOutputTokens": 128000,
+      "pricing": {
+        "input": 0.6,
+        "output": 1.92
       },
-      "indices": { "intelligence": 64, "coding": 68, "agentic": 62 },
-      "speed": { "tokensPerSecond": 110, "firstTokenSeconds": 1.0 },
+      "benchmarks": {
+        "mmlu": null,
+        "gpqa": 82,
+        "sweBenchVerified": null,
+        "aime": null,
+        "hle": 29.3
+      },
+      "indices": {
+        "intelligence": 40.6,
+        "coding": null,
+        "agentic": null
+      },
+      "speed": {
+        "tokensPerSecond": 0,
+        "firstTokenSeconds": 0
+      },
       "features": {
         "multimodal": true,
         "toolUse": true,
@@ -410,17 +502,27 @@
       "openWeights": false,
       "license": null,
       "contextWindow": 1000000,
-      "maxOutputTokens": 65536,
-      "pricing": { "input": 1.8, "output": 9 },
-      "benchmarks": {
-        "mmlu": 90.2,
-        "gpqa": 89.7,
-        "sweBenchVerified": 88.1,
-        "aime": 94.8,
-        "hle": 34.9
+      "maxOutputTokens": 131072,
+      "pricing": {
+        "input": 1.475,
+        "output": 4.425
       },
-      "indices": { "intelligence": 76, "coding": 75, "agentic": 72 },
-      "speed": { "tokensPerSecond": 105, "firstTokenSeconds": 1.0 },
+      "benchmarks": {
+        "mmlu": null,
+        "gpqa": 92.3,
+        "sweBenchVerified": null,
+        "aime": null,
+        "hle": 40.5
+      },
+      "indices": {
+        "intelligence": 46.7,
+        "coding": 66,
+        "agentic": null
+      },
+      "speed": {
+        "tokensPerSecond": 0,
+        "firstTokenSeconds": 0
+      },
       "features": {
         "multimodal": true,
         "toolUse": true,
@@ -453,18 +555,28 @@
       "releaseDate": "2026-01-22",
       "openWeights": true,
       "license": "Apache 2.0",
-      "contextWindow": 256000,
-      "maxOutputTokens": 32768,
-      "pricing": { "input": 0.3, "output": 1.2 },
-      "benchmarks": {
-        "mmlu": 85.4,
-        "gpqa": 79.8,
-        "sweBenchVerified": 79.2,
-        "aime": 86.1,
-        "hle": 19.7
+      "contextWindow": 262144,
+      "maxOutputTokens": 65536,
+      "pricing": {
+        "input": 0.39,
+        "output": 2.34
       },
-      "indices": { "intelligence": 61, "coding": 64, "agentic": 58 },
-      "speed": { "tokensPerSecond": 118, "firstTokenSeconds": 0.8 },
+      "benchmarks": {
+        "mmlu": null,
+        "gpqa": null,
+        "sweBenchVerified": null,
+        "aime": null,
+        "hle": null
+      },
+      "indices": {
+        "intelligence": null,
+        "coding": null,
+        "agentic": null
+      },
+      "speed": {
+        "tokensPerSecond": null,
+        "firstTokenSeconds": null
+      },
       "features": {
         "multimodal": false,
         "toolUse": true,
