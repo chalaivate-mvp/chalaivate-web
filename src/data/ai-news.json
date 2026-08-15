@@ -1,0 +1,86 @@
+{
+  "status": "sample",
+  "updatedAt": "2026-08-15",
+  "items": [
+    {
+      "id": "news-2026-08-14-fable-context",
+      "title": "Anthropic ขยาย context window ของ Claude Fable 5 เป็น 1M tokens ให้ผู้ใช้ทุกระดับ",
+      "summary": "จากเดิมที่จำกัดเฉพาะลูกค้าองค์กร ตอนนี้เปิดให้ใช้งานผ่าน API ทั่วไป พร้อมปรับราคาส่วนที่เกิน 200K tokens แยกเป็นอีกอัตรา",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news",
+      "publishedAt": "2026-08-14",
+      "category": "product",
+      "relatedModels": ["claude-fable-5", "claude-opus-5"]
+    },
+    {
+      "id": "news-2026-08-13-swebench-pro",
+      "title": "SWE-bench Pro เพิ่มชุดทดสอบใหม่ 300 issue จากโปรเจกต์ enterprise",
+      "summary": "ชุดทดสอบใหม่เน้น codebase ขนาดใหญ่ที่มี dependency ซับซ้อน ทำให้คะแนนของทุกโมเดลลดลงเฉลี่ย 12 จุดเทียบกับ SWE-bench Verified",
+      "source": "SWE-bench",
+      "url": "https://www.swebench.com/",
+      "publishedAt": "2026-08-13",
+      "category": "research",
+      "relatedModels": ["claude-opus-5", "gpt-5-6-sol", "gemini-3-1-pro"]
+    },
+    {
+      "id": "news-2026-08-12-gemini-price",
+      "title": "Google ลดราคา Gemini 3.1 Pro ลง 20% สำหรับงาน batch",
+      "summary": "โหมด batch processing ที่ไม่ต้องการผลลัพธ์ทันทีจะได้ส่วนลด 20% จากราคาปกติ มีผลกับงานประเภทสรุปเอกสารและ classification จำนวนมาก",
+      "source": "Google DeepMind",
+      "url": "https://deepmind.google/",
+      "publishedAt": "2026-08-12",
+      "category": "business",
+      "relatedModels": ["gemini-3-1-pro"]
+    },
+    {
+      "id": "news-2026-08-11-qwen-thai",
+      "title": "Alibaba ปล่อย Qwen3.5 เวอร์ชันปรับแต่งสำหรับภาษาไทยและภาษาในอาเซียน",
+      "summary": "โมเดลได้รับการ fine-tune เพิ่มเติมบนคลังข้อมูลภาษาไทย ลาว เขมร และเวียดนาม โดยยังคงสัญญาอนุญาต Apache 2.0 เหมือนรุ่นหลัก",
+      "source": "Alibaba Cloud",
+      "url": "https://www.alibabacloud.com/",
+      "publishedAt": "2026-08-11",
+      "category": "model-release",
+      "relatedModels": ["qwen3-5", "qwen3-7-max"]
+    },
+    {
+      "id": "news-2026-08-09-mcp-standard",
+      "title": "MCP กลายเป็นมาตรฐานกลาง หลังผู้ให้บริการรายใหญ่ประกาศรองรับครบ",
+      "summary": "Model Context Protocol ได้รับการรองรับแบบ native จากผู้ให้บริการโมเดลรายใหญ่เกือบทั้งหมดแล้ว ทำให้การย้ายเครื่องมือระหว่างโมเดลทำได้โดยไม่ต้องเขียนโค้ดใหม่",
+      "source": "Model Context Protocol",
+      "url": "https://modelcontextprotocol.io/",
+      "publishedAt": "2026-08-09",
+      "category": "policy",
+      "relatedModels": ["claude-opus-5", "gpt-5-6-sol", "qwen3-7-max"]
+    },
+    {
+      "id": "news-2026-08-07-kimi-k3-weights",
+      "title": "Moonshot AI เปิด weights ของ Kimi K3 พร้อมสัญญาอนุญาตแบบแก้ไข MIT",
+      "summary": "โมเดล context 2M tokens เปิดให้ดาวน์โหลดไปรันเองได้ โดยมีเงื่อนไขเพิ่มเติมสำหรับผู้ให้บริการที่มีผู้ใช้เกิน 100 ล้านคนต่อเดือน",
+      "source": "Moonshot AI",
+      "url": "https://www.moonshot.ai/",
+      "publishedAt": "2026-08-07",
+      "category": "model-release",
+      "relatedModels": ["kimi-k3"]
+    },
+    {
+      "id": "news-2026-08-05-hle-saturation",
+      "title": "นักวิจัยเตือน Humanity's Last Exam กำลังเข้าใกล้จุดอิ่มตัว",
+      "summary": "คะแนนสูงสุดขยับจาก 26% เป็น 44% ภายในหนึ่งปี ทำให้เกิดข้อเสนอให้ออกแบบชุดทดสอบใหม่ที่วัดการให้เหตุผลระยะยาวแทนความรู้เชิงข้อเท็จจริง",
+      "source": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/",
+      "publishedAt": "2026-08-05",
+      "category": "research",
+      "relatedModels": ["gpt-5-6-sol", "claude-fable-5"]
+    },
+    {
+      "id": "news-2026-08-03-glm5-mit",
+      "title": "Z.ai ปล่อย GLM-5 ภายใต้สัญญาอนุญาต MIT เต็มรูปแบบ",
+      "summary": "เป็นโมเดลระดับใกล้เคียง flagship ตัวแรกที่ใช้ MIT โดยไม่มีข้อจำกัดเชิงพาณิชย์ ราคา API ตั้งไว้ต่ำกว่าคู่แข่งตะวันตกราว 10 เท่า",
+      "source": "Z.ai",
+      "url": "https://z.ai/",
+      "publishedAt": "2026-08-03",
+      "category": "model-release",
+      "relatedModels": ["glm-5"]
+    }
+  ]
+}

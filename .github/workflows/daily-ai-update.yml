@@ -1,0 +1,68 @@
+name: อัปเดตข้อมูล AI รายวัน
+
+on:
+  schedule:
+    # 06:00 ตามเวลาไทย = 23:00 UTC ของวันก่อนหน้า (cron ของ GitHub เป็น UTC เสมอ)
+    - cron: "0 23 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "ดึงข้อมูลแต่ไม่เขียนไฟล์ (ใช้ตรวจก่อนของจริง)"
+        type: boolean
+        default: false
+
+# กันสองรอบชนกันแล้วเขียนไฟล์ทับกัน
+concurrency:
+  group: daily-ai-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      # ต้องใช้เขียน commit กลับเข้า branch
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - run: npm ci
+
+      # เทสต์ต้องผ่านก่อนแตะข้อมูลจริง ถ้า logic แปลงหน่วยพัง
+      # จะได้รู้ตั้งแต่ตรงนี้ ไม่ใช่หลังเขียนทับไฟล์ไปแล้ว
+      - name: ทดสอบ pipeline
+        run: npx tsx --test scripts/lib/pipeline.test.ts
+
+      - name: ดึงข้อมูล
+        env:
+          ARTIFICIAL_ANALYSIS_API_KEY: ${{ secrets.ARTIFICIAL_ANALYSIS_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: npm run fetch:ai ${{ inputs.dry_run && '-- --dry' || '' }}
+
+      # build ต้องผ่านด้วยข้อมูลชุดใหม่ก่อนจะ commit
+      # ข้อมูลที่ผ่าน schema แต่ทำหน้าเว็บพังยังเป็นไปได้
+      - name: ตรวจว่า build ผ่าน
+        if: ${{ !inputs.dry_run }}
+        run: npm run build
+
+      - name: Commit เมื่อข้อมูลเปลี่ยน
+        if: ${{ !inputs.dry_run }}
+        run: |
+          if git diff --quiet -- src/data/; then
+            echo "ข้อมูลไม่เปลี่ยน — ไม่ต้อง commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/
+          STATUS=$(node -p "require('./src/data/ai-models.json').status")
+          FILLED=$(node -p "const p=require('./src/data/ai-models.json').provenance; p ? p.filled.actual+'/'+p.filled.expected : 'n/a'")
+          git commit -m "chore(data): อัปเดตข้อมูลโมเดล AI และข่าวประจำวัน
+
+          status: $STATUS · ข้อมูลที่ดึงได้: $FILLED ช่อง"
+          git push

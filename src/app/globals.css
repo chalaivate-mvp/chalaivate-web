@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+:root {
+  --blue-primary: #005CFF;
+  --blue-light: #3D85FF;
+  --blue-dark: #0044CC;
+  --amber-accent: #FFB020;
+  --amber-light: #FFD080;
+  --deep-navy: #0D1B2A;
+  --navy-mid: #1B2D45;
+  --navy-light: #243B55;
+  --white: #FFFFFF;
+  --gray-50: #F8FAFC;
+  --gray-100: #F1F5F9;
+  --gray-200: #E2E8F0;
+  --gray-300: #CBD5E1;
+  --gray-400: #94A3B8;
+  --gray-500: #64748B;
+  --gray-600: #475569;
+}
+
+@theme inline {
+  --color-blue-primary: var(--blue-primary);
+  --color-blue-light: var(--blue-light);
+  --color-blue-dark: var(--blue-dark);
+  --color-amber-accent: var(--amber-accent);
+  --color-amber-light: var(--amber-light);
+  --color-deep-navy: var(--deep-navy);
+  --color-navy-mid: var(--navy-mid);
+  --color-navy-light: var(--navy-light);
+  --font-sans: "LINE Seed Sans", "Inter", var(--font-inter), var(--font-thai), system-ui, sans-serif;
+}
+
+/* Reset ต้องอยู่ใน @layer base
+ *
+ * Tailwind v4 วาง utility ทั้งหมดไว้ใน cascade layer ชื่อ "utilities" และตาม
+ * กติกาของ cascade layers กฎที่ "ไม่อยู่ใน layer ใดเลย" จะชนะกฎที่อยู่ใน layer
+ * เสมอ ไม่ว่า specificity จะต่ำแค่ไหน — `* { padding: 0 }` แบบไม่มี layer
+ * จึงทับ .px-6 / .pt-28 / .py-8 ทั้งเว็บ และ `margin: 0` ก็ทับ .mx-auto
+ * ทำให้เนื้อหาไม่ถูกจัดกึ่งกลางและไม่มีระยะห่างขอบเลย
+ *
+ * ย้ายเข้า @layer base แล้ว utility กลับมาชนะตามปกติ
+ */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "LINE Seed Sans", "Inter", var(--font-inter), var(--font-thai), system-ui, sans-serif;
+    background: var(--deep-navy);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+}
+
+/* Animations */
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orbit-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  33% { transform: translateY(-15px) translateX(10px); }
+  66% { transform: translateY(10px) translateX(-5px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--deep-navy);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--blue-primary);
+  border-radius: 3px;
+}

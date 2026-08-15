@@ -1,0 +1,412 @@
+{
+  "$comment": "ข้อมูลที่คนเขียนเอง — pipeline ไม่แตะไฟล์นี้ แก้ที่นี่เมื่อเพิ่ม/ลดโมเดล หรือแก้คำบรรยายไทย",
+  "models": [
+    {
+      "id": "claude-fable-5",
+      "name": "Claude Fable 5",
+      "shortName": "Fable 5",
+      "vendor": "Anthropic",
+      "releaseDate": "2026-05-20",
+      "openWeights": false,
+      "license": null,
+      "sources": {
+        "openrouter": "anthropic/claude-fable-5",
+        "artificialAnalysis": "claude-fable-5"
+      },
+      "features": {
+        "multimodal": true,
+        "toolUse": true,
+        "webSearch": true,
+        "mcp": "native",
+        "documentHandling": true,
+        "scheduling": true
+      },
+      "strengths": [
+        "งานเขียนเชิงสร้างสรรค์และการเล่าเรื่องที่มีน้ำเสียงเป็นธรรมชาติที่สุด",
+        "รักษาบริบทยาว ๆ ได้ดีโดยไม่หลุดประเด็น",
+        "ทำงาน agentic หลายขั้นตอนได้ต่อเนื่อง"
+      ],
+      "weaknesses": [
+        "ราคาต่อ token สูงที่สุดในกลุ่ม",
+        "ความเร็วตอบสนองช้ากว่ารุ่นเล็ก",
+        "ยังไม่เปิด weights"
+      ],
+      "bestFor": [
+        "งานเขียน content และ storytelling",
+        "วิเคราะห์เอกสารยาวหลายร้อยหน้า",
+        "AI agent ที่ต้องทำงานยาวต่อเนื่อง"
+      ]
+    },
+    {
+      "id": "claude-opus-5",
+      "name": "Claude Opus 5",
+      "shortName": "Opus 5",
+      "vendor": "Anthropic",
+      "releaseDate": "2026-04-10",
+      "openWeights": false,
+      "license": null,
+      "sources": {
+        "openrouter": "anthropic/claude-opus-5",
+        "artificialAnalysis": "claude-opus-5"
+      },
+      "features": {
+        "multimodal": true,
+        "toolUse": true,
+        "webSearch": true,
+        "mcp": "native",
+        "documentHandling": true,
+        "scheduling": true
+      },
+      "strengths": [
+        "เขียนโค้ดและแก้ bug ในโปรเจกต์จริงได้แม่นที่สุด",
+        "รองรับ MCP แบบ native ต่อเครื่องมือภายนอกง่าย",
+        "ทำตาม instruction ซับซ้อนได้ตรงตามที่สั่ง"
+      ],
+      "weaknesses": [
+        "ราคาสูงกว่ารุ่นกลางหลายเท่า",
+        "ต้องออกแบบ prompt ให้ชัดจึงคุ้มค่าตัว",
+        "ยังไม่เปิด weights"
+      ],
+      "bestFor": [
+        "งาน software development และ code review",
+        "AI agent ที่ต้องเรียกใช้เครื่องมือหลายตัว",
+        "งานวิเคราะห์ที่ต้องการความแม่นยำสูง"
+      ]
+    },
+    {
+      "id": "claude-sonnet-5",
+      "name": "Claude Sonnet 5",
+      "shortName": "Sonnet 5",
+      "vendor": "Anthropic",
+      "releaseDate": "2026-04-10",
+      "openWeights": false,
+      "license": null,
+      "sources": {
+        "openrouter": "anthropic/claude-sonnet-5",
+        "artificialAnalysis": "claude-sonnet-5"
+      },
+      "features": {
+        "multimodal": true,
+        "toolUse": true,
+        "webSearch": true,
+        "mcp": "native",
+        "documentHandling": true,
+        "scheduling": true
+      },
+      "strengths": [
+        "สมดุลราคา/ความสามารถดีที่สุดในตระกูล Claude",
+        "ตอบเร็วพอสำหรับงาน production ที่มีผู้ใช้จริง",
+        "รองรับ context ยาวเท่ารุ่นใหญ่"
+      ],
+      "weaknesses": [
+        "งานให้เหตุผลยาก ๆ ยังสู้ Opus ไม่ได้",
+        "output token จำกัดกว่ารุ่นใหญ่",
+        "ยังไม่เปิด weights"
+      ],
+      "bestFor": [
+        "แอปพลิเคชันที่มีผู้ใช้จำนวนมาก",
+        "chatbot และงานสรุปเอกสารประจำวัน",
+        "งานที่ต้องคุมต้นทุนแต่ยังต้องการคุณภาพ"
+      ]
+    },
+    {
+      "id": "gpt-5-6-sol",
+      "name": "GPT-5.6 Sol",
+      "shortName": "GPT-5.6",
+      "vendor": "OpenAI",
+      "releaseDate": "2026-06-02",
+      "openWeights": false,
+      "license": null,
+      "sources": {
+        "openrouter": "openai/gpt-5.6-sol",
+        "artificialAnalysis": "gpt-5-6-sol"
+      },
+      "features": {
+        "multimodal": true,
+        "toolUse": true,
+        "webSearch": true,
+        "mcp": "native",
+        "documentHandling": true,
+        "scheduling": true
+      },
+      "strengths": [
+        "คะแนน reasoning และคณิตศาสตร์สูงที่สุดในกลุ่ม",
+        "context window ใหญ่ที่สุดที่ 1.05M tokens",
+        "ecosystem เครื่องมือและ integration กว้างที่สุด"
+      ],
+      "weaknesses": [
+        "ราคา output แพงที่สุดในกลุ่ม flagship",
+        "latency สูงเมื่อเปิดโหมดคิดลึก",
+        "ยังไม่เปิด weights"
+      ],
+      "bestFor": [
+        "งานวิจัยและวิเคราะห์เชิงลึก",
+        "โจทย์คณิตศาสตร์และ STEM",
+        "องค์กรที่ใช้ ecosystem ของ OpenAI อยู่แล้ว"
+      ]
+    },
+    {
+      "id": "gemini-3-1-pro",
+      "name": "Gemini 3.1 Pro",
+      "shortName": "Gemini 3.1",
+      "vendor": "Google DeepMind",
+      "releaseDate": "2026-05-14",
+      "openWeights": false,
+      "license": null,
+      "sources": {
+        "openrouter": "google/gemini-3.1-pro",
+        "artificialAnalysis": "gemini-3-1-pro"
+      },
+      "features": {
+        "multimodal": true,
+        "toolUse": true,
+        "webSearch": true,
+        "mcp": "wrapper",
+        "documentHandling": true,
+        "scheduling": false
+      },
+      "strengths": [
+        "เร็วที่สุดในกลุ่ม flagship ที่ 128 tokens/วินาที",
+        "ราคาถูกกว่าคู่แข่งระดับเดียวกันเกือบครึ่ง",
+        "จัดการวิดีโอและเสียงได้ดีเป็นพิเศษ"
+      ],
+      "weaknesses": [
+        "งานเขียนโค้ดยังตามหลัง Claude และ GPT",
+        "รองรับ MCP ผ่าน wrapper ไม่ใช่ native",
+        "ยังไม่มีระบบตั้งเวลางานในตัว"
+      ],
+      "bestFor": [
+        "งานที่ต้องประมวลผลวิดีโอหรือเสียง",
+        "แอปที่ต้องการ latency ต่ำ",
+        "งานปริมาณมากที่ต้องคุมต้นทุน"
+      ]
+    },
+    {
+      "id": "kimi-k3",
+      "name": "Kimi K3",
+      "shortName": "Kimi K3",
+      "vendor": "Moonshot AI",
+      "releaseDate": "2026-03-28",
+      "openWeights": true,
+      "license": "Modified MIT",
+      "sources": {
+        "openrouter": "moonshotai/kimi-k3",
+        "artificialAnalysis": "kimi-k3"
+      },
+      "features": {
+        "multimodal": true,
+        "toolUse": true,
+        "webSearch": true,
+        "mcp": "wrapper",
+        "documentHandling": true,
+        "scheduling": false
+      },
+      "strengths": [
+        "context window ยาวที่สุดที่ 2M tokens",
+        "ราคาถูกกว่ากลุ่ม flagship เกือบ 10 เท่า",
+        "เปิด weights ให้ deploy เองได้"
+      ],
+      "weaknesses": [
+        "คะแนน benchmark ยังตามหลังกลุ่มนำ",
+        "เอกสารภาษาอังกฤษน้อยกว่าคู่แข่งตะวันตก",
+        "ระบบนิเวศเครื่องมือยังเล็ก"
+      ],
+      "bestFor": [
+        "งานอ่านเอกสารขนาดใหญ่มาก",
+        "องค์กรที่ต้อง deploy on-premise",
+        "งานที่ต้องการต้นทุนต่ำเป็นหลัก"
+      ]
+    },
+    {
+      "id": "grok-5",
+      "name": "Grok 5",
+      "shortName": "Grok 5",
+      "vendor": "xAI",
+      "releaseDate": "2026-02-17",
+      "openWeights": false,
+      "license": null,
+      "sources": {
+        "openrouter": "x-ai/grok-5",
+        "artificialAnalysis": "grok-5"
+      },
+      "features": {
+        "multimodal": true,
+        "toolUse": true,
+        "webSearch": true,
+        "mcp": "wrapper",
+        "documentHandling": false,
+        "scheduling": false
+      },
+      "strengths": [
+        "เข้าถึงข้อมูลเรียลไทม์จาก X ได้โดยตรง",
+        "ตอบเร็วและมีบุคลิกการตอบที่ตรงไปตรงมา",
+        "เก่งงานวิเคราะห์กระแสสังคม"
+      ],
+      "weaknesses": [
+        "context window เล็กที่สุดในกลุ่มเปรียบเทียบ",
+        "ยังไม่รองรับการอ่านไฟล์เอกสารในตัว",
+        "ตัวเลือกโครงสร้างองค์กร/compliance น้อยกว่าคู่แข่ง"
+      ],
+      "bestFor": [
+        "งานติดตามข่าวและกระแสโซเชียล",
+        "งานวิเคราะห์ sentiment แบบเรียลไทม์",
+        "chatbot ที่ต้องการน้ำเสียงตรงไปตรงมา"
+      ]
+    },
+    {
+      "id": "glm-5",
+      "name": "GLM-5",
+      "shortName": "GLM-5",
+      "vendor": "Z.ai",
+      "releaseDate": "2026-04-25",
+      "openWeights": true,
+      "license": "MIT",
+      "sources": {
+        "openrouter": "z-ai/glm-5",
+        "artificialAnalysis": "glm-5"
+      },
+      "features": {
+        "multimodal": true,
+        "toolUse": true,
+        "webSearch": false,
+        "mcp": "wrapper",
+        "documentHandling": true,
+        "scheduling": false
+      },
+      "strengths": [
+        "ราคาถูกที่สุดในกลุ่มที่เปรียบเทียบ",
+        "เปิด weights ภายใต้ MIT ใช้เชิงพาณิชย์ได้",
+        "ประสิทธิภาพต่อต้นทุนสูงมากสำหรับงานทั่วไป"
+      ],
+      "weaknesses": [
+        "งานให้เหตุผลระดับยากยังห่างจากกลุ่มนำ",
+        "ไม่มีการค้นเว็บในตัว",
+        "รองรับภาษาไทยได้ปานกลาง"
+      ],
+      "bestFor": [
+        "งาน classification และ extraction ปริมาณมาก",
+        "prototype ที่ต้องคุมงบ",
+        "การ fine-tune บนข้อมูลองค์กร"
+      ]
+    },
+    {
+      "id": "qwen3-7-max",
+      "name": "Qwen3.7-Max",
+      "shortName": "Qwen3.7",
+      "vendor": "Alibaba",
+      "releaseDate": "2026-05-30",
+      "openWeights": false,
+      "license": null,
+      "sources": {
+        "openrouter": "qwen/qwen3.7-max",
+        "artificialAnalysis": "qwen3-7-max"
+      },
+      "features": {
+        "multimodal": true,
+        "toolUse": true,
+        "webSearch": true,
+        "mcp": "native",
+        "documentHandling": true,
+        "scheduling": true
+      },
+      "strengths": [
+        "รองรับภาษาเอเชียรวมถึงภาษาไทยได้ดีมาก",
+        "ราคาถูกกว่ากลุ่ม flagship ตะวันตกราวครึ่งหนึ่ง",
+        "รองรับ MCP แบบ native"
+      ],
+      "weaknesses": [
+        "ยังไม่เปิด weights สำหรับรุ่น Max",
+        "เอกสาร API ภาษาอังกฤษยังไม่ครบเท่าคู่แข่ง",
+        "การรองรับในเครื่องมือสากลยังน้อยกว่า"
+      ],
+      "bestFor": [
+        "งานภาษาไทยและภาษาเอเชียอื่น ๆ",
+        "องค์กรที่ต้องการสมดุลราคา/ความสามารถ",
+        "งานแปลและสร้างเนื้อหาหลายภาษา"
+      ]
+    },
+    {
+      "id": "qwen3-5",
+      "name": "Qwen3.5 (397B-A17B)",
+      "shortName": "Qwen3.5",
+      "vendor": "Alibaba",
+      "releaseDate": "2026-01-22",
+      "openWeights": true,
+      "license": "Apache 2.0",
+      "sources": {
+        "openrouter": "qwen/qwen3.5-397b-a17b",
+        "artificialAnalysis": "qwen3-5"
+      },
+      "features": {
+        "multimodal": false,
+        "toolUse": true,
+        "webSearch": false,
+        "mcp": "wrapper",
+        "documentHandling": true,
+        "scheduling": false
+      },
+      "strengths": [
+        "Apache 2.0 ใช้เชิงพาณิชย์ได้เต็มที่",
+        "สถาปัตยกรรม MoE ใช้พารามิเตอร์จริงแค่ 17B ต่อ token",
+        "รันบนเครื่องตัวเองได้ ไม่ต้องส่งข้อมูลออกนอกองค์กร"
+      ],
+      "weaknesses": [
+        "ไม่รองรับ multimodal",
+        "ไม่มีการค้นเว็บในตัว",
+        "ต้องมี GPU แรงพอสมควรถ้าจะรันเอง"
+      ],
+      "bestFor": [
+        "องค์กรที่ข้อมูลห้ามออกนอกระบบ",
+        "งานที่ต้อง fine-tune หนัก ๆ",
+        "การเรียนการสอนเรื่องสถาปัตยกรรม LLM"
+      ]
+    }
+  ],
+  "benchmarkMeta": [
+    {
+      "key": "mmlu",
+      "label": "MMLU",
+      "description": "ความรู้ทั่วไประดับมหาวิทยาลัย 57 วิชา — วัดความกว้างของความรู้",
+      "unit": "percent"
+    },
+    {
+      "key": "gpqa",
+      "label": "GPQA Diamond",
+      "description": "คำถามระดับปริญญาเอก สาขาฟิสิกส์/เคมี/ชีววิทยา — วัดการให้เหตุผลเชิงลึก",
+      "unit": "percent"
+    },
+    {
+      "key": "sweBenchVerified",
+      "label": "SWE-bench Verified",
+      "description": "แก้ issue จริงบน GitHub — วัดความสามารถเขียนโค้ดในโปรเจกต์จริง",
+      "unit": "percent"
+    },
+    {
+      "key": "aime",
+      "label": "AIME",
+      "description": "ข้อสอบคณิตศาสตร์โอลิมปิกระดับมัธยมปลายของสหรัฐฯ",
+      "unit": "percent"
+    },
+    {
+      "key": "hle",
+      "label": "Humanity's Last Exam",
+      "description": "ชุดคำถามยากที่สุดที่มนุษย์ผู้เชี่ยวชาญออกแบบมาเพื่อท้าทาย AI",
+      "unit": "percent"
+    }
+  ],
+  "dataSources": [
+    {
+      "name": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/",
+      "attribution": "Benchmark indices courtesy of Artificial Analysis"
+    },
+    {
+      "name": "OpenRouter Models API",
+      "url": "https://openrouter.ai/docs/guides/overview/models"
+    },
+    {
+      "name": "LMArena Leaderboard",
+      "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"
+    }
+  ]
+}
