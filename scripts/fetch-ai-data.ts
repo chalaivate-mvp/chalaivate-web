@@ -157,7 +157,13 @@ async function main() {
     const orKeys = openRouter ? [...openRouter.keys()] : [];
     const aaKeys = aa ? [...aa.byKey.keys()] : [];
 
-    /** ตัดชื่อค่ายหน้า "/" ออกก่อน แล้วเอาคำแรกที่ยาวพอเป็นตัวค้น */
+    /**
+     * ตัดชื่อค่ายหน้า "/" ออกก่อน แล้วเอาคำแรกที่ยาวพอเป็นตัวค้น
+     *
+     * AA ลง index ทั้ง slug และ "ชื่อเต็มที่มีเว้นวรรค" ถ้าเรียงตามตัวอักษรเฉย ๆ
+     * ชื่อที่มีเว้นวรรคจะมาก่อนทั้งหมด (0x20 < 0x2D) แล้วดัน slug ตกรายการ
+     * จึงต้องเอา slug ขึ้นก่อน และบอกจำนวนเต็มไว้ด้วยว่าตัดไปกี่ตัว
+     */
     const near = (slug: string | null, keys: string[]) => {
       const tail = (slug ?? "").split("/").pop() ?? "";
       const token = tail
@@ -165,8 +171,13 @@ async function main() {
         .find((t) => t.length >= 3)
         ?.toLowerCase();
       if (!token) return "ไม่มีคำค้น";
-      const hits = keys.filter((k) => k.includes(token)).sort();
-      return hits.length ? hits.slice(0, 12).join(", ") : "ไม่เจอสักตัว";
+      const hits = keys.filter((k) => k.includes(token));
+      if (!hits.length) return "ไม่เจอสักตัว";
+      const slugLike = hits.filter((k) => !k.includes(" ")).sort();
+      const named = hits.filter((k) => k.includes(" ")).sort();
+      const pick = [...slugLike, ...named].slice(0, 30);
+      const more = hits.length - pick.length;
+      return `${pick.join(", ")}${more > 0 ? ` … อีก ${more} ตัว` : ""}`;
     };
 
     for (const row of explainMissing(parsed.data)) {
