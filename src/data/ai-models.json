@@ -1,15 +1,15 @@
 {
-  "status": "live",
+  "status": "sample",
   "updatedAt": "2026-08-16",
   "provenance": {
-    "fetchedAt": "2026-08-16T06:08:43.965Z",
+    "fetchedAt": "2026-08-16T06:13:42.093Z",
     "ok": [
       "OpenRouter",
       "Artificial Analysis"
     ],
     "failed": [],
     "filled": {
-      "actual": 50,
+      "actual": 48,
       "expected": 50
     }
   },
@@ -422,7 +422,7 @@
         "เก่งงานวิเคราะห์กระแสสังคม"
       ],
       "weaknesses": [
-        "context window เล็กที่สุดในกลุ่มเปรียบเทียบ",
+        "context window 500K เล็กกว่ากลุ่มนำที่ให้ถึง 1M",
         "ยังไม่รองรับการอ่านไฟล์เอกสารในตัว",
         "ตัวเลือกโครงสร้างองค์กร/compliance น้อยกว่าคู่แข่ง"
       ],
@@ -458,8 +458,8 @@
         "coding": null
       },
       "speed": {
-        "tokensPerSecond": 0,
-        "firstTokenSeconds": 0
+        "tokensPerSecond": null,
+        "firstTokenSeconds": null
       },
       "features": {
         "multimodal": true,
@@ -511,8 +511,8 @@
         "coding": 66
       },
       "speed": {
-        "tokensPerSecond": 0,
-        "firstTokenSeconds": 0
+        "tokensPerSecond": null,
+        "firstTokenSeconds": null
       },
       "features": {
         "multimodal": true,
