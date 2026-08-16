@@ -166,18 +166,25 @@ async function main() {
      */
     const near = (slug: string | null, keys: string[]) => {
       const tail = (slug ?? "").split("/").pop() ?? "";
-      const token = tail
+      const tokens = tail
         .split(/[^a-z0-9]+/i)
-        .find((t) => t.length >= 3)
-        ?.toLowerCase();
-      if (!token) return "ไม่มีคำค้น";
-      const hits = keys.filter((k) => k.includes(token));
-      if (!hits.length) return "ไม่เจอสักตัว";
-      const slugLike = hits.filter((k) => !k.includes(" ")).sort();
-      const named = hits.filter((k) => k.includes(" ")).sort();
-      const pick = [...slugLike, ...named].slice(0, 30);
-      const more = hits.length - pick.length;
-      return `${pick.join(", ")}${more > 0 ? ` … อีก ${more} ตัว` : ""}`;
+        .filter(Boolean)
+        .map((t) => t.toLowerCase());
+      if (!tokens.length) return "ไม่มีคำค้น";
+
+      // ให้คะแนนตามความยาวคำที่ตรง คำยาวอย่าง "397b" จำเพาะกว่าเลขโดด ๆ อย่าง "5"
+      // เรียงตามคะแนนแล้วค่อยเอาตัวสั้นก่อน ตัวที่ใช่จะลอยขึ้นหัวรายการเสมอ
+      const score = (k: string) =>
+        tokens.reduce((n, t) => (k.includes(t) ? n + t.length : n), 0);
+      const ranked = keys
+        .map((k) => ({ k, s: score(k) }))
+        .filter((x) => x.s > 0)
+        .sort((a, b) => b.s - a.s || a.k.length - b.k.length || a.k.localeCompare(b.k));
+      if (!ranked.length) return "ไม่เจอสักตัว";
+
+      const pick = ranked.slice(0, 20);
+      const more = ranked.length - pick.length;
+      return `${pick.map((x) => x.k).join(", ")}${more > 0 ? ` … อีก ${more} ตัว` : ""}`;
     };
 
     for (const row of explainMissing(parsed.data)) {
