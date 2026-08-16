@@ -42,7 +42,7 @@ const expertise = [
   {
     icon: "🎓",
     title: "Training & Education",
-    desc: "ผู้ก่อตั้ง 9Expert Group — สถาบันฝึกอบรมด้าน IT ชั้นนำของประเทศไทย",
+    desc: "ผู้ก่อตั้ง 9Expert Training — สถาบันฝึกอบรมด้าน IT ชั้นนำของประเทศไทย",
   },
   {
     icon: "🚀",
@@ -92,7 +92,7 @@ export default function Home() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-primary/10 border border-blue-primary/20 mb-6">
               <span className="w-2 h-2 rounded-full bg-lime-accent animate-pulse" />
               <span className="text-sm text-blue-light">
-                CEO & Co-Founder, 9Expert Group
+                CEO & Co-Founder, 9Expert Training
               </span>
             </div>
 
@@ -111,7 +111,7 @@ export default function Home() {
 
             <p className="text-lg text-gray-400 max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
               Microsoft MVP | ผู้เชี่ยวชาญด้าน AI, Cloud & Digital
-              Transformation | ผู้ก่อตั้ง 9Expert Group
+              Transformation | ผู้ก่อตั้ง 9Expert Training
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -153,11 +153,15 @@ export default function Home() {
 
               {/* Image container */}
               <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white/10">
+                {/* ภาพตัดพื้นหลัง (alpha) — ตอนแปลงไฟล์เติมช่องว่างเหนือหัวไว้ 10%
+                   ต้นฉบับเหลือที่เหนือหัวแค่ 3% ของความสูง ครอปแบบไหนหัวก็ชนขอบวงกลม
+                   object-top จึงเริ่มนับจากช่องว่างนั้น หัวเลยมีระยะหายใจ */}
                 <Image
-                  src="/images/Aj.Chalaivate_1.webp"
+                  src="/images/chalaivate-mvp.webp"
                   alt="Chalaivate Pipatpannawong - อ.เวท"
                   fill
-                  className="object-cover object-[center_18%] scale-110"
+                  sizes="(max-width: 768px) 288px, 440px"
+                  className="object-cover object-top"
                   priority
                 />
               </div>
@@ -227,7 +231,7 @@ export default function Home() {
                   ชไลเวท พิพัฒพรรณวงศ์ (อ.เวท)
                 </span>{" "}
                 เป็น CEO & Co-Founder ของ{" "}
-                <span className="text-blue-light font-bold">9Expert Group</span>{" "}
+                <span className="text-blue-light font-bold">9Expert Training</span>{" "}
                 สถาบันฝึกอบรมด้าน IT ชั้นนำของประเทศไทย
                 ที่ได้รับการรับรองจาก Microsoft
               </p>
