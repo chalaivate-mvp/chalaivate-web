@@ -319,7 +319,18 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-6">
             {PROJECTS.map((item, i) => (
               <Reveal key={item.title} delay={i * 90}>
-                <div className="group h-full flex flex-col p-8 rounded-3xl bg-white/[0.03] border border-white/[0.06] hover:border-blue-primary/30 hover:bg-white/[0.05] transition-all duration-300 hover:-translate-y-1">
+                <div className="group h-full flex flex-col rounded-3xl overflow-hidden bg-white/[0.03] border border-white/[0.06] hover:border-blue-primary/30 hover:bg-white/[0.05] transition-all duration-300 hover:-translate-y-1">
+                  <div className="relative h-48 overflow-hidden">
+                    <div className="absolute inset-0 z-10 bg-gradient-to-b from-blue-primary/15 to-deep-navy/95" />
+                    <Image
+                      src={item.image}
+                      alt=""
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                  <div className="flex flex-col flex-1 p-8">
                   <span className="text-xs font-bold tracking-widest uppercase text-blue-light mb-3">
                     {item.period}
                   </span>
@@ -339,6 +350,7 @@ export default function Home() {
                         {tag}
                       </span>
                     ))}
+                  </div>
                   </div>
                 </div>
               </Reveal>

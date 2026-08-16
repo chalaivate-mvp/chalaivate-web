@@ -121,6 +121,9 @@ export type Project = {
   org: string;
   desc: string;
   tags: string[];
+  /* รูปในคลังมีแต่ภาพ อ.เวท ไม่ใช่ภาพหน้าจอผลงานจริง จึงใช้เป็นภาพประกอบ
+     ไม่ใช่หลักฐานของงาน — ถ้าได้ screenshot dashboard จริงมาให้สลับตรงนี้ */
+  image: string;
 };
 
 export const PROJECTS: Project[] = [
@@ -130,6 +133,7 @@ export const PROJECTS: Project[] = [
     org: "บริษัท ท่าอากาศยานไทย จำกัด (มหาชน)",
     desc: "Dashboard วิเคราะห์ระดับองค์กร ติดตามการไหลของผู้โดยสารและงานปฏิบัติการครบทั้ง 7 สนามบินของ AOT",
     tags: ["Power Query", "Power BI"],
+    image: "/images/Aj.Chalaivate_3.webp",
   },
   {
     period: "2020",
@@ -137,6 +141,7 @@ export const PROJECTS: Project[] = [
     org: "บริษัท เบอร์ลี่ ยุคเกอร์ จำกัด (มหาชน)",
     desc: "ระบบวิเคราะห์ยอดขายให้กลุ่มสินค้าอุปโภคบริโภครายใหญ่ที่สุดรายหนึ่งของไทย เห็นภาพทั้งประเทศและเจาะลึกได้ถึงระดับสาขา",
     tags: ["Power BI", "Sales Analytics"],
+    image: "/images/Aj.Chalaivate_4.webp",
   },
   {
     period: "มิ.ย. 2017 – พ.ค. 2019",
@@ -144,5 +149,6 @@ export const PROJECTS: Project[] = [
     org: "กระทรวงแรงงาน",
     desc: "เว็บไซต์หน่วยงานราชการ 101 เว็บ — วางมาตรฐานตัวตนดิจิทัลระดับประเทศ ออกแบบให้เข้าถึงได้ตั้งแต่ต้น",
     tags: ["Web stack", "WCAG"],
+    image: "/images/Aj.Chalaivate_2.webp",
   },
 ];
