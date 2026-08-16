@@ -1,15 +1,15 @@
 {
-  "status": "sample",
-  "updatedAt": "2026-08-15",
+  "status": "live",
+  "updatedAt": "2026-08-16",
   "provenance": {
-    "fetchedAt": "2026-08-15T23:41:11.607Z",
+    "fetchedAt": "2026-08-16T06:08:43.965Z",
     "ok": [
       "OpenRouter",
       "Artificial Analysis"
     ],
     "failed": [],
     "filled": {
-      "actual": 37,
+      "actual": 50,
       "expected": 50
     }
   },
@@ -78,17 +78,17 @@
       "benchmarks": {
         "gpqa": 92.6,
         "hle": 55.5,
-        "terminalBench": null,
-        "tau2": null,
-        "sciCode": null
+        "terminalBench": 84.6,
+        "tau2": 98.5,
+        "sciCode": 60.2
       },
       "indices": {
         "intelligence": 62.1,
         "coding": 76.5
       },
       "speed": {
-        "tokensPerSecond": 57.448,
-        "firstTokenSeconds": 58.037
+        "tokensPerSecond": 59.665,
+        "firstTokenSeconds": 60.379
       },
       "features": {
         "multimodal": true,
@@ -131,17 +131,17 @@
       "benchmarks": {
         "gpqa": 93.2,
         "hle": 54.9,
-        "terminalBench": null,
+        "terminalBench": 89.1,
         "tau2": null,
-        "sciCode": null
+        "sciCode": 55.7
       },
       "indices": {
         "intelligence": 63.1,
         "coding": 78
       },
       "speed": {
-        "tokensPerSecond": 47.292,
-        "firstTokenSeconds": 28.534
+        "tokensPerSecond": 48.101,
+        "firstTokenSeconds": 31.495
       },
       "features": {
         "multimodal": true,
@@ -184,17 +184,17 @@
       "benchmarks": {
         "gpqa": 91.1,
         "hle": 41.3,
-        "terminalBench": null,
+        "terminalBench": 80.5,
         "tau2": null,
-        "sciCode": null
+        "sciCode": 53.6
       },
       "indices": {
         "intelligence": 55.3,
         "coding": 71.5
       },
       "speed": {
-        "tokensPerSecond": 73.519,
-        "firstTokenSeconds": 128.307
+        "tokensPerSecond": 75.522,
+        "firstTokenSeconds": 134.166
       },
       "features": {
         "multimodal": true,
@@ -237,9 +237,9 @@
       "benchmarks": {
         "gpqa": 94.1,
         "hle": 49.5,
-        "terminalBench": null,
-        "tau2": null,
-        "sciCode": null
+        "terminalBench": 88,
+        "tau2": 85.1,
+        "sciCode": 56.1
       },
       "indices": {
         "intelligence": 60.9,
@@ -247,7 +247,7 @@
       },
       "speed": {
         "tokensPerSecond": 61.457,
-        "firstTokenSeconds": 81.039
+        "firstTokenSeconds": 99.508
       },
       "features": {
         "multimodal": true,
@@ -281,26 +281,26 @@
       "releaseDate": "2026-05-14",
       "openWeights": false,
       "license": null,
-      "contextWindow": null,
-      "maxOutputTokens": null,
+      "contextWindow": 1048576,
+      "maxOutputTokens": 65536,
       "pricing": {
-        "input": null,
-        "output": null
+        "input": 2,
+        "output": 12
       },
       "benchmarks": {
-        "gpqa": null,
-        "hle": null,
-        "terminalBench": null,
-        "tau2": null,
-        "sciCode": null
+        "gpqa": 94.1,
+        "hle": 47,
+        "terminalBench": 73.8,
+        "tau2": 95.6,
+        "sciCode": 58.9
       },
       "indices": {
-        "intelligence": null,
-        "coding": null
+        "intelligence": 47.7,
+        "coding": 68.8
       },
       "speed": {
-        "tokensPerSecond": null,
-        "firstTokenSeconds": null
+        "tokensPerSecond": 130.645,
+        "firstTokenSeconds": 26.828
       },
       "features": {
         "multimodal": true,
@@ -343,16 +343,16 @@
       "benchmarks": {
         "gpqa": 93.5,
         "hle": 46.9,
-        "terminalBench": null,
+        "terminalBench": 85,
         "tau2": null,
-        "sciCode": null
+        "sciCode": 58.7
       },
       "indices": {
         "intelligence": 59.7,
         "coding": 76.2
       },
       "speed": {
-        "tokensPerSecond": 36.666,
+        "tokensPerSecond": 37.124,
         "firstTokenSeconds": 2.255
       },
       "features": {
@@ -387,26 +387,26 @@
       "releaseDate": null,
       "openWeights": false,
       "license": null,
-      "contextWindow": null,
+      "contextWindow": 500000,
       "maxOutputTokens": null,
       "pricing": {
-        "input": null,
-        "output": null
+        "input": 2,
+        "output": 6
       },
       "benchmarks": {
-        "gpqa": null,
-        "hle": null,
-        "terminalBench": null,
+        "gpqa": 94.9,
+        "hle": 42.9,
+        "terminalBench": 88.4,
         "tau2": null,
-        "sciCode": null
+        "sciCode": 53.6
       },
       "indices": {
-        "intelligence": null,
-        "coding": null
+        "intelligence": 60.9,
+        "coding": 76.8
       },
       "speed": {
-        "tokensPerSecond": null,
-        "firstTokenSeconds": null
+        "tokensPerSecond": 58.393,
+        "firstTokenSeconds": 38.664
       },
       "features": {
         "multimodal": true,
@@ -450,8 +450,8 @@
         "gpqa": 82,
         "hle": 29.3,
         "terminalBench": null,
-        "tau2": null,
-        "sciCode": null
+        "tau2": 98.2,
+        "sciCode": 46.2
       },
       "indices": {
         "intelligence": 40.6,
@@ -502,9 +502,9 @@
       "benchmarks": {
         "gpqa": 92.3,
         "hle": 40.5,
-        "terminalBench": null,
-        "tau2": null,
-        "sciCode": null
+        "terminalBench": 74.5,
+        "tau2": 94.7,
+        "sciCode": 48.8
       },
       "indices": {
         "intelligence": 46.7,
@@ -553,19 +553,19 @@
         "output": 2.34
       },
       "benchmarks": {
-        "gpqa": null,
-        "hle": null,
-        "terminalBench": null,
-        "tau2": null,
-        "sciCode": null
+        "gpqa": 89.3,
+        "hle": 29,
+        "terminalBench": 51.3,
+        "tau2": 95.6,
+        "sciCode": 42
       },
       "indices": {
-        "intelligence": null,
-        "coding": null
+        "intelligence": 34.3,
+        "coding": 48.2
       },
       "speed": {
-        "tokensPerSecond": null,
-        "firstTokenSeconds": null
+        "tokensPerSecond": 89.9,
+        "firstTokenSeconds": 1.375
       },
       "features": {
         "multimodal": false,
