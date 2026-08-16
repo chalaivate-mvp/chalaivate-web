@@ -143,6 +143,44 @@ describe("Artificial Analysis", () => {
     assert.equal(lookupAa(res, "claude-opus-5")?.benchmarks.hle, null);
     assert.equal(res.matchedFields.hle, null);
   });
+
+  /* แยก "คลังมี" ออกจาก "โมเดลที่เราเลือกมี" — สองอย่างนี้ตอบคนละคำถาม */
+
+  test("field ที่ค่าเป็น null ไปกอง allNull ไม่ใช่ withValues", async () => {
+    const res = await fetchArtificialAnalysis(
+      "k",
+      jsonFetch({
+        data: [
+          {
+            slug: "m",
+            name: "M",
+            evaluations: { gpqa: 80, swe_bench_verified: null },
+          },
+        ],
+      }),
+    );
+    assert.ok(res.availableFields.withValues.includes("gpqa"));
+    assert.ok(
+      res.availableFields.allNull.includes("swe_bench_verified"),
+      "field ที่มีอยู่แต่ null ต้องแยกไปอีกกอง จะได้รู้ว่าเลิกวัดไม่ใช่เปลี่ยนชื่อ",
+    );
+  });
+
+  test("presentFields บอกเฉพาะของโมเดลนั้น ไม่ใช่ของทั้งคลัง", async () => {
+    const res = await fetchArtificialAnalysis(
+      "k",
+      jsonFetch({
+        data: [
+          { slug: "a", name: "A", evaluations: { gpqa: 80 } },
+          { slug: "b", name: "B", evaluations: { hle: 40, aime_25: 90 } },
+        ],
+      }),
+    );
+    assert.deepEqual(lookupAa(res, "a")?.presentFields, ["gpqa"]);
+    assert.deepEqual(lookupAa(res, "b")?.presentFields, ["aime_25", "hle"]);
+    // คลังรวมมีครบสามตัว แต่ไม่ได้แปลว่าโมเดล a มี hle
+    assert.deepEqual(res.availableFields.withValues, ["aime_25", "gpqa", "hle"]);
+  });
 });
 
 /* ────────────── HTTP ────────────── */
@@ -389,6 +427,7 @@ describe("merge", () => {
             {
               benchmarks: { mmlu: 88 },
               indices: { intelligence: 70, coding: 72, agentic: 68 },
+              presentFields: ["mmlu"],
               speed: { tokensPerSecond: 90, firstTokenSeconds: 1.2 },
             },
           ],
@@ -489,6 +528,7 @@ describe("sanity check", () => {
           ["m1", {
             benchmarks: { mmlu: 88 },
             indices: { intelligence: 70, coding: 72, agentic: 68 },
+            presentFields: ["mmlu"],
             speed: { tokensPerSecond: 90, firstTokenSeconds: 1.2 },
           }],
         ]),

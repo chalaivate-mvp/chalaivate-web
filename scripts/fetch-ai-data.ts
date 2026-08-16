@@ -17,7 +17,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { Catalog, OutputDataset, OutputNews } from "./lib/schema";
 import { fetchOpenRouter } from "./lib/sources/openrouter";
-import { fetchArtificialAnalysis } from "./lib/sources/artificial-analysis";
+import { fetchArtificialAnalysis, lookupAa } from "./lib/sources/artificial-analysis";
 import {
   DEFAULT_FEEDS,
   fetchFeeds,
@@ -97,6 +97,17 @@ async function main() {
         log(`    ${allNull.join(", ")}`);
       }
     }
+
+    // รายการข้างบนรวมทั้งคลัง 1792 รายการ ซึ่งตอบไม่ได้ว่า "10 ตัวที่เราเลือก" มีอะไร
+    // benchmark ที่คลังมีแต่ไม่ได้วัดกับโมเดลเรา จะโผล่ข้างบนแต่ยังเป็น null ในตาราง
+    const ours = new Set<string>();
+    for (const m of catalog.models) {
+      lookupAa(aa, m.sources.artificialAnalysis)?.presentFields.forEach((f) =>
+        ours.add(f),
+      );
+    }
+    log(`  field ที่โมเดลใน catalog มีจริง (${ours.size}):`);
+    log(`    ${[...ours].sort().join(", ")}`);
   } catch (err) {
     const reason = err instanceof Error ? err.message : String(err);
     failed.push({ source: "Artificial Analysis", reason });
@@ -140,8 +151,36 @@ async function main() {
       "ยังไม่ครบทุกช่อง — หน้าเว็บจะยังขึ้นแบนเนอร์เตือนและไม่ปล่อย Dataset JSON-LD",
     );
     // ขาดกระจายทุกโมเดล = field เปลี่ยนชื่อ · ขาดเฉพาะบางโมเดล = slug ผิด
+    //
+    // บอกว่า slug ไหนผิดยังไม่พอ ต้องบอกด้วยว่าที่ถูกคืออะไร ไม่งั้นคนแก้ก็ต้องเดาอยู่ดี
+    // จึงพิมพ์คีย์ที่ปลายทางมีจริงและใกล้เคียงกับที่ตั้งไว้ ให้เลือกจากของจริงเท่านั้น
+    const orKeys = openRouter ? [...openRouter.keys()] : [];
+    const aaKeys = aa ? [...aa.byKey.keys()] : [];
+
+    /** ตัดชื่อค่ายหน้า "/" ออกก่อน แล้วเอาคำแรกที่ยาวพอเป็นตัวค้น */
+    const near = (slug: string | null, keys: string[]) => {
+      const tail = (slug ?? "").split("/").pop() ?? "";
+      const token = tail
+        .split(/[^a-z0-9]+/i)
+        .find((t) => t.length >= 3)
+        ?.toLowerCase();
+      if (!token) return "ไม่มีคำค้น";
+      const hits = keys.filter((k) => k.includes(token)).sort();
+      return hits.length ? hits.slice(0, 12).join(", ") : "ไม่เจอสักตัว";
+    };
+
     for (const row of explainMissing(parsed.data)) {
       log(`    ${row.id}: ขาด ${row.missing.join(", ")}`);
+      const m = catalog.models.find((x) => x.id === row.id);
+      if (!m) continue;
+      if (row.missing.some((s) => s.includes("OpenRouter"))) {
+        const slug = m.sources.openrouter;
+        log(`      OpenRouter ตั้งไว้ ${slug} → ที่มีจริง: ${near(slug, orKeys)}`);
+      }
+      if (row.missing.some((s) => s.includes("(AA)"))) {
+        const slug = m.sources.artificialAnalysis;
+        log(`      AA ตั้งไว้ ${slug} → ที่มีจริง: ${near(slug, aaKeys)}`);
+      }
     }
   }
 

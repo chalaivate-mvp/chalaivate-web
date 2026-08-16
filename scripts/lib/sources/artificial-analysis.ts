@@ -45,6 +45,13 @@ export type AaMetrics = {
     agentic: number | null;
   };
   speed: { tokensPerSecond: number | null; firstTokenSeconds: number | null };
+  /**
+   * ชื่อ field ที่ "โมเดลตัวนี้" มีค่าจริง
+   *
+   * ต่างจาก availableFields ที่รวมทั้ง 1792 รายการ — benchmark บางตัวมีในคลังแต่
+   * ไม่ได้วัดกับโมเดลที่เราเลือก การรู้ว่าโมเดลของเรามีอะไรบ้างจึงเป็นคนละคำถาม
+   */
+  presentFields: string[];
 };
 
 export type AaResult = {
@@ -143,6 +150,10 @@ export async function fetchArtificialAnalysis(
     const metrics: AaMetrics = {
       benchmarks,
       indices,
+      presentFields: Object.entries(bag)
+        .filter(([, v]) => v !== null && v !== undefined)
+        .map(([k]) => k)
+        .sort(),
       speed: {
         tokensPerSecond: m.median_output_tokens_per_second,
         firstTokenSeconds: m.median_time_to_first_token_seconds,
