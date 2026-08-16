@@ -84,6 +84,17 @@ function toPercent(value: number | null): number | null {
   return scaled > 100 ? null : Number(scaled.toFixed(1));
 }
 
+/**
+ * ความเร็ว 0 ไม่ใช่ผลวัด แต่เป็น "ยังไม่ได้วัด" ที่ปลายทางส่งมาเป็นเลข
+ *
+ * ไม่มีโมเดลไหนพ่น token ได้ 0 ตัวต่อวินาที หรือตอบ token แรกภายใน 0 วินาที
+ * ถ้าปล่อยผ่าน ตัวนับความครบถ้วนจะโป่งแล้ว status ขึ้น live ทั้งที่ยังไม่มีข้อมูลจริง
+ * ซึ่งเป็นความผิดพลาดแบบเดียวกับที่ทั้ง pipeline พยายามกันไว้ตั้งแต่ต้น
+ */
+function speedOrNull(value: number | null | undefined): number | null {
+  return value === null || value === undefined || value <= 0 ? null : value;
+}
+
 function pickAlias(
   bag: Record<string, number | null> | null | undefined,
   aliases: string[],
@@ -159,8 +170,8 @@ export async function fetchArtificialAnalysis(
         .map(([k]) => k)
         .sort(),
       speed: {
-        tokensPerSecond: m.median_output_tokens_per_second,
-        firstTokenSeconds: m.median_time_to_first_token_seconds,
+        tokensPerSecond: speedOrNull(m.median_output_tokens_per_second),
+        firstTokenSeconds: speedOrNull(m.median_time_to_first_token_seconds),
       },
     };
 

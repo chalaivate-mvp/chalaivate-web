@@ -166,6 +166,27 @@ describe("Artificial Analysis", () => {
     );
   });
 
+  test("ความเร็ว 0 ถือว่ายังไม่ได้วัด ไม่ใช่วัดได้ 0", async () => {
+    const res = await fetchArtificialAnalysis(
+      "k",
+      jsonFetch({
+        data: [
+          {
+            slug: "m",
+            name: "M",
+            evaluations: { gpqa: 80 },
+            median_output_tokens_per_second: 0,
+            median_time_to_first_token_seconds: 0,
+          },
+        ],
+      }),
+    );
+    const m = lookupAa(res, "m");
+    // ปล่อย 0 ผ่านจะทำให้ตัวนับความครบถ้วนโป่ง แล้ว status ขึ้น live ทั้งที่ไม่มีข้อมูล
+    assert.equal(m?.speed.tokensPerSecond, null, "0 tok/s ต้องเป็น null");
+    assert.equal(m?.speed.firstTokenSeconds, null, "0 วินาทีต้องเป็น null");
+  });
+
   test("presentFields บอกเฉพาะของโมเดลนั้น ไม่ใช่ของทั้งคลัง", async () => {
     const res = await fetchArtificialAnalysis(
       "k",
