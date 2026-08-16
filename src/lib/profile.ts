@@ -163,11 +163,10 @@ export type ContactLink = {
 };
 
 /**
- * ช่องทางติดต่อ — ใส่เฉพาะที่ยืนยัน URL ได้จริง
+ * ช่องทางติดต่อ — ทุก URL ยืนยันโดยเจ้าของเว็บแล้ว ไม่มีตัวไหนเดาเอง
  *
- * handle @9expert มาจากข้อมูลที่เจ้าของเว็บให้มาเอง (สถิติ YouTube 246K subscribers)
- * ส่วน Facebook กับ TikTok ยังไม่มี URL ที่ยืนยันได้ จึงยังไม่ใส่ — การเดา URL
- * โซเชียลมีโอกาสพาไปบัญชีคนอื่นหรือเพจปลอม เสียหายกว่าไม่มีลิงก์
+ * ห้ามเติมช่องทางใหม่โดยเดา URL จากชื่อแบรนด์ เดาผิดทีเดียวอาจพาผู้ใช้
+ * ไปบัญชีคนอื่นหรือเพจปลอม ซึ่งเสียหายกว่าการไม่มีลิงก์นั้นเลย
  */
 export const CONTACTS: ContactLink[] = [
   {
@@ -181,6 +180,18 @@ export const CONTACTS: ContactLink[] = [
     value: "@9expert",
     href: "https://www.youtube.com/@9expert",
     icon: "youtube",
+  },
+  {
+    label: "Facebook",
+    value: "9experttraining",
+    href: "https://www.facebook.com/9experttraining",
+    icon: "facebook",
+  },
+  {
+    label: "TikTok",
+    value: "@9expert",
+    href: "https://www.tiktok.com/@9expert",
+    icon: "tiktok",
   },
 ];
 
