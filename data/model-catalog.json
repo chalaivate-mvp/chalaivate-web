@@ -154,8 +154,8 @@
       "openWeights": false,
       "license": null,
       "sources": {
-        "openrouter": "google/gemini-3.1-pro",
-        "artificialAnalysis": "gemini-3-1-pro"
+        "openrouter": "google/gemini-3.1-pro-preview",
+        "artificialAnalysis": "gemini-3-1-pro-preview"
       },
       "features": {
         "multimodal": true,
@@ -335,7 +335,7 @@
       "license": "Apache 2.0",
       "sources": {
         "openrouter": "qwen/qwen3.5-397b-a17b",
-        "artificialAnalysis": "qwen3-5"
+        "artificialAnalysis": "qwen3-5-397b-a17b"
       },
       "features": {
         "multimodal": false,
@@ -376,11 +376,6 @@
       "unit": "percent"
     },
     {
-      "key": "sweBenchVerified",
-      "label": "SWE-bench Verified",
-      "description": "แก้ issue จริงบน GitHub — วัดความสามารถเขียนโค้ดในโปรเจกต์จริง",
-      "unit": "percent"
-    },
     {
       "key": "aime",
       "label": "AIME",

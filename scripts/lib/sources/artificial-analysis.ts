@@ -14,7 +14,8 @@ const ENDPOINT = "https://artificialanalysis.ai/api/v2/data/llms/models";
 const EVAL_ALIASES: Record<string, string[]> = {
   mmlu: ["mmlu_pro", "mmlu", "mmlu_redux"],
   gpqa: ["gpqa_diamond", "gpqa"],
-  sweBenchVerified: ["swe_bench_verified", "swebench_verified", "swe_bench"],
+  // SWE-bench ถูกถอดออกจาก catalog แล้ว เพราะ API ไม่ส่ง field นี้มาเลยสักชื่อ
+  // (ไม่ได้มาแบบ null ด้วยซ้ำ) เก็บ alias ไว้เฉย ๆ มีแต่ทำให้รายงานขึ้น "ไม่พบ" ทุกรอบ
   aime: ["aime_2026", "aime_2025", "aime_2024", "aime"],
   hle: ["humanitys_last_exam", "humanity_last_exam", "hle"],
 };

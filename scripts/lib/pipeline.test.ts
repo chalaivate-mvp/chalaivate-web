@@ -91,21 +91,21 @@ describe("Artificial Analysis", () => {
   test("จับคู่ชื่อ field ที่ต่างจากที่คาดไว้ได้", async () => {
     const res = await fetchArtificialAnalysis(
       "test-key",
-      jsonFetch(aaPayload({ gpqa_diamond: 92.6, swe_bench_verified: 96.5 })),
+      jsonFetch(aaPayload({ gpqa_diamond: 92.6, humanitys_last_exam: 26.5 })),
     );
     const m = lookupAa(res, "claude-opus-5");
     assert.equal(m?.benchmarks.gpqa, 92.6);
-    assert.equal(m?.benchmarks.sweBenchVerified, 96.5);
+    assert.equal(m?.benchmarks.hle, 26.5);
     assert.equal(res.matchedFields.gpqa, "gpqa_diamond");
   });
 
   test("ทน field ที่เป็น camelCase หรือมีขีดกลาง", async () => {
     const res = await fetchArtificialAnalysis(
       "k",
-      jsonFetch(aaPayload({ "SWE-Bench-Verified": 90, mmluPro: 88 })),
+      jsonFetch(aaPayload({ "Humanitys-Last-Exam": 26, mmluPro: 88 })),
     );
     const m = lookupAa(res, "claude-opus-5");
-    assert.equal(m?.benchmarks.sweBenchVerified, 90);
+    assert.equal(m?.benchmarks.hle, 26);
     assert.equal(m?.benchmarks.mmlu, 88);
   });
 

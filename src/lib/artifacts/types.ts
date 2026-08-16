@@ -7,12 +7,7 @@
  */
 
 /** benchmark ที่แสดงเป็นกราฟ — key ต้องตรงกับ Model["benchmarks"] */
-export type BenchmarkKey =
-  | "mmlu"
-  | "gpqa"
-  | "sweBenchVerified"
-  | "aime"
-  | "hle";
+export type BenchmarkKey = "mmlu" | "gpqa" | "aime" | "hle";
 
 export type BenchmarkMeta = {
   key: BenchmarkKey;
