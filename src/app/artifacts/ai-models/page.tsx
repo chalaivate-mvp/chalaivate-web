@@ -58,6 +58,20 @@ export const revalidate = 3600;
 export default function AiModelsPage() {
   const isSample = modelDataset.status === "sample";
 
+  /* แบนเนอร์เตือนต้องบอกตัวเลขจริง ไม่ใช่ข้อความตายตัว
+     ตอนยังไม่มี pipeline ข้อความเดิมบอกว่า "ทุกตัวเลขยังไม่ยืนยัน" ซึ่งพอต่อ API
+     แล้วกลายเป็นคำพูดที่ผิดยิ่งกว่าไม่มีแบนเนอร์ เพราะทำให้คนไม่เชื่อข้อมูลที่จริง
+     อ่านจาก provenance ทุกครั้งจึงล้าสมัยไม่ได้ */
+  const filled = modelDataset.provenance?.filled;
+  const missingSlots = filled ? filled.expected - filled.actual : null;
+  /* ต้องใช้ provenance.ok ไม่ใช่ sources — sources คือรายการ attribution ที่คนเขียนไว้
+     ซึ่งมีแหล่งที่ pipeline ไม่ได้ดึงตัวเลขมาด้วย ถ้าเอามาอ้างจะกลายเป็นเครดิตเกินจริง */
+  const fetched = modelDataset.provenance?.ok ?? [];
+  const sourceNames =
+    fetched.length > 1
+      ? `${fetched.slice(0, -1).join(", ")} และ ${fetched.at(-1)}`
+      : (fetched[0] ?? "");
+
   const stats = [
     { value: String(models.length), label: "โมเดล" },
     { value: String(benchmarkMeta.length), label: "Benchmark" },
@@ -170,18 +184,18 @@ export default function AiModelsPage() {
               </svg>
               <div>
                 <p className="text-amber-accent font-bold mb-1">
-                  ตัวเลขในหน้านี้ยังเป็นข้อมูลตัวอย่าง
+                  ข้อมูลยังไม่ครบทุกช่อง
                 </p>
                 <p className="text-sm text-gray-300 leading-relaxed">
-                  หน้านี้สร้างขึ้นเพื่อตรวจการแสดงผลและการทำงานของ slicer
-                  ก่อนต่อระบบดึงข้อมูลอัตโนมัติ
-                  ตัวเลข benchmark ราคา และความเร็วทั้งหมด{" "}
-                  <strong className="text-white">
-                    ยังไม่ได้ยืนยันกับแหล่งข้อมูลจริง
-                  </strong>{" "}
-                  กรุณาอย่าเพิ่งนำไปใช้อ้างอิง — เมื่อเชื่อมต่อ pipeline แล้ว
-                  ตัวเลขจะถูกแทนที่ด้วยข้อมูลจาก API พร้อมแหล่งอ้างอิงรายค่า
-                  และแถบนี้จะหายไปเอง
+                  ตัวเลขที่แสดงดึงจาก{sourceNames ? ` ${sourceNames} ` : " "}
+                  โดยตรงและ<strong className="text-white">ไม่มีการเดาค่า</strong>
+                  {filled
+                    ? ` แต่รอบล่าสุดได้ข้อมูล ${filled.actual} จาก ${filled.expected} ช่อง`
+                    : " แต่ยังได้ข้อมูลไม่ครบทุกช่อง"}
+                  {missingSlots
+                    ? ` — อีก ${missingSlots} ช่องที่แหล่งข้อมูลยังไม่ได้วัดจะแสดงเป็น N/A ไม่ใช่ตัวเลขประมาณ`
+                    : " ช่องที่ยังไม่มีข้อมูลจะแสดงเป็น N/A"}{" "}
+                  แถบนี้จะหายไปเองเมื่อข้อมูลครบทุกช่อง
                 </p>
               </div>
             </div>
