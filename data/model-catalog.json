@@ -218,16 +218,16 @@
       ]
     },
     {
-      "id": "grok-5",
-      "name": "Grok 5",
-      "shortName": "Grok 5",
+      "id": "grok-4-6",
+      "name": "Grok 4.6",
+      "shortName": "Grok 4.6",
       "vendor": "xAI",
-      "releaseDate": "2026-02-17",
+      "releaseDate": null,
       "openWeights": false,
       "license": null,
       "sources": {
-        "openrouter": "x-ai/grok-5",
-        "artificialAnalysis": "grok-5"
+        "openrouter": "x-ai/grok-4.6",
+        "artificialAnalysis": "grok-4-6"
       },
       "features": {
         "multimodal": true,
@@ -364,28 +364,33 @@
   ],
   "benchmarkMeta": [
     {
-      "key": "mmlu",
-      "label": "MMLU",
-      "description": "ความรู้ทั่วไประดับมหาวิทยาลัย 57 วิชา — วัดความกว้างของความรู้",
-      "unit": "percent"
-    },
-    {
       "key": "gpqa",
       "label": "GPQA Diamond",
       "description": "คำถามระดับปริญญาเอก สาขาฟิสิกส์/เคมี/ชีววิทยา — วัดการให้เหตุผลเชิงลึก",
       "unit": "percent"
     },
     {
-    {
-      "key": "aime",
-      "label": "AIME",
-      "description": "ข้อสอบคณิตศาสตร์โอลิมปิกระดับมัธยมปลายของสหรัฐฯ",
-      "unit": "percent"
-    },
-    {
       "key": "hle",
       "label": "Humanity's Last Exam",
       "description": "ชุดคำถามยากที่สุดที่มนุษย์ผู้เชี่ยวชาญออกแบบมาเพื่อท้าทาย AI",
+      "unit": "percent"
+    },
+    {
+      "key": "terminalBench",
+      "label": "Terminal-Bench 2.1",
+      "description": "สั่งงานผ่าน terminal หลายขั้นตอนจนจบด้วยตัวเอง — วัดการทำงานแบบ agent",
+      "unit": "percent"
+    },
+    {
+      "key": "tau2",
+      "label": "τ²-bench",
+      "description": "คุยกับผู้ใช้พร้อมเรียกใช้เครื่องมือตามกฎของธุรกิจ — วัดการใช้ tool ในสถานการณ์จริง",
+      "unit": "percent"
+    },
+    {
+      "key": "sciCode",
+      "label": "SciCode",
+      "description": "เขียนโค้ดแก้โจทย์วิทยาศาสตร์ระดับงานวิจัย",
       "unit": "percent"
     }
   ],

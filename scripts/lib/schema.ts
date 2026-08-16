@@ -144,7 +144,6 @@ export const OutputModel = z.object({
   indices: z.object({
     intelligence: pct,
     coding: pct,
-    agentic: pct,
   }),
   speed: z.object({
     tokensPerSecond: z.number().min(0).nullable(),

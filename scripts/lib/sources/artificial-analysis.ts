@@ -11,15 +11,24 @@ const ENDPOINT = "https://artificialanalysis.ai/api/v2/data/llms/models";
  * รอบแรกที่รันจริงให้ดู mapping report ที่ script พิมพ์ออกมา ถ้าตัวไหนขึ้น "ไม่พบ"
  * ให้เอาชื่อจริงจาก log มาเติมในรายการนี้ — ไม่ต้องแก้ logic
  */
+/*
+ * SWE-bench, MMLU และ AIME ถูกถอดออกจาก catalog แล้ว ด้วยเหตุผลคนละแบบ
+ *
+ * SWE-bench — API ไม่ส่ง field นี้มาเลยสักชื่อ ไม่ได้มาแบบ null ด้วยซ้ำ
+ * MMLU/AIME — คลังมี field และมีค่าจริง แต่ไม่ได้วัดกับ 10 รุ่นที่หน้าเว็บเทียบ
+ *
+ * ทั้งสองแบบเติม alias ไปก็ไม่ได้ค่าเพิ่ม เหลือไว้มีแต่ทำให้รายงานขึ้น "ไม่พบ" ทุกรอบ
+ */
 const EVAL_ALIASES: Record<string, string[]> = {
-  mmlu: ["mmlu_pro", "mmlu", "mmlu_redux"],
   gpqa: ["gpqa_diamond", "gpqa"],
-  // SWE-bench ถูกถอดออกจาก catalog แล้ว เพราะ API ไม่ส่ง field นี้มาเลยสักชื่อ
-  // (ไม่ได้มาแบบ null ด้วยซ้ำ) เก็บ alias ไว้เฉย ๆ มีแต่ทำให้รายงานขึ้น "ไม่พบ" ทุกรอบ
-  aime: ["aime_2026", "aime_2025", "aime_2024", "aime"],
   hle: ["humanitys_last_exam", "humanity_last_exam", "hle"],
+  terminalBench: ["terminalbench_v2_1", "terminal_bench_v2_1"],
+  tau2: ["tau2", "tau_2", "tau2_bench"],
+  sciCode: ["scicode", "sci_code"],
 };
 
+// ดัชนี agentic ถูกถอดออกจาก API แล้ว (เหลือ intelligence กับ coding)
+// ส่วน math index คลังมีแต่ไม่ได้วัดกับรุ่นที่เราเทียบ จึงยังไม่เอามาใช้
 const INDEX_ALIASES: Record<string, string[]> = {
   intelligence: [
     "artificial_analysis_intelligence_index",
@@ -31,11 +40,6 @@ const INDEX_ALIASES: Record<string, string[]> = {
     "coding_index",
     "aa_coding_index",
   ],
-  agentic: [
-    "artificial_analysis_agentic_index",
-    "agentic_index",
-    "aa_agentic_index",
-  ],
 };
 
 export type AaMetrics = {
@@ -43,7 +47,6 @@ export type AaMetrics = {
   indices: {
     intelligence: number | null;
     coding: number | null;
-    agentic: number | null;
   };
   speed: { tokensPerSecond: number | null; firstTokenSeconds: number | null };
   /**

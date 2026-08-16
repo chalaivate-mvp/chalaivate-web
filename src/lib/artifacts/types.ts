@@ -7,7 +7,12 @@
  */
 
 /** benchmark ที่แสดงเป็นกราฟ — key ต้องตรงกับ Model["benchmarks"] */
-export type BenchmarkKey = "mmlu" | "gpqa" | "aime" | "hle";
+export type BenchmarkKey =
+  | "gpqa"
+  | "hle"
+  | "terminalBench"
+  | "tau2"
+  | "sciCode";
 
 export type BenchmarkMeta = {
   key: BenchmarkKey;
@@ -56,7 +61,6 @@ export type Model = {
   indices: {
     intelligence: number | null;
     coding: number | null;
-    agentic: number | null;
   };
 
   speed: {

@@ -73,7 +73,6 @@ export function mergeModels(input: MergeInput): OutputDatasetT {
       indices: {
         intelligence,
         coding: metrics?.indices.coding ?? null,
-        agentic: metrics?.indices.agentic ?? null,
       },
       speed: {
         tokensPerSecond,

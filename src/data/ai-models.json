@@ -15,33 +15,33 @@
   },
   "benchmarkMeta": [
     {
-      "key": "mmlu",
-      "label": "MMLU",
-      "description": "ความรู้ทั่วไประดับมหาวิทยาลัย 57 วิชา — วัดความกว้างของความรู้",
-      "unit": "percent"
-    },
-    {
       "key": "gpqa",
       "label": "GPQA Diamond",
       "description": "คำถามระดับปริญญาเอก สาขาฟิสิกส์/เคมี/ชีววิทยา — วัดการให้เหตุผลเชิงลึก",
       "unit": "percent"
     },
     {
-      "key": "sweBenchVerified",
-      "label": "SWE-bench Verified",
-      "description": "แก้ issue จริงบน GitHub — วัดความสามารถเขียนโค้ดในโปรเจกต์จริง",
-      "unit": "percent"
-    },
-    {
-      "key": "aime",
-      "label": "AIME",
-      "description": "ข้อสอบคณิตศาสตร์โอลิมปิกระดับมัธยมปลายของสหรัฐฯ",
-      "unit": "percent"
-    },
-    {
       "key": "hle",
       "label": "Humanity's Last Exam",
       "description": "ชุดคำถามยากที่สุดที่มนุษย์ผู้เชี่ยวชาญออกแบบมาเพื่อท้าทาย AI",
+      "unit": "percent"
+    },
+    {
+      "key": "terminalBench",
+      "label": "Terminal-Bench 2.1",
+      "description": "สั่งงานผ่าน terminal หลายขั้นตอนจนจบด้วยตัวเอง — วัดการทำงานแบบ agent",
+      "unit": "percent"
+    },
+    {
+      "key": "tau2",
+      "label": "τ²-bench",
+      "description": "คุยกับผู้ใช้พร้อมเรียกใช้เครื่องมือตามกฎของธุรกิจ — วัดการใช้ tool ในสถานการณ์จริง",
+      "unit": "percent"
+    },
+    {
+      "key": "sciCode",
+      "label": "SciCode",
+      "description": "เขียนโค้ดแก้โจทย์วิทยาศาสตร์ระดับงานวิจัย",
       "unit": "percent"
     }
   ],
@@ -76,16 +76,15 @@
         "output": 50
       },
       "benchmarks": {
-        "mmlu": null,
         "gpqa": 92.6,
-        "sweBenchVerified": null,
-        "aime": null,
-        "hle": 55.5
+        "hle": 55.5,
+        "terminalBench": null,
+        "tau2": null,
+        "sciCode": null
       },
       "indices": {
         "intelligence": 62.1,
-        "coding": 76.5,
-        "agentic": null
+        "coding": 76.5
       },
       "speed": {
         "tokensPerSecond": 57.448,
@@ -130,16 +129,15 @@
         "output": 25
       },
       "benchmarks": {
-        "mmlu": null,
         "gpqa": 93.2,
-        "sweBenchVerified": null,
-        "aime": null,
-        "hle": 54.9
+        "hle": 54.9,
+        "terminalBench": null,
+        "tau2": null,
+        "sciCode": null
       },
       "indices": {
         "intelligence": 63.1,
-        "coding": 78,
-        "agentic": null
+        "coding": 78
       },
       "speed": {
         "tokensPerSecond": 47.292,
@@ -184,16 +182,15 @@
         "output": 10
       },
       "benchmarks": {
-        "mmlu": null,
         "gpqa": 91.1,
-        "sweBenchVerified": null,
-        "aime": null,
-        "hle": 41.3
+        "hle": 41.3,
+        "terminalBench": null,
+        "tau2": null,
+        "sciCode": null
       },
       "indices": {
         "intelligence": 55.3,
-        "coding": 71.5,
-        "agentic": null
+        "coding": 71.5
       },
       "speed": {
         "tokensPerSecond": 73.519,
@@ -238,16 +235,15 @@
         "output": 30
       },
       "benchmarks": {
-        "mmlu": null,
         "gpqa": 94.1,
-        "sweBenchVerified": null,
-        "aime": null,
-        "hle": 49.5
+        "hle": 49.5,
+        "terminalBench": null,
+        "tau2": null,
+        "sciCode": null
       },
       "indices": {
         "intelligence": 60.9,
-        "coding": 77.4,
-        "agentic": null
+        "coding": 77.4
       },
       "speed": {
         "tokensPerSecond": 61.457,
@@ -292,16 +288,15 @@
         "output": null
       },
       "benchmarks": {
-        "mmlu": null,
         "gpqa": null,
-        "sweBenchVerified": null,
-        "aime": null,
-        "hle": null
+        "hle": null,
+        "terminalBench": null,
+        "tau2": null,
+        "sciCode": null
       },
       "indices": {
         "intelligence": null,
-        "coding": null,
-        "agentic": null
+        "coding": null
       },
       "speed": {
         "tokensPerSecond": null,
@@ -346,16 +341,15 @@
         "output": 15
       },
       "benchmarks": {
-        "mmlu": null,
         "gpqa": 93.5,
-        "sweBenchVerified": null,
-        "aime": null,
-        "hle": 46.9
+        "hle": 46.9,
+        "terminalBench": null,
+        "tau2": null,
+        "sciCode": null
       },
       "indices": {
         "intelligence": 59.7,
-        "coding": 76.2,
-        "agentic": null
+        "coding": 76.2
       },
       "speed": {
         "tokensPerSecond": 36.666,
@@ -386,11 +380,11 @@
       ]
     },
     {
-      "id": "grok-5",
-      "name": "Grok 5",
-      "shortName": "Grok 5",
+      "id": "grok-4-6",
+      "name": "Grok 4.6",
+      "shortName": "Grok 4.6",
       "vendor": "xAI",
-      "releaseDate": "2026-02-17",
+      "releaseDate": null,
       "openWeights": false,
       "license": null,
       "contextWindow": null,
@@ -400,16 +394,15 @@
         "output": null
       },
       "benchmarks": {
-        "mmlu": null,
         "gpqa": null,
-        "sweBenchVerified": null,
-        "aime": null,
-        "hle": null
+        "hle": null,
+        "terminalBench": null,
+        "tau2": null,
+        "sciCode": null
       },
       "indices": {
         "intelligence": null,
-        "coding": null,
-        "agentic": null
+        "coding": null
       },
       "speed": {
         "tokensPerSecond": null,
@@ -454,16 +447,15 @@
         "output": 1.92
       },
       "benchmarks": {
-        "mmlu": null,
         "gpqa": 82,
-        "sweBenchVerified": null,
-        "aime": null,
-        "hle": 29.3
+        "hle": 29.3,
+        "terminalBench": null,
+        "tau2": null,
+        "sciCode": null
       },
       "indices": {
         "intelligence": 40.6,
-        "coding": null,
-        "agentic": null
+        "coding": null
       },
       "speed": {
         "tokensPerSecond": 0,
@@ -508,16 +500,15 @@
         "output": 4.425
       },
       "benchmarks": {
-        "mmlu": null,
         "gpqa": 92.3,
-        "sweBenchVerified": null,
-        "aime": null,
-        "hle": 40.5
+        "hle": 40.5,
+        "terminalBench": null,
+        "tau2": null,
+        "sciCode": null
       },
       "indices": {
         "intelligence": 46.7,
-        "coding": 66,
-        "agentic": null
+        "coding": 66
       },
       "speed": {
         "tokensPerSecond": 0,
@@ -562,16 +553,15 @@
         "output": 2.34
       },
       "benchmarks": {
-        "mmlu": null,
         "gpqa": null,
-        "sweBenchVerified": null,
-        "aime": null,
-        "hle": null
+        "hle": null,
+        "terminalBench": null,
+        "tau2": null,
+        "sciCode": null
       },
       "indices": {
         "intelligence": null,
-        "coding": null,
-        "agentic": null
+        "coding": null
       },
       "speed": {
         "tokensPerSecond": null,

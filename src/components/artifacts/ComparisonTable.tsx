@@ -108,7 +108,6 @@ const GROUPS: Group[] = [
       [
         ["intelligence", "Intelligence", "คะแนนรวมความสามารถทั่วไป"],
         ["coding", "Coding", "คะแนนรวมด้านการเขียนโปรแกรม"],
-        ["agentic", "Agentic", "ความสามารถทำงานหลายขั้นตอนด้วยตัวเอง"],
       ] as const
     ).map(([key, label, hint]) => ({
       label,

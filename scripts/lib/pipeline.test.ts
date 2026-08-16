@@ -102,16 +102,16 @@ describe("Artificial Analysis", () => {
   test("ทน field ที่เป็น camelCase หรือมีขีดกลาง", async () => {
     const res = await fetchArtificialAnalysis(
       "k",
-      jsonFetch(aaPayload({ "Humanitys-Last-Exam": 26, mmluPro: 88 })),
+      jsonFetch(aaPayload({ "Humanitys-Last-Exam": 26, SciCode: 88 })),
     );
     const m = lookupAa(res, "claude-opus-5");
     assert.equal(m?.benchmarks.hle, 26);
-    assert.equal(m?.benchmarks.mmlu, 88);
+    assert.equal(m?.benchmarks.sciCode, 88);
   });
 
   test("ค่าที่มาเป็นสัดส่วน 0-1 ถูกแปลงเป็นเปอร์เซ็นต์", async () => {
-    const res = await fetchArtificialAnalysis("k", jsonFetch(aaPayload({ mmlu: 0.918 })));
-    assert.equal(lookupAa(res, "claude-opus-5")?.benchmarks.mmlu, 91.8);
+    const res = await fetchArtificialAnalysis("k", jsonFetch(aaPayload({ gpqa: 0.918 })));
+    assert.equal(lookupAa(res, "claude-opus-5")?.benchmarks.gpqa, 91.8);
   });
 
   test("อ่าน index จาก top level ได้ ไม่ใช่แค่ใน evaluations", async () => {
@@ -426,7 +426,7 @@ describe("merge", () => {
             "m1",
             {
               benchmarks: { mmlu: 88 },
-              indices: { intelligence: 70, coding: 72, agentic: 68 },
+              indices: { intelligence: 70, coding: 72 },
               presentFields: ["mmlu"],
               speed: { tokensPerSecond: 90, firstTokenSeconds: 1.2 },
             },
@@ -527,7 +527,7 @@ describe("sanity check", () => {
         byKey: new Map([
           ["m1", {
             benchmarks: { mmlu: 88 },
-            indices: { intelligence: 70, coding: 72, agentic: 68 },
+            indices: { intelligence: 70, coding: 72 },
             presentFields: ["mmlu"],
             speed: { tokensPerSecond: 90, firstTokenSeconds: 1.2 },
           }],
