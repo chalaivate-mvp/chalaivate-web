@@ -12,7 +12,8 @@ import type { CatalogModelT } from "../schema";
 
 export type FeedSource = {
   name: string;
-  url: string;
+  /** ลองทีละ url ตามลำดับ ตัวไหนได้ก่อนใช้ตัวนั้น */
+  urls: string[];
   /** หมวดตั้งต้นถ้า Claude จัดหมวดให้ไม่ได้ */
   fallbackCategory: NewsCategory;
 };
@@ -26,23 +27,33 @@ type NewsCategory =
 
 export const DEFAULT_FEEDS: FeedSource[] = [
   {
+    // Anthropic ไม่มี RSS อย่างเป็นทางการ (news/rss.xml คืน 404) จึงไล่ลองหลาย path
+    // ที่เป็นไปได้เผื่อวันหนึ่งเขาเปิดให้ — ได้เมื่อไหร่ข่าวจะไหลเข้าเองโดยไม่ต้องแก้โค้ด
+    //
+    // ตั้งใจไม่ใช้ mirror ของบุคคลที่สาม แม้จะมีคนทำไว้หลายเจ้า เพราะข่าวจากตรงนี้
+    // จะถูกส่งให้ Claude แปลแล้วขึ้นเว็บทันที ถ้าต้นทางถูกแก้ไขเนื้อหาได้
+    // เท่ากับเปิดให้คนอื่นเขียนอะไรก็ได้ลงหน้าเว็บเรา
     name: "Anthropic",
-    url: "https://www.anthropic.com/news/rss.xml",
+    urls: [
+      "https://www.anthropic.com/news/rss.xml",
+      "https://www.anthropic.com/rss.xml",
+      "https://claude.com/blog/rss.xml",
+    ],
     fallbackCategory: "product",
   },
   {
     name: "OpenAI",
-    url: "https://openai.com/news/rss.xml",
+    urls: ["https://openai.com/news/rss.xml"],
     fallbackCategory: "product",
   },
   {
     name: "Google DeepMind",
-    url: "https://deepmind.google/blog/rss.xml",
+    urls: ["https://deepmind.google/blog/rss.xml"],
     fallbackCategory: "research",
   },
   {
     name: "Hugging Face",
-    url: "https://huggingface.co/blog/feed.xml",
+    urls: ["https://huggingface.co/blog/feed.xml"],
     fallbackCategory: "research",
   },
 ];
@@ -135,13 +146,21 @@ export async function fetchFeeds(
 
   const results = await Promise.all(
     feeds.map(async (feed) => {
-      try {
-        const xml = await fetchText(feed.url, { fetchImpl });
-        return parseFeed(xml, feed);
-      } catch (err) {
-        onError?.(feed, err instanceof Error ? err.message : String(err));
-        return [];
+      const reasons: string[] = [];
+      for (const url of feed.urls) {
+        try {
+          const xml = await fetchText(url, { fetchImpl });
+          const parsed = parseFeed(xml, feed);
+          // ตอบ 200 แต่ไม่มี item เลยแปลว่าไม่ใช่ feed จริง (มักเป็นหน้า HTML)
+          // ให้ลอง url ถัดไปแทนที่จะรับของเปล่ามา
+          if (parsed.length > 0) return parsed;
+          reasons.push(`${url} → ไม่มีรายการข่าว`);
+        } catch (err) {
+          reasons.push(`${url} → ${err instanceof Error ? err.message : String(err)}`);
+        }
       }
+      onError?.(feed, reasons.join(" · "));
+      return [];
     }),
   );
 

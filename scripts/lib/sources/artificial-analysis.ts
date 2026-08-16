@@ -51,6 +51,15 @@ export type AaResult = {
   byKey: Map<string, AaMetrics>;
   /** ชื่อ field ที่ match ได้จริง สำหรับพิมพ์รายงาน */
   matchedFields: Record<string, string | null>;
+  /**
+   * ชื่อ field ทั้งหมดที่ API ส่งมาจริง แยกสองกอง
+   *
+   * ผู้ให้บริการประกาศว่า "เลิกใช้ field ไหนจะปล่อยให้เป็น null ไม่เปลี่ยนชื่อ"
+   * การแยก withValues ออกจาก allNull จึงบอกได้ว่า field ที่จับคู่ไม่ได้นั้น
+   * "ไม่มีอยู่จริง" (ต้องหาชื่อใหม่) หรือ "มีแต่เขาเลิกวัดแล้ว" (ต้องถอดออกจาก catalog)
+   * — เป็นคนละปัญหาที่แก้คนละแบบ
+   */
+  availableFields: { withValues: string[]; allNull: string[] };
 };
 
 /**
@@ -97,6 +106,8 @@ export async function fetchArtificialAnalysis(
 
   const byKey = new Map<string, AaMetrics>();
   const matchedFields: Record<string, string | null> = {};
+  const keysSeen = new Set<string>();
+  const keysWithValue = new Set<string>();
 
   for (const m of parsed.data) {
     // top-level กับ evaluations อาจเก็บ index คนละที่ รวมสองที่แล้วค่อยไล่หา
@@ -107,6 +118,11 @@ export async function fetchArtificialAnalysis(
       ...(m.evaluations ?? {}),
       ...Object.fromEntries(topLevelNumbers),
     };
+
+    for (const [k, v] of Object.entries(bag)) {
+      keysSeen.add(k);
+      if (v !== null && v !== undefined) keysWithValue.add(k);
+    }
 
     const benchmarks: Record<string, number | null> = {};
     for (const [key, aliases] of Object.entries(EVAL_ALIASES)) {
@@ -139,7 +155,10 @@ export async function fetchArtificialAnalysis(
     }
   }
 
-  return { byKey, matchedFields };
+  const withValues = [...keysWithValue].sort();
+  const allNull = [...keysSeen].filter((k) => !keysWithValue.has(k)).sort();
+
+  return { byKey, matchedFields, availableFields: { withValues, allNull } };
 }
 
 export function lookupAa(

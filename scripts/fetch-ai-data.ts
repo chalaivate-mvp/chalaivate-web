@@ -24,7 +24,7 @@ import {
   matchRelatedModels,
   summarizeToThai,
 } from "./lib/sources/news";
-import { mergeModels, sanityCheck } from "./lib/merge";
+import { mergeModels, sanityCheck, explainMissing } from "./lib/merge";
 import type { OutputDatasetT } from "./lib/schema";
 
 const ROOT = process.cwd();
@@ -82,6 +82,21 @@ async function main() {
       .join(", ");
     log(`Artificial Analysis: ${aa.byKey.size} รายการ`);
     log(`  field ที่จับคู่ได้: ${mapped}`);
+
+    // จับคู่ไม่ได้ = เดาชื่อผิด ให้พิมพ์ชื่อจริงทั้งหมดออกมาเลยจะได้เลิกเดา
+    const unmatched = Object.entries(aa.matchedFields)
+      .filter(([, v]) => v === null)
+      .map(([k]) => k);
+    if (unmatched.length) {
+      const { withValues, allNull } = aa.availableFields;
+      log(`  ยังจับคู่ไม่ได้: ${unmatched.join(", ")}`);
+      log(`  field ที่ API ส่งมาและมีค่าจริง (${withValues.length}):`);
+      log(`    ${withValues.join(", ")}`);
+      if (allNull.length) {
+        log(`  field ที่มีอยู่แต่เป็น null ทุกโมเดล — เขาเลิกวัดแล้ว (${allNull.length}):`);
+        log(`    ${allNull.join(", ")}`);
+      }
+    }
   } catch (err) {
     const reason = err instanceof Error ? err.message : String(err);
     failed.push({ source: "Artificial Analysis", reason });
@@ -124,6 +139,10 @@ async function main() {
     warn(
       "ยังไม่ครบทุกช่อง — หน้าเว็บจะยังขึ้นแบนเนอร์เตือนและไม่ปล่อย Dataset JSON-LD",
     );
+    // ขาดกระจายทุกโมเดล = field เปลี่ยนชื่อ · ขาดเฉพาะบางโมเดล = slug ผิด
+    for (const row of explainMissing(parsed.data)) {
+      log(`    ${row.id}: ขาด ${row.missing.join(", ")}`);
+    }
   }
 
   /* ── ข่าว ── */

@@ -2,8 +2,13 @@ import { test, describe } from "node:test";
 import assert from "node:assert/strict";
 import { fetchOpenRouter, lookupOpenRouter } from "./sources/openrouter";
 import { fetchArtificialAnalysis, lookupAa } from "./sources/artificial-analysis";
-import { parseFeed, matchRelatedModels, type FeedSource } from "./sources/news";
-import { mergeModels, sanityCheck } from "./merge";
+import {
+  parseFeed,
+  fetchFeeds,
+  matchRelatedModels,
+  type FeedSource,
+} from "./sources/news";
+import { mergeModels, sanityCheck, explainMissing } from "./merge";
 import { Catalog, type CatalogT, type OutputDatasetT } from "./schema";
 import { fetchJson, HttpError } from "./http";
 
@@ -186,7 +191,7 @@ describe("HTTP", () => {
 /* ────────────── RSS ────────────── */
 
 describe("RSS", () => {
-  const feed: FeedSource = { name: "Test", url: "u", fallbackCategory: "product" };
+  const feed: FeedSource = { name: "Test", urls: ["u"], fallbackCategory: "product" };
 
   test("อ่าน RSS 2.0 และลอก HTML ออกจากคำอธิบาย", () => {
     const xml = `<?xml version="1.0"?><rss><channel>
@@ -225,6 +230,72 @@ describe("RSS", () => {
 
   test("XML เสียไม่ทำให้ throw", () => {
     assert.doesNotThrow(() => parseFeed("<rss><channel>", feed));
+  });
+
+  /* feed ของเจ้าใหญ่ย้าย path บ่อย จึงตั้งได้หลาย url ต่อหนึ่งแหล่ง */
+
+  const goodRss = `<?xml version="1.0"?><rss><channel>
+    <item><title>Ship it</title><link>https://x/1</link>
+    <pubDate>Fri, 14 Aug 2026 10:00:00 GMT</pubDate></item></channel></rss>`;
+
+  /** ตอบตาม url ที่ขอ — url ไหนไม่อยู่ในตารางถือว่า 404 */
+  const routedFetch = (table: Record<string, string>): typeof globalThis.fetch =>
+    (async (url: string) =>
+      url in table
+        ? new Response(table[url], { status: 200 })
+        : new Response("", { status: 404 })) as unknown as typeof globalThis.fetch;
+
+  // sinceDays กว้างมากเพื่อให้เทสต์ไม่ผูกกับวันที่ตอนรัน ไม่งั้นอีกสองสัปดาห์เทสต์จะแดงเอง
+  const forever = { sinceDays: 1_000_000 };
+
+  test("url แรกล้ม ต้องลอง url ถัดไปต่อ", async () => {
+    const multi: FeedSource = {
+      name: "Multi",
+      urls: ["https://a/dead.xml", "https://a/live.xml"],
+      fallbackCategory: "product",
+    };
+    const out = await fetchFeeds([multi], {
+      ...forever,
+      fetchImpl: routedFetch({ "https://a/live.xml": goodRss }),
+    });
+    assert.equal(out.length, 1);
+    assert.equal(out[0].title, "Ship it");
+  });
+
+  test("url ที่ตอบ 200 แต่ไม่มีข่าวถือว่าใช้ไม่ได้ ต้องลองตัวถัดไป", async () => {
+    const multi: FeedSource = {
+      name: "Multi",
+      urls: ["https://a/html.xml", "https://a/live.xml"],
+      fallbackCategory: "product",
+    };
+    const out = await fetchFeeds([multi], {
+      ...forever,
+      fetchImpl: routedFetch({
+        // หน้า HTML ปกติ ตอบ 200 แต่ parse แล้วไม่ได้ข่าวสักรายการ
+        "https://a/html.xml": "<html><body>Newsroom</body></html>",
+        "https://a/live.xml": goodRss,
+      }),
+    });
+    assert.equal(out.length, 1, "ต้องไม่หยุดที่ url ที่ตอบ 200 แต่ว่างเปล่า");
+  });
+
+  test("ล้มทุก url ต้องรายงานเหตุผลของทุกตัว ไม่ใช่แค่ตัวสุดท้าย", async () => {
+    const multi: FeedSource = {
+      name: "Multi",
+      urls: ["https://a/1.xml", "https://a/2.xml"],
+      fallbackCategory: "product",
+    };
+    let reported = "";
+    const out = await fetchFeeds([multi], {
+      ...forever,
+      fetchImpl: routedFetch({}),
+      onError: (_f, reason) => {
+        reported = reason;
+      },
+    });
+    assert.equal(out.length, 0);
+    assert.match(reported, /1\.xml/);
+    assert.match(reported, /2\.xml/, "ต้องบอกด้วยว่า url ที่สองก็ล้ม");
   });
 
   test("จับคู่ข่าวกับโมเดลจากชื่อรุ่นและชื่อค่าย", () => {
@@ -323,10 +394,12 @@ describe("merge", () => {
           ],
         ]),
         matchedFields: {},
+        availableFields: { withValues: [], allNull: [] },
       },
     });
     assert.equal(out.status, "live");
     assert.equal(out.provenance.filled.actual, out.provenance.filled.expected);
+    assert.deepEqual(explainMissing(out), [], "ครบแล้วต้องไม่มีรายการค้าง");
   });
 
   test("ได้ข้อมูลบางส่วน = ยังเป็น sample (แบนเนอร์ยังขึ้น)", () => {
@@ -338,6 +411,45 @@ describe("merge", () => {
       aa: null,
     });
     assert.equal(out.status, "sample", "ขาด benchmark ต้องไม่ประกาศว่า live");
+  });
+});
+
+/* ────────────── รายงานว่าขาดอะไร ────────────── */
+
+describe("explainMissing", () => {
+  test("บอกเป็นรายโมเดลว่าขาดช่องไหน", () => {
+    const out = mergeModels({
+      ...baseMerge,
+      openRouter: new Map([
+        [
+          "acme/m1",
+          { contextWindow: 200000, maxOutputTokens: null, pricing: { input: 3, output: 15 } },
+        ],
+      ]),
+      aa: null,
+    });
+    const [row] = explainMissing(out);
+    assert.equal(row.id, "m1");
+    assert.deepEqual(row.missing, [
+      "ดัชนี intelligence (AA)",
+      "ความเร็ว (AA)",
+      "benchmark ทุกตัว (AA)",
+    ]);
+    assert.ok(
+      !row.missing.some((s) => s.includes("OpenRouter")),
+      "ช่องที่ได้ข้อมูลแล้วต้องไม่ถูกรายงานว่าขาด",
+    );
+  });
+
+  test("จำนวนช่องที่ขาดต้องตรงกับตัวเลข filled ที่ merge นับไว้", () => {
+    const out = mergeModels({ ...baseMerge, openRouter: null, aa: null });
+    const missingCount = explainMissing(out).reduce(
+      (n, r) => n + r.missing.length,
+      0,
+    );
+    const { actual, expected } = out.provenance.filled;
+    // ถ้าสองตัวนี้ไม่ตรงกันแปลว่ารายงานกับตัวนับหลุดจากกัน แก้ที่หนึ่งลืมอีกที่
+    assert.equal(missingCount, expected - actual);
   });
 });
 
@@ -381,6 +493,7 @@ describe("sanity check", () => {
           }],
         ]),
         matchedFields: {},
+        availableFields: { withValues: [], allNull: [] },
       },
     });
     const after = mergeModels({ ...baseMerge, openRouter: null, aa: null });

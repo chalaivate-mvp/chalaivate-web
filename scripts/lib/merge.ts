@@ -104,6 +104,33 @@ export function mergeModels(input: MergeInput): OutputDatasetT {
 }
 
 /**
+ * บอกว่าโมเดลไหนขาดช่องอะไรบ้าง — ใช้ตอน status ยังเป็น sample
+ *
+ * ตัวเลขรวม "37/50 ช่อง" บอกแค่ว่าไม่ครบ แต่ไม่ได้บอกว่าจะไปแก้ตรงไหน
+ * ถ้าขาดกระจายทุกโมเดลแปลว่า field ในแหล่งข้อมูลเปลี่ยนชื่อ
+ * ถ้าขาดกระจุกที่ไม่กี่โมเดลแปลว่า slug ใน catalog ของโมเดลนั้นผิด
+ * รายการนี้จึงต้องแยกเป็นรายโมเดล ไม่ใช่ยอดรวม
+ *
+ * ห้าช่องที่นับต้องตรงกับที่ mergeModels นับเป๊ะ ๆ ไม่งั้นรายงานจะหลอกตัวเอง
+ */
+export function explainMissing(
+  dataset: OutputDatasetT,
+): { id: string; missing: string[] }[] {
+  return dataset.models
+    .map((m) => {
+      const missing: string[] = [];
+      if (m.contextWindow === null) missing.push("context (OpenRouter)");
+      if (m.pricing.input === null) missing.push("ราคา (OpenRouter)");
+      if (m.indices.intelligence === null) missing.push("ดัชนี intelligence (AA)");
+      if (m.speed.tokensPerSecond === null) missing.push("ความเร็ว (AA)");
+      if (!Object.values(m.benchmarks).some((v) => v !== null))
+        missing.push("benchmark ทุกตัว (AA)");
+      return { id: m.id, missing };
+    })
+    .filter((r) => r.missing.length > 0);
+}
+
+/**
  * ตรวจความสมเหตุสมผลก่อนเขียนทับไฟล์จริง
  *
  * zod จับ "ผิดรูป" ได้ แต่จับ "ถูกรูปแต่เพี้ยน" ไม่ได้ เช่น API เปลี่ยนหน่วยราคา
