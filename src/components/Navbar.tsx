@@ -9,6 +9,7 @@ const sections = [
   { hash: "#expertise", label: "ความเชี่ยวชาญ" },
   { hash: "#portfolio", label: "ผลงาน" },
   { hash: "#achievements", label: "รางวัล" },
+  { hash: "#contact", label: "ติดต่อ" },
 ];
 
 /**

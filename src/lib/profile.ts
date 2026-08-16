@@ -1,3 +1,5 @@
+import type { ArtKey } from "@/components/ProjectArt";
+
 /**
  * เนื้อหาโปรไฟล์ อ.ชลัยวัฒน์ — แหล่งความจริงเดียวของหน้าแรก
  *
@@ -121,9 +123,8 @@ export type Project = {
   org: string;
   desc: string;
   tags: string[];
-  /* รูปในคลังมีแต่ภาพ อ.เวท ไม่ใช่ภาพหน้าจอผลงานจริง จึงใช้เป็นภาพประกอบ
-     ไม่ใช่หลักฐานของงาน — ถ้าได้ screenshot dashboard จริงมาให้สลับตรงนี้ */
-  image: string;
+  /* ภาพประกอบวาดด้วย SVG ให้เล่าเนื้องาน ไม่ใช่ภาพถ่ายคนทำ — ดู ProjectArt.tsx */
+  art: ArtKey;
 };
 
 export const PROJECTS: Project[] = [
@@ -133,7 +134,7 @@ export const PROJECTS: Project[] = [
     org: "บริษัท ท่าอากาศยานไทย จำกัด (มหาชน)",
     desc: "Dashboard วิเคราะห์ระดับองค์กร ติดตามการไหลของผู้โดยสารและงานปฏิบัติการครบทั้ง 7 สนามบินของ AOT",
     tags: ["Power Query", "Power BI"],
-    image: "/images/Aj.Chalaivate_3.webp",
+    art: "aot",
   },
   {
     period: "2020",
@@ -141,7 +142,7 @@ export const PROJECTS: Project[] = [
     org: "บริษัท เบอร์ลี่ ยุคเกอร์ จำกัด (มหาชน)",
     desc: "ระบบวิเคราะห์ยอดขายให้กลุ่มสินค้าอุปโภคบริโภครายใหญ่ที่สุดรายหนึ่งของไทย เห็นภาพทั้งประเทศและเจาะลึกได้ถึงระดับสาขา",
     tags: ["Power BI", "Sales Analytics"],
-    image: "/images/Aj.Chalaivate_4.webp",
+    art: "bjc",
   },
   {
     period: "มิ.ย. 2017 – พ.ค. 2019",
@@ -149,6 +150,39 @@ export const PROJECTS: Project[] = [
     org: "กระทรวงแรงงาน",
     desc: "เว็บไซต์หน่วยงานราชการ 101 เว็บ — วางมาตรฐานตัวตนดิจิทัลระดับประเทศ ออกแบบให้เข้าถึงได้ตั้งแต่ต้น",
     tags: ["Web stack", "WCAG"],
-    image: "/images/Aj.Chalaivate_2.webp",
+    art: "web",
   },
 ];
+
+export type ContactLink = {
+  label: string;
+  value: string;
+  href: string;
+  /** ชื่อไอคอนที่ ContactSection รู้จัก */
+  icon: "web" | "youtube" | "facebook" | "tiktok" | "mail";
+};
+
+/**
+ * ช่องทางติดต่อ — ใส่เฉพาะที่ยืนยัน URL ได้จริง
+ *
+ * handle @9expert มาจากข้อมูลที่เจ้าของเว็บให้มาเอง (สถิติ YouTube 246K subscribers)
+ * ส่วน Facebook กับ TikTok ยังไม่มี URL ที่ยืนยันได้ จึงยังไม่ใส่ — การเดา URL
+ * โซเชียลมีโอกาสพาไปบัญชีคนอื่นหรือเพจปลอม เสียหายกว่าไม่มีลิงก์
+ */
+export const CONTACTS: ContactLink[] = [
+  {
+    label: "เว็บไซต์",
+    value: "9experttraining.com",
+    href: "https://www.9experttraining.com",
+    icon: "web",
+  },
+  {
+    label: "YouTube",
+    value: "@9expert",
+    href: "https://www.youtube.com/@9expert",
+    icon: "youtube",
+  },
+];
+
+/** อีเมลสำหรับเชิญเป็นวิทยากร */
+export const SPEAKER_EMAIL = "training@9expert.co.th";

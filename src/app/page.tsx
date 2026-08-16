@@ -6,11 +6,14 @@ import OrbitalRings from "@/components/OrbitalRings";
 import SectionTitle from "@/components/SectionTitle";
 import CountUp from "@/components/CountUp";
 import Reveal from "@/components/Reveal";
+import ProjectArt from "@/components/ProjectArt";
 import {
   AWARDS,
   PARTNERSHIPS,
   PROJECTS,
   STATS,
+  CONTACTS,
+  SPEAKER_EMAIL,
 } from "@/lib/profile";
 
 /* ───────────────────────── DATA ───────────────────────── */
@@ -47,6 +50,13 @@ const expertise = [
     desc: "ที่ปรึกษาด้าน DX สำหรับองค์กรขนาดใหญ่ ช่วยวางแผนและ Implement ระบบ Digital",
   },
 ];
+
+/* เส้น path ของไอคอนช่องทางติดต่อ — เก็บเป็นตารางเพื่อไม่ให้ JSX บวม */
+const ICON: Record<string, string> = {
+  web: "M21 12a9 9 0 11-18 0 9 9 0 0118 0zM3.6 9h16.8M3.6 15h16.8M12 3a15 15 0 010 18a15 15 0 010-18z",
+  youtube: "M21.6 7.2a2.5 2.5 0 00-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 002.4 7.2 26 26 0 002 12c0 1.6.1 3.2.4 4.8a2.5 2.5 0 001.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 001.8-1.8c.3-1.6.4-3.2.4-4.8s-.1-3.2-.4-4.8zM10 15V9l5 3-5 3z",
+  mail: "M3 8l7.9 5.3a2 2 0 002.2 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
+};
 
 /* ───────────────────────── PAGE ───────────────────────── */
 
@@ -145,7 +155,7 @@ export default function Home() {
                   src="/images/Aj.Chalaivate_1.webp"
                   alt="Chalaivate Pipatpannawong - อ.เวท"
                   fill
-                  className="object-cover object-top scale-125"
+                  className="object-cover object-[center_18%] scale-110"
                   priority
                 />
               </div>
@@ -320,15 +330,10 @@ export default function Home() {
             {PROJECTS.map((item, i) => (
               <Reveal key={item.title} delay={i * 90}>
                 <div className="group h-full flex flex-col rounded-3xl overflow-hidden bg-white/[0.03] border border-white/[0.06] hover:border-blue-primary/30 hover:bg-white/[0.05] transition-all duration-300 hover:-translate-y-1">
-                  <div className="relative h-48 overflow-hidden">
-                    <div className="absolute inset-0 z-10 bg-gradient-to-b from-blue-primary/15 to-deep-navy/95" />
-                    <Image
-                      src={item.image}
-                      alt=""
-                      fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                    />
+                  <div className="relative h-44 overflow-hidden">
+                    <ProjectArt name={item.art} />
+                    {/* ไล่สีทับขอบล่างให้ภาพจมเข้าหาเนื้อการ์ด ไม่ให้เห็นเป็นรอยต่อแข็ง ๆ */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-deep-navy" />
                   </div>
                   <div className="flex flex-col flex-1 p-8">
                   <span className="text-xs font-bold tracking-widest uppercase text-blue-light mb-3">
@@ -388,12 +393,12 @@ export default function Home() {
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 mb-24">
             {STATS.map((s, i) => (
               <Reveal key={s.label} delay={i * 80}>
-                <div className="group h-full p-6 md:p-8 rounded-3xl bg-white/[0.03] border border-white/[0.06] hover:border-lime-accent/25 transition-all duration-300 hover:-translate-y-1">
+                <div className="group h-full p-6 md:p-8 rounded-3xl bg-white/[0.03] border border-white/[0.06] hover:border-blue-sky/40 hover:bg-white/[0.06] hover:shadow-[0_0_36px_-6px_rgba(36,134,255,0.45)] transition-all duration-300 hover:-translate-y-1">
                   <CountUp
                     value={s.value}
                     suffix={s.suffix}
                     decimals={s.decimals}
-                    className="block text-3xl md:text-5xl font-bold text-lime-accent tabular-nums tracking-tight"
+                    className="block text-3xl md:text-5xl font-bold tabular-nums tracking-tight bg-gradient-to-br from-blue-brand from-20% via-blue-sky via-60% to-lime-accent bg-clip-text text-transparent"
                   />
                   <div className="text-base md:text-lg font-bold text-white mt-2">
                     {s.label}
@@ -474,6 +479,66 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/80 via-transparent to-transparent" />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════ CONTACT ═══════════ */}
+      <section id="contact" className="relative py-24 md:py-32">
+        <div className="absolute inset-0 bg-deep-navy" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(0,92,255,0.14)_0%,transparent_60%)]" />
+
+        <div className="relative z-10 max-w-5xl mx-auto px-6">
+          <SectionTitle subtitle="Contact" title="ติดต่อ" />
+
+          <Reveal>
+            <a
+              href={`mailto:${SPEAKER_EMAIL}`}
+              className="group block rounded-3xl p-8 md:p-10 mb-6 bg-gradient-to-br from-blue-primary/15 to-white/[0.02] border border-blue-primary/25 hover:border-lime-accent/40 hover:shadow-[0_0_46px_-8px_rgba(36,134,255,0.5)] transition-all duration-300 hover:-translate-y-1"
+            >
+              <span className="text-xs font-bold tracking-widest uppercase text-lime-accent">
+                เชิญเป็นวิทยากร
+              </span>
+              <p className="text-gray-300 mt-3 leading-relaxed">
+                สนใจเชิญ อ.เวท บรรยายในงานสัมมนา อบรมภายในองค์กร
+                หรือปรึกษาโครงการด้าน Data &amp; AI ติดต่อได้ที่
+              </p>
+              <p className="mt-4 text-xl md:text-3xl font-bold bg-gradient-to-r from-blue-brand via-blue-sky to-lime-accent bg-clip-text text-transparent break-all">
+                {SPEAKER_EMAIL}
+              </p>
+            </a>
+          </Reveal>
+
+          <div className="grid sm:grid-cols-2 gap-5">
+            {CONTACTS.map((c, i) => (
+              <Reveal key={c.href} delay={i * 90}>
+                <a
+                  href={c.href}
+                  target="_blank"
+                  rel="noopener"
+                  className="group flex items-center gap-4 h-full p-6 rounded-3xl bg-white/[0.03] border border-white/[0.06] hover:border-blue-sky/40 hover:bg-white/[0.06] hover:shadow-[0_0_36px_-6px_rgba(36,134,255,0.45)] transition-all duration-300 hover:-translate-y-1"
+                >
+                  <span className="shrink-0 w-12 h-12 rounded-2xl bg-blue-primary/15 border border-blue-primary/20 flex items-center justify-center">
+                    <svg
+                      className="w-6 h-6 text-blue-light group-hover:text-lime-accent transition-colors"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={1.7}
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d={ICON[c.icon]} />
+                    </svg>
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block text-sm text-slate-gray">{c.label}</span>
+                    <span className="block text-lg font-bold text-white truncate group-hover:text-blue-light transition-colors">
+                      {c.value}
+                    </span>
+                  </span>
+                </a>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
