@@ -4,6 +4,14 @@ import Navbar from "@/components/Navbar";
 import SiteFooter from "@/components/SiteFooter";
 import OrbitalRings from "@/components/OrbitalRings";
 import SectionTitle from "@/components/SectionTitle";
+import CountUp from "@/components/CountUp";
+import Reveal from "@/components/Reveal";
+import {
+  AWARDS,
+  PARTNERSHIPS,
+  PROJECTS,
+  STATS,
+} from "@/lib/profile";
 
 /* ───────────────────────── DATA ───────────────────────── */
 
@@ -40,69 +48,6 @@ const expertise = [
   },
 ];
 
-const portfolioItems = [
-  {
-    title: "9Expert Training Academy",
-    category: "Education Platform",
-    desc: "สถาบันฝึกอบรมด้าน IT ชั้นนำของไทย เปิดสอนหลักสูตร Microsoft, AI, Cloud และ Software Development มากกว่า 200 หลักสูตร",
-    tags: ["Training", "Microsoft", "AI", "Cloud"],
-    image: "/images/Aj.Chalaivate_3.webp",
-  },
-  {
-    title: "Enterprise AI Consulting",
-    category: "AI Solutions",
-    desc: "ให้คำปรึกษาด้าน AI และ Generative AI แก่องค์กรชั้นนำ พัฒนา Custom AI Solutions, RAG Systems และ AI Agents",
-    tags: ["Generative AI", "LLM", "Enterprise", "Consulting"],
-    image: "/images/Aj.Chalaivate_4.webp",
-  },
-  {
-    title: "Cloud Architecture & Migration",
-    category: "Cloud Solutions",
-    desc: "ออกแบบและวาง Cloud Architecture บน Microsoft Azure สำหรับองค์กรระดับ Enterprise รวมถึง Migration Strategy",
-    tags: ["Azure", "Architecture", "Migration", "DevOps"],
-    image: "/images/Aj.Chalaivate_2.webp",
-  },
-  {
-    title: "Digital Transformation Programs",
-    category: "DX Strategy",
-    desc: "วางกลยุทธ์และ Roadmap สำหรับ Digital Transformation ขององค์กร ตั้งแต่ Assessment จนถึง Implementation",
-    tags: ["Strategy", "DX", "Roadmap", "Implementation"],
-    image: "/images/Aj.Chalaivate_1.webp",
-  },
-];
-
-const achievements = [
-  {
-    number: "15+",
-    label: "ปีประสบการณ์",
-    desc: "ด้าน IT Training & Consulting",
-  },
-  {
-    number: "200+",
-    label: "หลักสูตร",
-    desc: "ที่พัฒนาและสอนที่ 9Expert",
-  },
-  {
-    number: "10,000+",
-    label: "ผู้เรียน",
-    desc: "ที่ผ่านการอบรม",
-  },
-  {
-    number: "MVP",
-    label: "Microsoft MVP",
-    desc: "Most Valuable Professional",
-  },
-];
-
-const certifications = [
-  "Microsoft Most Valuable Professional (MVP)",
-  "Microsoft Certified Trainer (MCT)",
-  "Azure Solutions Architect Expert",
-  "Azure AI Engineer Associate",
-  "Microsoft 365 Certified",
-  "Power Platform Developer",
-];
-
 /* ───────────────────────── PAGE ───────────────────────── */
 
 export default function Home() {
@@ -119,7 +64,7 @@ export default function Home() {
         {/* Cosmic gradient background */}
         <div className="absolute inset-0 bg-deep-navy">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_50%,rgba(0,92,255,0.15)_0%,transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,rgba(255,176,32,0.08)_0%,transparent_40%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,rgba(72,176,255,0.10)_0%,transparent_40%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,rgba(0,92,255,0.1)_0%,transparent_50%)]" />
         </div>
 
@@ -133,7 +78,7 @@ export default function Home() {
           {/* Text */}
           <div className="flex-1 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-primary/10 border border-blue-primary/20 mb-6">
-              <span className="w-2 h-2 rounded-full bg-amber-accent animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-lime-accent animate-pulse" />
               <span className="text-sm text-blue-light">
                 CEO & Co-Founder, 9Expert Group
               </span>
@@ -142,14 +87,14 @@ export default function Home() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4">
               <span className="text-white">Chalaivate</span>
               <br />
-              <span className="bg-gradient-to-r from-blue-primary via-blue-light to-amber-accent bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-primary via-blue-light to-lime-accent bg-clip-text text-transparent">
                 Pipatpannawong
               </span>
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-300 mb-2 font-bold">
               ชไลเวท พิพัฒพรรณวงศ์{" "}
-              <span className="text-amber-accent">(อ.เวท)</span>
+              <span className="text-lime-accent">(อ.เวท)</span>
             </p>
 
             <p className="text-lg text-gray-400 max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
@@ -181,7 +126,7 @@ export default function Home() {
                 href="https://www.9experttraining.com"
                 target="_blank"
                 rel="noopener"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-amber-accent/50 text-amber-accent font-bold text-lg hover:bg-amber-accent/10 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-lime-accent/50 text-lime-accent font-bold text-lg hover:bg-lime-accent/10 transition-all duration-300"
               >
                 ดูหลักสูตร 9Expert
               </a>
@@ -192,7 +137,7 @@ export default function Home() {
           <div className="relative flex-shrink-0">
             <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[440px] lg:h-[440px]">
               {/* Glow behind image */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-primary/30 to-amber-accent/20 blur-3xl" />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-primary/30 to-lime-accent/20 blur-3xl" />
 
               {/* Image container */}
               <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white/10">
@@ -210,7 +155,7 @@ export default function Home() {
                 className="absolute -inset-4 rounded-full border border-blue-primary/20"
                 style={{ animation: "orbit 20s linear infinite" }}
               >
-                <div className="absolute top-2 right-8 w-3 h-3 rounded-full bg-amber-accent shadow-lg shadow-amber-accent/50" />
+                <div className="absolute top-2 right-8 w-3 h-3 rounded-full bg-lime-accent shadow-lg shadow-lime-accent/50" />
               </div>
             </div>
           </div>
@@ -241,7 +186,7 @@ export default function Home() {
       <section id="about" className="relative py-24 md:py-32">
         <div className="absolute inset-0 bg-gradient-to-b from-deep-navy via-navy-mid to-deep-navy" />
         <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <SectionTitle subtitle="About" title="เกี่ยวกับ 9Expert Training" />
+          <SectionTitle subtitle="About" title="เกี่ยวกับ อ.เวท" />
 
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Image side */}
@@ -266,7 +211,7 @@ export default function Home() {
             {/* Text side */}
             <div className="space-y-6">
               <p className="text-lg text-gray-300 leading-relaxed">
-                <span className="text-amber-accent font-bold">
+                <span className="text-lime-accent font-bold">
                   ชไลเวท พิพัฒพรรณวงศ์ (อ.เวท)
                 </span>{" "}
                 เป็น CEO & Co-Founder ของ{" "}
@@ -279,7 +224,7 @@ export default function Home() {
                 AI & Machine Learning, Cloud Architecture, Software
                 Development และ Digital Transformation
                 โดยได้รับการยกย่องให้เป็น{" "}
-                <span className="text-amber-accent font-bold">
+                <span className="text-lime-accent font-bold">
                   Microsoft Most Valuable Professional (MVP)
                 </span>
               </p>
@@ -289,24 +234,27 @@ export default function Home() {
                 ผ่านหลักสูตรที่ทันสมัยและการให้คำปรึกษาแก่องค์กรชั้นนำ
               </p>
 
-              {/* Stats row */}
-              <div className="grid grid-cols-3 gap-4 pt-4">
-                {[
-                  { num: "15+", label: "ปีประสบการณ์" },
-                  { num: "200+", label: "หลักสูตร" },
-                  { num: "10K+", label: "ผู้เรียน" },
-                ].map((s) => (
-                  <div
-                    key={s.label}
-                    className="text-center p-4 rounded-2xl bg-white/5 border border-white/5"
-                  >
-                    <div className="text-2xl md:text-3xl font-bold text-blue-primary">
-                      {s.num}
-                    </div>
-                    <div className="text-sm text-gray-400 mt-1">{s.label}</div>
-                  </div>
-                ))}
-              </div>
+              {/* ตัวเลขสรุปเคยอยู่ตรงนี้ด้วย แล้วหลุดจนไม่ตรงกับ section Impact
+                 (ที่นี่ 10K+ ผู้เรียน ส่วนของจริง 90,000+) เก็บไว้ที่เดียวพอ */}
+              <a
+                href="#achievements"
+                className="inline-flex items-center gap-2 text-blue-light hover:text-lime-accent transition-colors font-bold"
+              >
+                ดูผลลัพธ์ที่วัดได้
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
@@ -316,7 +264,7 @@ export default function Home() {
       <section id="expertise" className="relative py-24 md:py-32">
         <div className="absolute inset-0 bg-deep-navy" />
         <div className="absolute top-0 left-0 w-96 h-96 bg-blue-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-accent/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-lime-accent/5 rounded-full blur-3xl" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <SectionTitle subtitle="Expertise" title="ความเชี่ยวชาญ" />
@@ -338,44 +286,51 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════ PORTFOLIO ═══════════ */}
+      {/* ═══════════ PARTNERSHIPS + PROJECTS ═══════════ */}
       <section id="portfolio" className="relative py-24 md:py-32">
         <div className="absolute inset-0 bg-gradient-to-b from-deep-navy via-navy-mid to-deep-navy" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <SectionTitle subtitle="Portfolio" title="ผลงานที่โดดเด่น" />
+          <SectionTitle subtitle="Partnerships" title="ความร่วมมือเชิงกลยุทธ์" />
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {portfolioItems.map((item, i) => (
-              <div
-                key={i}
-                className="group relative rounded-3xl overflow-hidden bg-white/[0.03] border border-white/[0.06] hover:border-blue-primary/30 transition-all duration-500"
-              >
-                {/* Image area */}
-                <div className="relative h-64 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-b from-blue-primary/20 to-deep-navy/90 z-10" />
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute top-4 left-4 z-20">
-                    <span className="px-3 py-1 rounded-full text-xs font-bold bg-amber-accent/90 text-deep-navy">
-                      {item.category}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-light transition-colors">
+          <div className="grid md:grid-cols-3 gap-6 mb-24">
+            {PARTNERSHIPS.map((item, i) => (
+              <Reveal key={item.title} delay={i * 90}>
+                <div className="group h-full flex flex-col p-8 rounded-3xl bg-white/[0.03] border border-white/[0.06] hover:border-lime-accent/30 hover:bg-white/[0.05] transition-all duration-300 hover:-translate-y-1">
+                  {/* แถบไลม์ด้านซ้ายคือลายเซ็นของ CI — ใช้แทนโลโก้พาร์ตเนอร์ที่เราไม่มีสิทธิ์ใช้ */}
+                  <span className="inline-block w-10 h-1 rounded-full bg-lime-accent mb-5" />
+                  <span className="text-xs font-bold tracking-widest uppercase text-lime-accent mb-3">
+                    {item.period}
+                  </span>
+                  <h3 className="text-xl font-bold text-white mb-1 group-hover:text-blue-light transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-gray-400 leading-relaxed mb-4">
+                  <p className="text-sm text-slate-gray mb-4">{item.org}</p>
+                  <p className="text-gray-400 leading-relaxed text-sm">
                     {item.desc}
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <SectionTitle subtitle="Featured projects" title="ผลงานที่โดดเด่น" />
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {PROJECTS.map((item, i) => (
+              <Reveal key={item.title} delay={i * 90}>
+                <div className="group h-full flex flex-col p-8 rounded-3xl bg-white/[0.03] border border-white/[0.06] hover:border-blue-primary/30 hover:bg-white/[0.05] transition-all duration-300 hover:-translate-y-1">
+                  <span className="text-xs font-bold tracking-widest uppercase text-blue-light mb-3">
+                    {item.period}
+                  </span>
+                  <h3 className="text-xl font-bold text-white mb-1 group-hover:text-blue-light transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-slate-gray mb-4">{item.org}</p>
+                  <p className="text-gray-400 leading-relaxed text-sm flex-1">
+                    {item.desc}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mt-5">
                     {item.tags.map((tag) => (
                       <span
                         key={tag}
@@ -386,13 +341,13 @@ export default function Home() {
                     ))}
                   </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ═══════════ ACHIEVEMENTS ═══════════ */}
+      {/* ═══════════ IMPACT + AWARDS ═══════════ */}
       <section id="achievements" className="relative py-24 md:py-32">
         <div className="absolute inset-0 bg-deep-navy" />
         <OrbitalRings
@@ -401,56 +356,62 @@ export default function Home() {
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <SectionTitle subtitle="Achievements" title="ผลงานและรางวัล" />
+          <SectionTitle subtitle="Impact" title="ผลลัพธ์ที่วัดได้" />
 
-          {/* Numbers */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-            {achievements.map((item, i) => (
-              <div
-                key={i}
-                className="text-center p-8 rounded-3xl bg-white/[0.03] border border-white/[0.06] hover:border-blue-primary/20 transition-all"
-              >
-                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-primary to-blue-light bg-clip-text text-transparent mb-2">
-                  {item.number}
+          {/* ตัวเลขทั้งหมดเป็นผลงานของ 9Expert ที่ อ.เวทเป็นผู้ก่อตั้ง ไม่ใช่ตัวเลขส่วนบุคคล
+              ต้องเขียนกำกับให้ชัด ไม่งั้นกลายเป็นเคลมผลงานองค์กรเป็นของคนคนเดียว */}
+          <p className="-mt-8 mb-12 text-center text-sm text-slate-gray">
+            ตัวเลขรวมของ{" "}
+            <a
+              href="https://www.9experttraining.com"
+              target="_blank"
+              rel="noopener"
+              className="text-blue-light hover:text-lime-accent transition-colors"
+            >
+              9Expert Training
+            </a>{" "}
+            สถาบันที่ อ.เวทร่วมก่อตั้งและดูแลหลักสูตร
+          </p>
+
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 mb-24">
+            {STATS.map((s, i) => (
+              <Reveal key={s.label} delay={i * 80}>
+                <div className="group h-full p-6 md:p-8 rounded-3xl bg-white/[0.03] border border-white/[0.06] hover:border-lime-accent/25 transition-all duration-300 hover:-translate-y-1">
+                  <CountUp
+                    value={s.value}
+                    suffix={s.suffix}
+                    decimals={s.decimals}
+                    className="block text-3xl md:text-5xl font-bold text-lime-accent tabular-nums tracking-tight"
+                  />
+                  <div className="text-base md:text-lg font-bold text-white mt-2">
+                    {s.label}
+                  </div>
+                  <div className="text-xs md:text-sm text-slate-gray mt-1 leading-relaxed">
+                    {s.note}
+                  </div>
                 </div>
-                <div className="text-lg font-bold text-white mb-1">
-                  {item.label}
-                </div>
-                <div className="text-sm text-gray-400">{item.desc}</div>
-              </div>
+              </Reveal>
             ))}
           </div>
 
-          {/* Certifications */}
-          <div className="max-w-3xl mx-auto">
-            <h3 className="text-2xl font-bold text-center text-white mb-8">
-              Certifications & Awards
-            </h3>
-            <div className="grid sm:grid-cols-2 gap-4">
-              {certifications.map((cert, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-3 p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06]"
-                >
-                  <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-primary/20 flex items-center justify-center">
-                    <svg
-                      className="w-5 h-5 text-blue-primary"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                      />
-                    </svg>
+          <SectionTitle subtitle="Awards & recognition" title="รางวัลและการยอมรับ" />
+
+          <div className="max-w-4xl mx-auto divide-y divide-white/[0.07]">
+            {AWARDS.map((a, i) => (
+              <Reveal key={a.title} delay={i * 90}>
+                <div className="group grid md:grid-cols-[minmax(0,15rem)_1fr] gap-2 md:gap-8 py-7">
+                  <span className="text-xs font-bold tracking-widest uppercase text-lime-accent pt-1">
+                    {a.eyebrow}
+                  </span>
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-light transition-colors">
+                      {a.title}
+                    </h3>
+                    <p className="text-gray-400 leading-relaxed">{a.desc}</p>
                   </div>
-                  <span className="text-sm text-gray-300">{cert}</span>
                 </div>
-              ))}
-            </div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
@@ -483,7 +444,7 @@ export default function Home() {
                     key={event}
                     className="flex items-center gap-3 text-gray-300"
                   >
-                    <div className="w-2 h-2 rounded-full bg-amber-accent flex-shrink-0" />
+                    <div className="w-2 h-2 rounded-full bg-lime-accent flex-shrink-0" />
                     <span>{event}</span>
                   </div>
                 ))}

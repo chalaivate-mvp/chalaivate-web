@@ -76,7 +76,7 @@ export default function ArtifactsPage() {
       <main className="relative pt-32 pb-24 min-h-screen">
         <div className="absolute inset-0 bg-deep-navy -z-10">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_0%,rgba(0,92,255,0.15)_0%,transparent_55%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,rgba(255,176,32,0.07)_0%,transparent_45%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,rgba(72,176,255,0.09)_0%,transparent_45%)]" />
         </div>
 
         <div className="max-w-7xl mx-auto px-6">
@@ -99,8 +99,8 @@ export default function ArtifactsPage() {
                 className="group relative rounded-3xl bg-white/[0.03] border border-white/[0.06] p-7 hover:border-blue-primary/30 transition-all duration-300 hover:-translate-y-1 flex flex-col"
               >
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="w-2 h-2 rounded-full bg-amber-accent animate-pulse" />
-                  <span className="text-xs text-amber-accent font-bold tracking-widest uppercase">
+                  <span className="w-2 h-2 rounded-full bg-lime-accent animate-pulse" />
+                  <span className="text-xs text-lime-accent font-bold tracking-widest uppercase">
                     {item.eyebrow}
                   </span>
                 </div>

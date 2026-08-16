@@ -110,7 +110,7 @@ export default function AiModelsPage() {
       <main className="relative pt-28 pb-24">
         <div className="absolute inset-0 bg-deep-navy -z-10">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_15%_0%,rgba(0,92,255,0.14)_0%,transparent_55%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_85%_10%,rgba(255,176,32,0.07)_0%,transparent_45%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_85%_10%,rgba(72,176,255,0.09)_0%,transparent_45%)]" />
         </div>
 
         <div className="max-w-7xl mx-auto px-6">
@@ -136,12 +136,12 @@ export default function AiModelsPage() {
               กลับไปหน้า Artifacts
             </a>
 
-            <span className="inline-block text-amber-accent text-sm font-bold tracking-widest uppercase mb-3">
+            <span className="inline-block text-lime-accent text-sm font-bold tracking-widest uppercase mb-3">
               AI Model Intelligence
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight max-w-3xl">
               เปรียบเทียบศักยภาพ
-              <span className="bg-gradient-to-r from-blue-primary via-blue-light to-amber-accent bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-primary via-blue-light to-lime-accent bg-clip-text text-transparent">
                 {" "}
                 โมเดล AI
               </span>
@@ -151,7 +151,7 @@ export default function AiModelsPage() {
               และฟีเจอร์เทียบกันแบบตรง ๆ พร้อมข่าวสารวงการ AI ที่อัปเดตทุกวัน
             </p>
 
-            <div className="mt-4 h-1 w-16 bg-gradient-to-r from-blue-primary to-amber-accent rounded-full" />
+            <div className="mt-4 h-1 w-16 bg-gradient-to-r from-blue-primary to-lime-accent rounded-full" />
 
             <dl className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-3xl">
               {stats.map((s) => (
@@ -168,9 +168,9 @@ export default function AiModelsPage() {
 
           {/* ── คำเตือนข้อมูลตัวอย่าง ── */}
           {isSample && (
-            <div className="rounded-2xl border border-amber-accent/30 bg-amber-accent/[0.07] p-5 mb-10 flex gap-4">
+            <div className="rounded-2xl border border-lime-accent/30 bg-lime-accent/[0.07] p-5 mb-10 flex gap-4">
               <svg
-                className="w-6 h-6 text-amber-accent shrink-0 mt-0.5"
+                className="w-6 h-6 text-lime-accent shrink-0 mt-0.5"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -183,7 +183,7 @@ export default function AiModelsPage() {
                 />
               </svg>
               <div>
-                <p className="text-amber-accent font-bold mb-1">
+                <p className="text-lime-accent font-bold mb-1">
                   ข้อมูลยังไม่ครบทุกช่อง
                 </p>
                 <p className="text-sm text-gray-300 leading-relaxed">
@@ -214,7 +214,7 @@ export default function AiModelsPage() {
 
           {/* ── แหล่งข้อมูล ── */}
           <section className="mt-16 pt-8 border-t border-white/[0.06]">
-            <h3 className="text-sm font-bold tracking-widest uppercase text-amber-accent mb-4">
+            <h3 className="text-sm font-bold tracking-widest uppercase text-lime-accent mb-4">
               แหล่งข้อมูล
             </h3>
             <ul className="grid gap-3 sm:grid-cols-3">

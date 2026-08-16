@@ -100,7 +100,7 @@ export default function ModelSlicer({
       </div>
 
       {selection.length === 0 && (
-        <p className="mt-4 text-sm text-amber-accent">
+        <p className="mt-4 text-sm text-lime-accent">
           ยังไม่ได้เลือกโมเดล — กดชิปด้านบนอย่างน้อย 1 ตัวเพื่อดูการเปรียบเทียบ
         </p>
       )}

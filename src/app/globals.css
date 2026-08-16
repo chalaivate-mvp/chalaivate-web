@@ -1,11 +1,25 @@
 @import "tailwindcss";
 
+/* สีตาม 9Expert CI — สัดส่วนที่ CI กำหนด: น้ำเงิน 60% · highlight 30% · ไลม์ 10%
+ *
+ * เดิมใช้ Amber #FFB020 เป็นสี accent ซึ่ง CI ระบุว่าเลิกใช้แล้ว ("ห้ามใช้")
+ * สี accent จริงของแบรนด์คือ Lime #D4F73F ซึ่งอ่านออกชัดบนพื้น Navy (contrast ~12.5:1)
+ * และคู่ Navy + Lime คือลุคที่เป็น 9Expert ที่สุด
+ *
+ * ข้อควรระวัง: ห้ามใช้ Lime เป็นสีตัวอักษรบนพื้นอ่อน (contrast ~1.8:1) — เว็บนี้พื้นเข้ม
+ * ทั้งหมดจึงใช้ได้ แต่ถ้าเพิ่มส่วนพื้นอ่อนในอนาคตต้องเปลี่ยนเป็น Navy หรือ Brand Blue
+ */
 :root {
+  --blue-brand: #2486FF;
   --blue-primary: #005CFF;
   --blue-light: #3D85FF;
+  --blue-sky: #48B0FF;
   --blue-dark: #0044CC;
-  --amber-accent: #FFB020;
-  --amber-light: #FFD080;
+  --lime-accent: #D4F73F;
+  --lime-light: #E4FF6B;
+  --lime-dark: #B8D930;
+  --ice-white: #F8FAFD;
+  --slate-gray: #808A95;
   --deep-navy: #0D1B2A;
   --navy-mid: #1B2D45;
   --navy-light: #243B55;
@@ -20,14 +34,19 @@
 }
 
 @theme inline {
-  --color-blue-primary: var(--blue-primary);
-  --color-blue-light: var(--blue-light);
-  --color-blue-dark: var(--blue-dark);
-  --color-amber-accent: var(--amber-accent);
-  --color-amber-light: var(--amber-light);
-  --color-deep-navy: var(--deep-navy);
-  --color-navy-mid: var(--navy-mid);
-  --color-navy-light: var(--navy-light);
+  --color-blue-brand: #2486FF;
+  --color-blue-primary: #005CFF;
+  --color-blue-light: #3D85FF;
+  --color-blue-sky: #48B0FF;
+  --color-blue-dark: #0044CC;
+  --color-lime-accent: #D4F73F;
+  --color-lime-light: #E4FF6B;
+  --color-lime-dark: #B8D930;
+  --color-ice-white: #F8FAFD;
+  --color-slate-gray: #808A95;
+  --color-deep-navy: #0D1B2A;
+  --color-navy-mid: #1B2D45;
+  --color-navy-light: #243B55;
   --font-sans: "LINE Seed Sans", "Inter", var(--font-inter), var(--font-thai), system-ui, sans-serif;
 }
 

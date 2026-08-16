@@ -22,14 +22,14 @@ export default function OrbitalRings({
 
       {/* Ring 2 */}
       <div
-        className="absolute rounded-full border border-amber-accent/15"
+        className="absolute rounded-full border border-lime-accent/15"
         style={{
           inset: "12%",
           animation: "orbit-reverse 25s linear infinite",
           transform: "rotateX(60deg)",
         }}
       >
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-amber-accent shadow-lg shadow-amber-accent/50" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-lime-accent shadow-lg shadow-lime-accent/50" />
       </div>
 
       {/* Ring 3 */}

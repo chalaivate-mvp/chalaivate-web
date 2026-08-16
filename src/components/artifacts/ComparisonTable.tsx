@@ -289,7 +289,7 @@ export default function ComparisonTable({
                 <tr>
                   <td
                     colSpan={selected.length + 1}
-                    className="sticky left-0 bg-white/[0.02] px-4 py-2 text-xs font-bold tracking-widest uppercase text-amber-accent border-y border-white/[0.06]"
+                    className="sticky left-0 bg-white/[0.02] px-4 py-2 text-xs font-bold tracking-widest uppercase text-lime-accent border-y border-white/[0.06]"
                   >
                     {group.title}
                   </td>
@@ -331,7 +331,7 @@ export default function ComparisonTable({
                                 <span
                                   title="ดีที่สุดในกลุ่มที่เลือก"
                                   aria-label="ดีที่สุดในกลุ่มที่เลือก"
-                                  className="text-amber-accent text-xs"
+                                  className="text-lime-accent text-xs"
                                 >
                                   ★
                                 </span>
@@ -351,7 +351,7 @@ export default function ComparisonTable({
                 <tr>
                   <td
                     colSpan={selected.length + 1}
-                    className="sticky left-0 bg-white/[0.02] px-4 py-2 text-xs font-bold tracking-widest uppercase text-amber-accent border-y border-white/[0.06]"
+                    className="sticky left-0 bg-white/[0.02] px-4 py-2 text-xs font-bold tracking-widest uppercase text-lime-accent border-y border-white/[0.06]"
                   >
                     {block.title}
                   </td>

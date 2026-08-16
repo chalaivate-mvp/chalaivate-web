@@ -34,7 +34,7 @@ async function loadFonts() {
 const NAVY = "#0D1B2A";
 const BLUE = "#005CFF";
 const BLUE_LIGHT = "#3D85FF";
-const AMBER = "#FFB020";
+const LIME = "#D4F73F";
 
 /**
  * การ์ด OG มาตรฐานของเว็บ — ใช้สีและโครงเดียวกับหน้าเว็บจริง
@@ -61,7 +61,7 @@ export async function renderOgImage({
           flexDirection: "column",
           justifyContent: "space-between",
           background: NAVY,
-          backgroundImage: `radial-gradient(ellipse 90% 70% at 12% 0%, rgba(0,92,255,0.35) 0%, transparent 60%), radial-gradient(ellipse 70% 60% at 95% 15%, rgba(255,176,32,0.18) 0%, transparent 55%)`,
+          backgroundImage: `radial-gradient(ellipse 90% 70% at 12% 0%, rgba(0,92,255,0.35) 0%, transparent 60%), radial-gradient(ellipse 70% 60% at 95% 15%, rgba(72,176,255,0.20) 0%, transparent 55%)`,
           padding: "72px 80px",
           fontFamily: "NotoLatin, NotoThai",
         }}
@@ -72,7 +72,7 @@ export async function renderOgImage({
               width: 14,
               height: 14,
               borderRadius: 999,
-              background: AMBER,
+              background: LIME,
               display: "flex",
             }}
           />
@@ -80,7 +80,7 @@ export async function renderOgImage({
             style={{
               fontSize: 26,
               fontWeight: 700,
-              color: AMBER,
+              color: LIME,
               letterSpacing: 4,
               textTransform: "uppercase",
             }}
@@ -143,7 +143,7 @@ export async function renderOgImage({
             width: "100%",
             height: 8,
             display: "flex",
-            background: `linear-gradient(90deg, ${BLUE} 0%, ${BLUE_LIGHT} 50%, ${AMBER} 100%)`,
+            background: `linear-gradient(90deg, ${BLUE} 0%, ${BLUE_LIGHT} 50%, ${LIME} 100%)`,
           }}
         />
       </div>

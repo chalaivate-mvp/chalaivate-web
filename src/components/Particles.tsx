@@ -22,7 +22,7 @@ export default function Particles() {
       color: string;
     }[] = [];
 
-    const colors = ["#005CFF", "#3D85FF", "#FFB020", "#FFD080", "#FFFFFF"];
+    const colors = ["#005CFF", "#3D85FF", "#2486FF", "#D4F73F", "#FFFFFF"];
 
     function resize() {
       canvas!.width = window.innerWidth;
