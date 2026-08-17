@@ -1,11 +1,57 @@
 {
   "status": "live",
-  "updatedAt": "2026-08-16",
+  "updatedAt": "2026-08-17",
   "items": [
     {
+      "id": "news-2026-08-17-ps-openai-com-index-the-defenders-window",
+      "title": "ช่วงเวลาของฝ่ายป้องกัน: AI กับการเปลี่ยนโฉม cybersecurity",
+      "summary": "OpenAI เผยว่า AI กำลังเปลี่ยนภูมิทัศน์ด้าน cybersecurity ทั้งฝ่ายผู้โจมตีและฝ่ายป้องกัน พร้อมอธิบายวิธีที่ OpenAI เสริมความแข็งแกร่งให้ระบบป้องกันของตนเอง และสิ่งที่ทีม security ควรเริ่มทำตั้งแต่วันนี้",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/the-defenders-window",
+      "publishedAt": "2026-08-17",
+      "category": "policy",
+      "relatedModels": [
+        "gpt-5-6-sol"
+      ]
+    },
+    {
+      "id": "news-2026-08-17-om-index-openai-joins-ports-pike-project",
+      "title": "OpenAI เข้าร่วมโครงการ PORTS-Pike",
+      "summary": "OpenAI ประกาศเข้าร่วมโครงการ PORTS-Pike เพื่อขยายการลงทุนในชุมชนและสนับสนุนการจ้างงานหลายพันตำแหน่งในพื้นที่ Southern Ohio",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/openai-joins-ports-pike-project",
+      "publishedAt": "2026-08-17",
+      "category": "business",
+      "relatedModels": [
+        "gpt-5-6-sol"
+      ]
+    },
+    {
+      "id": "news-2026-08-17-ew-policy-ideas-for-the-intelligence-age",
+      "title": "แนวคิดนโยบายใหม่สำหรับยุค Intelligence Age",
+      "summary": "OpenAI สนับสนุนเงินทุนให้ 14 โครงการอิสระที่ศึกษาแนวคิดนโยบาย AI ใหม่ ๆ เพื่อขยายโอกาสทางเศรษฐกิจและเสริมความยืดหยุ่นของสังคมในยุค Intelligence Age",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/new-policy-ideas-for-the-intelligence-age",
+      "publishedAt": "2026-08-17",
+      "category": "policy",
+      "relatedModels": [
+        "gpt-5-6-sol"
+      ]
+    },
+    {
+      "id": "news-2026-08-17-ace-co-blog-Dharma-AI-gpu-management-pt2",
+      "title": "คลัสเตอร์เดิม แต่ utilization เพิ่มขึ้น 33 จุด เพราะเปลี่ยนแค่ลำดับงาน",
+      "summary": "Hugging Face เผยกรณีศึกษาที่การปรับลำดับการรันงานบนคลัสเตอร์เดิมช่วยเพิ่มอัตราการใช้ทรัพยากร (utilization) ได้ถึง 33 จุด ชี้ให้เห็นว่าการจัดคิวงานมีผลต่อประสิทธิภาพอย่างมาก",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/Dharma-AI/gpu-management-pt2",
+      "publishedAt": "2026-08-17",
+      "category": "research",
+      "relatedModels": []
+    },
+    {
       "id": "news-2026-08-14-co-blog-state-of-open-models-summer-2026",
-      "title": "รายงานสถานะ Open Models ฤดูร้อน 2026 จาก Hugging Face",
-      "summary": "Hugging Face เผยแพร่บทสังเกตการณ์ภาพรวมวงการ open models ประจำฤดูร้อนปี 2026 ช่วยให้เห็นทิศทางและแนวโน้มของโมเดลแบบเปิดในปัจจุบัน",
+      "title": "State of Open Models: ข้อสังเกตประจำฤดูร้อน 2026",
+      "summary": "Hugging Face สรุปภาพรวมและข้อสังเกตล่าสุดเกี่ยวกับสถานะของ open models ในช่วงกลางปี 2026",
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/state-of-open-models-summer-2026",
       "publishedAt": "2026-08-14",
@@ -14,8 +60,8 @@
     },
     {
       "id": "news-2026-08-13-enai-com-index-builders-guide-to-gpt-5-6",
-      "title": "คู่มือนักพัฒนาสำหรับ GPT-5.6 จาก OpenAI",
-      "summary": "OpenAI เผยแพร่คู่มือแนะนำวิธีที่ startup ใช้ GPT-5.6 สร้าง AI agents ได้เร็วขึ้นและคุ้มค่าใช้จ่ายมากขึ้น ด้วยการเลือกโมเดลอย่างเหมาะสมและความสามารถใหม่ของ Responses API",
+      "title": "คู่มือนักพัฒนาสำหรับ GPT-5.6",
+      "summary": "OpenAI เผยแพร่แนวทางที่ startup ใช้ GPT-5.6 เพื่อสร้าง AI agents ได้เร็วขึ้นและคุ้มค่ากว่า ด้วยการเลือกโมเดลให้เหมาะสมและความสามารถใหม่ของ Responses API",
       "source": "OpenAI",
       "url": "https://openai.com/index/builders-guide-to-gpt-5-6",
       "publishedAt": "2026-08-13",
@@ -26,8 +72,8 @@
     },
     {
       "id": "news-2026-08-13-ps-openai-com-index-previewing-ultrafast",
-      "title": "OpenAI เปิดตัว Ultrafast mode รัน GPT-5.6 Sol เร็วขึ้นถึง 14 เท่า",
-      "summary": "OpenAI พรีวิว service tier ใหม่ชื่อ Ultrafast บน API ที่รัน GPT-5.6 Sol ได้เร็วขึ้นถึง 14 เท่า โดยใช้ฮาร์ดแวร์ของ Cerebras ทำความเร็วได้สูงสุด 750 output tokens ต่อวินาที",
+      "title": "เปิดพรีวิว Ultrafast mode: GPT-5.6 Sol เร็วขึ้นถึง 14 เท่า",
+      "summary": "OpenAI เปิดพรีวิว Ultrafast ซึ่งเป็น service tier ใหม่ของ OpenAI API ที่รัน GPT-5.6 Sol ได้เร็วขึ้นถึง 14 เท่า โดยใช้ฮาร์ดแวร์ของ Cerebras และให้ความเร็วสูงสุดถึง 750 output tokens ต่อวินาที",
       "source": "OpenAI",
       "url": "https://openai.com/index/previewing-ultrafast",
       "publishedAt": "2026-08-13",
@@ -39,7 +85,7 @@
     {
       "id": "news-2026-08-13-m-index-dali-rajic-chief-revenue-officer",
       "title": "OpenAI แต่งตั้ง Dali Rajic เป็น Chief Revenue Officer",
-      "summary": "OpenAI ตั้ง Dali Rajic ขึ้นเป็น Chief Revenue Officer เพื่อดูแลองค์กรด้านรายได้ระดับโลก และช่วยให้ธุรกิจใช้ประโยชน์จาก AI ได้เต็มที่",
+      "summary": "OpenAI แต่งตั้ง Dali Rajic ขึ้นเป็น Chief Revenue Officer เพื่อดูแลองค์กรด้านรายได้ระดับโลก และช่วยให้ภาคธุรกิจใช้ประโยชน์จาก AI ได้อย่างเต็มที่",
       "source": "OpenAI",
       "url": "https://openai.com/index/dali-rajic-chief-revenue-officer",
       "publishedAt": "2026-08-13",
@@ -50,8 +96,8 @@
     },
     {
       "id": "news-2026-08-13-oogle-blog-introducing-gemini-3-7-flash-",
-      "title": "Google DeepMind เปิดตัว Gemini 3.7 Flash",
-      "summary": "Google DeepMind ประกาศเปิดตัว Gemini 3.7 Flash ซึ่งเป็นโมเดลรุ่นใหม่ในตระกูล Gemini สาย Flash",
+      "title": "เปิดตัว Gemini 3.7 Flash",
+      "summary": "Google DeepMind ประกาศเปิดตัว Gemini 3.7 Flash ซึ่งเป็นโมเดลใหม่ในตระกูล Gemini",
       "source": "Google DeepMind",
       "url": "https://deepmind.google/blog/introducing-gemini-3-7-flash/",
       "publishedAt": "2026-08-13",
@@ -60,8 +106,8 @@
     },
     {
       "id": "news-2026-08-13-azon-strands-lerobot-streaming-data-loop",
-      "title": "รวมการบันทึกข้อมูล เทรน และ deploy ไว้ที่เดียวด้วย Strands Agents, LeRobot และ Hugging Face Storage Buckets",
-      "summary": "Hugging Face แนะแนวทางใช้ Strands Agents, LeRobot และ Hugging Face Storage Buckets ร่วมกัน เพื่อบันทึกข้อมูล เทรนโมเดล และ deploy ได้จากที่เดียว",
+      "title": "บันทึก เทรน และ deploy ได้ในที่เดียวด้วย Strands Agents, LeRobot และ Hugging Face Storage Buckets",
+      "summary": "Hugging Face แนะนำการทำงานร่วมกันของ Strands Agents, LeRobot และ Hugging Face Storage Buckets ที่ช่วยให้บันทึกข้อมูล เทรนโมเดล และ deploy ได้จากที่เดียว",
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/amazon/strands-lerobot-streaming-data-loop",
       "publishedAt": "2026-08-13",
@@ -70,8 +116,8 @@
     },
     {
       "id": "news-2026-08-13-ace-co-blog-icml-2026-open-reproductions",
-      "title": "บทเรียนจากการทำซ้ำผลงานวิจัย ICML จำนวน 2,200 ฉบับ",
-      "summary": "Hugging Face เล่าสิ่งที่ได้เรียนรู้จากการ reproduce งานวิจัยจาก ICML จำนวน 2,200 ฉบับ ซึ่งสะท้อนประเด็นเรื่อง reproducibility ในงานวิจัย AI",
+      "title": "บทเรียนจากการทำซ้ำงานวิจัย 2,200 ชิ้นจาก ICML",
+      "summary": "Hugging Face สรุปสิ่งที่ได้เรียนรู้จากการ reproduce งานวิจัย 2,200 ชิ้นจากงานประชุม ICML ซึ่งสะท้อนประเด็นเรื่องความสามารถในการทำซ้ำ (reproducibility) ของงานวิจัย AI",
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/icml-2026-open-reproductions",
       "publishedAt": "2026-08-13",
@@ -80,8 +126,8 @@
     },
     {
       "id": "news-2026-08-12-com-index-how-enterprises-put-ai-to-work",
-      "title": "OpenAI เผยงานวิจัยการนำ agentic AI ไปใช้ในองค์กร",
-      "summary": "งานวิจัยของ OpenAI เผยว่าองค์กรต่าง ๆ กำลังนำ agentic AI มาใช้ผ่าน ChatGPT และ Codex อย่างไร และองค์กรกลุ่มแนวหน้า (frontier firms) กำลังนำหน้าคู่แข่งด้านการใช้ AI",
+      "title": "จากผู้ช่วยสู่ผู้ลงมือทำ: องค์กรนำ AI ไปใช้งานจริงอย่างไร",
+      "summary": "งานวิจัยของ OpenAI เผยให้เห็นว่าองค์กรต่าง ๆ กำลังนำ agentic AI มาใช้อย่างไร ผ่าน ChatGPT และ Codex รวมถึงชี้ว่ากลุ่ม frontier firms กำลังนำหน้าในการนำ AI ไปใช้",
       "source": "OpenAI",
       "url": "https://openai.com/index/how-enterprises-put-ai-to-work",
       "publishedAt": "2026-08-12",
@@ -89,46 +135,6 @@
       "relatedModels": [
         "gpt-5-6-sol"
       ]
-    },
-    {
-      "id": "news-2026-08-12-https-openai-com-index-ringcentral",
-      "title": "RingCentral สร้างการทำงานแบบ AI-native ตั้งแต่ทีมวิศวกรรมถึงฝ่ายปฏิบัติการ",
-      "summary": "กรณีศึกษาจาก OpenAI แสดงให้เห็นว่า RingCentral ใช้ ChatGPT Work และ Codex เร่งการพัฒนาผลิตภัณฑ์ AI และรวมศูนย์ข้อมูลเชิงปฏิบัติการทั่วทั้งทีมวิศวกรรมและ operations",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/ringcentral",
-      "publishedAt": "2026-08-12",
-      "category": "business",
-      "relatedModels": []
-    },
-    {
-      "id": "news-2026-08-12-tting-sign-language-ai-into-users-hands-",
-      "title": "Google DeepMind เปิดตัวโมเดลแปลภาษามือเป็นข้อความ SL2T",
-      "summary": "Google DeepMind เปิดตัว sign-language-to-text (SL2T) โมเดลที่แปลภาษามือเป็นข้อความ ซึ่งเป็นเบื้องหลังฟีเจอร์ภาษามือใหม่สำหรับผู้ใช้ที่หูหนวกและมีปัญหาการได้ยิน",
-      "source": "Google DeepMind",
-      "url": "https://deepmind.google/blog/putting-sign-language-ai-into-users-hands/",
-      "publishedAt": "2026-08-12",
-      "category": "model-release",
-      "relatedModels": []
-    },
-    {
-      "id": "news-2026-08-12-ace-co-blog-allenai-olmoearth-embeddings",
-      "title": "เปิดตัว OlmoEarth embeddings ส่งออก embedding แบบกำหนดเองจาก OlmoEarth Studio",
-      "summary": "มีการเปิดตัว OlmoEarth embeddings ที่ให้ผู้ใช้ export embedding แบบกำหนดเองจาก OlmoEarth Studio เพื่อนำไปวิเคราะห์ต่อในงาน downstream",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/allenai/olmoearth-embeddings",
-      "publishedAt": "2026-08-12",
-      "category": "product",
-      "relatedModels": []
-    },
-    {
-      "id": "news-2026-08-12-uggingface-co-blog-LiquidAI-lfm2-5-vl-3b",
-      "title": "LFM2.5-VL-3B โมเดล vision สำหรับงาน edge ที่ดีขึ้นและเร็วขึ้น",
-      "summary": "มีการเปิดตัว LFM2.5-VL-3B โมเดลด้าน vision ที่มุ่งให้ความสามารถดีขึ้นและทำงานเร็วขึ้นบนอุปกรณ์ edge",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-vl-3b",
-      "publishedAt": "2026-08-12",
-      "category": "model-release",
-      "relatedModels": []
     }
   ]
 }
