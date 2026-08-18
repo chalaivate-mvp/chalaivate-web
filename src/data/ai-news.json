@@ -1,15 +1,103 @@
 {
   "status": "live",
-  "updatedAt": "2026-08-17",
+  "updatedAt": "2026-08-18",
   "items": [
     {
+      "id": "news-2026-08-18-emocratic-oversight-in-national-security",
+      "title": "OpenAI เสริมการกำกับดูแลโดยระบอบประชาธิปไตยในงานความมั่นคงแห่งชาติ",
+      "summary": "OpenAI เปิดตัวโครงการเพื่อเสริมสร้างการกำกับดูแลการใช้ AI ในงานด้านความมั่นคงแห่งชาติตามหลักประชาธิปไตย โดยสนับสนุนหน่วยงานรัฐด้วยเครื่องมือ การฝึกอบรม และความเชี่ยวชาญ",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/strengthening-democratic-oversight-in-national-security",
+      "publishedAt": "2026-08-18",
+      "category": "policy",
+      "relatedModels": [
+        "gpt-5-6-sol"
+      ]
+    },
+    {
+      "id": "news-2026-08-18--openai-com-index-partnering-with-codeai",
+      "title": "OpenAI จับมือ CodeAI เตรียมความพร้อมให้คนรุ่นแรกที่เติบโตมากับ AI",
+      "summary": "OpenAI ร่วมมือกับ CodeAI เพื่อช่วยนักเรียนสร้าง AI literacy คิดวิเคราะห์เกี่ยวกับ AI อย่างมีวิจารณญาณ และพัฒนาทักษะการใช้งาน AI อย่างรับผิดชอบ",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/partnering-with-codeai",
+      "publishedAt": "2026-08-18",
+      "category": "business",
+      "relatedModels": [
+        "gpt-5-6-sol"
+      ]
+    },
+    {
+      "id": "news-2026-08-18-ing-model-development-cyber-capabilities",
+      "title": "OpenAI ปรับจังหวะการพัฒนาโมเดลในยุคความสามารถด้าน cyber ที่สำคัญยิ่ง",
+      "summary": "OpenAI ยกระดับการ monitoring, alignment และความปลอดภัยของโมเดล frontier AI พร้อมอธิบายว่ามาตรการป้องกันใหม่ ๆ กำหนดจังหวะการพัฒนาโมเดลอย่างไร",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/pacing-model-development-cyber-capabilities",
+      "publishedAt": "2026-08-18",
+      "category": "research",
+      "relatedModels": [
+        "gpt-5-6-sol"
+      ]
+    },
+    {
+      "id": "news-2026-08-18-https-openai-com-index-chatgpt-for-teens",
+      "title": "เปิดตัว ChatGPT for Teens สร้างมาเพื่อการเรียนรู้พร้อมระบบป้องกัน",
+      "summary": "OpenAI เปิดตัว ChatGPT for Teens ที่ช่วยให้วัยรุ่นเรียนรู้และคิดวิเคราะห์ พร้อมระบบป้องกันในตัวที่แข็งแรงขึ้น ฟีเจอร์ส่งเสริมการใช้งานอย่างเหมาะสม และการควบคุมเพิ่มเติมสำหรับผู้ปกครอง",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/chatgpt-for-teens",
+      "publishedAt": "2026-08-18",
+      "category": "product",
+      "relatedModels": []
+    },
+    {
+      "id": "news-2026-08-18-tps-openai-com-index-nvidia-chatgpt-work",
+      "title": "NVIDIA ขยายความเชี่ยวชาญทั่วองค์กรด้วย ChatGPT Work",
+      "summary": "ทีมงานของ NVIDIA ใช้ ChatGPT Work เพื่อลดงาน manual เชื่อมโยงสัญญาณข้อมูลที่เปลี่ยนเร็ว และขยาย workflow ที่ประสบความสำเร็จไปใช้ทั่วโลก",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/nvidia/chatgpt-work",
+      "publishedAt": "2026-08-18",
+      "category": "business",
+      "relatedModels": []
+    },
+    {
+      "id": "news-2026-08-18-https-openai-com-index-asana",
+      "title": "Asana ใช้ Codex เคลียร์งาน engineering ที่คาดว่าใช้ 5 ปี ได้ใน 2 สัปดาห์",
+      "summary": "Asana ใช้ OpenAI Codex แทนที่ระบบ testing รุ่นเก่าได้ในเวลาเพียงสองสัปดาห์ ทั้งที่คาดว่างานนี้ต้องใช้เวลาถึงห้าปี ด้วยค่าใช้จ่ายราว 12,000 ดอลลาร์",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/asana",
+      "publishedAt": "2026-08-18",
+      "category": "product",
+      "relatedModels": [
+        "gpt-5-6-sol"
+      ]
+    },
+    {
+      "id": "news-2026-08-18-ace-co-blog-ibm-research-altk-evolve-hmm",
+      "title": "AI Agent ของคุณต้องใช้ memory มากแค่ไหนจริง ๆ?",
+      "summary": "บทความจาก Hugging Face ตั้งคำถามและสำรวจว่า AI agent จำเป็นต้องมี memory มากเพียงใดในการทำงานจริง",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/ibm-research/altk-evolve-hmm",
+      "publishedAt": "2026-08-18",
+      "category": "research",
+      "relatedModels": []
+    },
+    {
+      "id": "news-2026-08-18-huggingface-co-blog-multi-vector-encoder",
+      "title": "โมเดล Multi-Vector (Late Interaction) Embedding บน Sentence Transformers",
+      "summary": "Hugging Face นำเสนอการใช้งานโมเดล embedding แบบ multi-vector หรือ late interaction ผ่านไลบรารี Sentence Transformers",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/multi-vector-encoder",
+      "publishedAt": "2026-08-18",
+      "category": "research",
+      "relatedModels": []
+    },
+    {
       "id": "news-2026-08-17-ps-openai-com-index-the-defenders-window",
-      "title": "ช่วงเวลาของฝ่ายป้องกัน: AI กับการเปลี่ยนโฉม cybersecurity",
-      "summary": "OpenAI เผยว่า AI กำลังเปลี่ยนภูมิทัศน์ด้าน cybersecurity ทั้งฝ่ายผู้โจมตีและฝ่ายป้องกัน พร้อมอธิบายวิธีที่ OpenAI เสริมความแข็งแกร่งให้ระบบป้องกันของตนเอง และสิ่งที่ทีม security ควรเริ่มทำตั้งแต่วันนี้",
+      "title": "The Defender's Window: AI กำลังเปลี่ยนภูมิทัศน์ cybersecurity",
+      "summary": "OpenAI อธิบายว่า AI กำลังเปลี่ยนโฉมงาน cybersecurity ทั้งฝ่ายผู้โจมตีและฝ่ายป้องกัน พร้อมเล่าถึงการเสริมความแข็งแกร่งด้านการป้องกันของตนเองและสิ่งที่ทีม security ควรทำตั้งแต่วันนี้",
       "source": "OpenAI",
       "url": "https://openai.com/index/the-defenders-window",
       "publishedAt": "2026-08-17",
-      "category": "policy",
+      "category": "research",
       "relatedModels": [
         "gpt-5-6-sol"
       ]
@@ -17,7 +105,7 @@
     {
       "id": "news-2026-08-17-om-index-openai-joins-ports-pike-project",
       "title": "OpenAI เข้าร่วมโครงการ PORTS-Pike",
-      "summary": "OpenAI ประกาศเข้าร่วมโครงการ PORTS-Pike เพื่อขยายการลงทุนในชุมชนและสนับสนุนการจ้างงานหลายพันตำแหน่งในพื้นที่ Southern Ohio",
+      "summary": "OpenAI เข้าร่วมโครงการ PORTS-Pike เพื่อขยายการลงทุนในชุมชนและสนับสนุนการจ้างงานหลายพันตำแหน่งในพื้นที่ Southern Ohio",
       "source": "OpenAI",
       "url": "https://openai.com/index/openai-joins-ports-pike-project",
       "publishedAt": "2026-08-17",
@@ -28,8 +116,8 @@
     },
     {
       "id": "news-2026-08-17-ew-policy-ideas-for-the-intelligence-age",
-      "title": "แนวคิดนโยบายใหม่สำหรับยุค Intelligence Age",
-      "summary": "OpenAI สนับสนุนเงินทุนให้ 14 โครงการอิสระที่ศึกษาแนวคิดนโยบาย AI ใหม่ ๆ เพื่อขยายโอกาสทางเศรษฐกิจและเสริมความยืดหยุ่นของสังคมในยุค Intelligence Age",
+      "title": "OpenAI สนับสนุนแนวคิดนโยบายใหม่สำหรับยุค Intelligence Age",
+      "summary": "OpenAI ให้ทุนสนับสนุน 14 โครงการอิสระที่ศึกษาแนวคิดนโยบาย AI ใหม่ ๆ เพื่อขยายโอกาสทางเศรษฐกิจและเสริมความยืดหยุ่นของสังคมในยุค Intelligence Age",
       "source": "OpenAI",
       "url": "https://openai.com/index/new-policy-ideas-for-the-intelligence-age",
       "publishedAt": "2026-08-17",
@@ -40,101 +128,13 @@
     },
     {
       "id": "news-2026-08-17-ace-co-blog-Dharma-AI-gpu-management-pt2",
-      "title": "คลัสเตอร์เดิม แต่ utilization เพิ่มขึ้น 33 จุด เพราะเปลี่ยนแค่ลำดับงาน",
-      "summary": "Hugging Face เผยกรณีศึกษาที่การปรับลำดับการรันงานบนคลัสเตอร์เดิมช่วยเพิ่มอัตราการใช้ทรัพยากร (utilization) ได้ถึง 33 จุด ชี้ให้เห็นว่าการจัดคิวงานมีผลต่อประสิทธิภาพอย่างมาก",
+      "title": "cluster เดิมแต่ utilization เพิ่มขึ้น 33 จุด เพราะเปลี่ยนแค่ลำดับการทำงาน",
+      "summary": "Hugging Face เผยว่าการปรับลำดับการทำงานบน cluster เดิมช่วยเพิ่ม utilization ได้ถึง 33 จุด ชี้ให้เห็นว่าการจัดลำดับงานมีผลต่อประสิทธิภาพการใช้ทรัพยากรอย่างมาก",
       "source": "Hugging Face",
       "url": "https://huggingface.co/blog/Dharma-AI/gpu-management-pt2",
       "publishedAt": "2026-08-17",
       "category": "research",
       "relatedModels": []
-    },
-    {
-      "id": "news-2026-08-14-co-blog-state-of-open-models-summer-2026",
-      "title": "State of Open Models: ข้อสังเกตประจำฤดูร้อน 2026",
-      "summary": "Hugging Face สรุปภาพรวมและข้อสังเกตล่าสุดเกี่ยวกับสถานะของ open models ในช่วงกลางปี 2026",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/state-of-open-models-summer-2026",
-      "publishedAt": "2026-08-14",
-      "category": "research",
-      "relatedModels": []
-    },
-    {
-      "id": "news-2026-08-13-enai-com-index-builders-guide-to-gpt-5-6",
-      "title": "คู่มือนักพัฒนาสำหรับ GPT-5.6",
-      "summary": "OpenAI เผยแพร่แนวทางที่ startup ใช้ GPT-5.6 เพื่อสร้าง AI agents ได้เร็วขึ้นและคุ้มค่ากว่า ด้วยการเลือกโมเดลให้เหมาะสมและความสามารถใหม่ของ Responses API",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/builders-guide-to-gpt-5-6",
-      "publishedAt": "2026-08-13",
-      "category": "product",
-      "relatedModels": [
-        "gpt-5-6-sol"
-      ]
-    },
-    {
-      "id": "news-2026-08-13-ps-openai-com-index-previewing-ultrafast",
-      "title": "เปิดพรีวิว Ultrafast mode: GPT-5.6 Sol เร็วขึ้นถึง 14 เท่า",
-      "summary": "OpenAI เปิดพรีวิว Ultrafast ซึ่งเป็น service tier ใหม่ของ OpenAI API ที่รัน GPT-5.6 Sol ได้เร็วขึ้นถึง 14 เท่า โดยใช้ฮาร์ดแวร์ของ Cerebras และให้ความเร็วสูงสุดถึง 750 output tokens ต่อวินาที",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/previewing-ultrafast",
-      "publishedAt": "2026-08-13",
-      "category": "product",
-      "relatedModels": [
-        "gpt-5-6-sol"
-      ]
-    },
-    {
-      "id": "news-2026-08-13-m-index-dali-rajic-chief-revenue-officer",
-      "title": "OpenAI แต่งตั้ง Dali Rajic เป็น Chief Revenue Officer",
-      "summary": "OpenAI แต่งตั้ง Dali Rajic ขึ้นเป็น Chief Revenue Officer เพื่อดูแลองค์กรด้านรายได้ระดับโลก และช่วยให้ภาคธุรกิจใช้ประโยชน์จาก AI ได้อย่างเต็มที่",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/dali-rajic-chief-revenue-officer",
-      "publishedAt": "2026-08-13",
-      "category": "business",
-      "relatedModels": [
-        "gpt-5-6-sol"
-      ]
-    },
-    {
-      "id": "news-2026-08-13-oogle-blog-introducing-gemini-3-7-flash-",
-      "title": "เปิดตัว Gemini 3.7 Flash",
-      "summary": "Google DeepMind ประกาศเปิดตัว Gemini 3.7 Flash ซึ่งเป็นโมเดลใหม่ในตระกูล Gemini",
-      "source": "Google DeepMind",
-      "url": "https://deepmind.google/blog/introducing-gemini-3-7-flash/",
-      "publishedAt": "2026-08-13",
-      "category": "model-release",
-      "relatedModels": []
-    },
-    {
-      "id": "news-2026-08-13-azon-strands-lerobot-streaming-data-loop",
-      "title": "บันทึก เทรน และ deploy ได้ในที่เดียวด้วย Strands Agents, LeRobot และ Hugging Face Storage Buckets",
-      "summary": "Hugging Face แนะนำการทำงานร่วมกันของ Strands Agents, LeRobot และ Hugging Face Storage Buckets ที่ช่วยให้บันทึกข้อมูล เทรนโมเดล และ deploy ได้จากที่เดียว",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/amazon/strands-lerobot-streaming-data-loop",
-      "publishedAt": "2026-08-13",
-      "category": "product",
-      "relatedModels": []
-    },
-    {
-      "id": "news-2026-08-13-ace-co-blog-icml-2026-open-reproductions",
-      "title": "บทเรียนจากการทำซ้ำงานวิจัย 2,200 ชิ้นจาก ICML",
-      "summary": "Hugging Face สรุปสิ่งที่ได้เรียนรู้จากการ reproduce งานวิจัย 2,200 ชิ้นจากงานประชุม ICML ซึ่งสะท้อนประเด็นเรื่องความสามารถในการทำซ้ำ (reproducibility) ของงานวิจัย AI",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/icml-2026-open-reproductions",
-      "publishedAt": "2026-08-13",
-      "category": "research",
-      "relatedModels": []
-    },
-    {
-      "id": "news-2026-08-12-com-index-how-enterprises-put-ai-to-work",
-      "title": "จากผู้ช่วยสู่ผู้ลงมือทำ: องค์กรนำ AI ไปใช้งานจริงอย่างไร",
-      "summary": "งานวิจัยของ OpenAI เผยให้เห็นว่าองค์กรต่าง ๆ กำลังนำ agentic AI มาใช้อย่างไร ผ่าน ChatGPT และ Codex รวมถึงชี้ว่ากลุ่ม frontier firms กำลังนำหน้าในการนำ AI ไปใช้",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/how-enterprises-put-ai-to-work",
-      "publishedAt": "2026-08-12",
-      "category": "research",
-      "relatedModels": [
-        "gpt-5-6-sol"
-      ]
     }
   ]
 }
