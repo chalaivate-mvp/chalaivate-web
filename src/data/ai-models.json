@@ -1,8 +1,8 @@
 {
   "status": "sample",
-  "updatedAt": "2026-08-19",
+  "updatedAt": "2026-08-20",
   "provenance": {
-    "fetchedAt": "2026-08-19T23:49:22.447Z",
+    "fetchedAt": "2026-08-20T23:54:24.158Z",
     "ok": [
       "OpenRouter",
       "Artificial Analysis"
@@ -87,8 +87,8 @@
         "coding": 76.5
       },
       "speed": {
-        "tokensPerSecond": 67.465,
-        "firstTokenSeconds": 57.985
+        "tokensPerSecond": 68.376,
+        "firstTokenSeconds": 67.411
       },
       "features": {
         "multimodal": true,
@@ -140,8 +140,8 @@
         "coding": 78
       },
       "speed": {
-        "tokensPerSecond": 54.418,
-        "firstTokenSeconds": 36.976
+        "tokensPerSecond": 55.934,
+        "firstTokenSeconds": 35.991
       },
       "features": {
         "multimodal": true,
@@ -193,8 +193,8 @@
         "coding": 71.5
       },
       "speed": {
-        "tokensPerSecond": 81.863,
-        "firstTokenSeconds": 135.72
+        "tokensPerSecond": 86.647,
+        "firstTokenSeconds": 138.45
       },
       "features": {
         "multimodal": true,
@@ -246,8 +246,8 @@
         "coding": 77.4
       },
       "speed": {
-        "tokensPerSecond": 68.734,
-        "firstTokenSeconds": 75.247
+        "tokensPerSecond": 74.851,
+        "firstTokenSeconds": 108.105
       },
       "features": {
         "multimodal": true,
@@ -299,8 +299,8 @@
         "coding": 68.8
       },
       "speed": {
-        "tokensPerSecond": 126.262,
-        "firstTokenSeconds": 30.852
+        "tokensPerSecond": 124.267,
+        "firstTokenSeconds": 29.85
       },
       "features": {
         "multimodal": true,
@@ -352,8 +352,8 @@
         "coding": 76.2
       },
       "speed": {
-        "tokensPerSecond": 38.637,
-        "firstTokenSeconds": 2.585
+        "tokensPerSecond": 39.02,
+        "firstTokenSeconds": 2.625
       },
       "features": {
         "multimodal": true,
@@ -405,8 +405,8 @@
         "coding": 76.8
       },
       "speed": {
-        "tokensPerSecond": 65.976,
-        "firstTokenSeconds": 39.819
+        "tokensPerSecond": 62.186,
+        "firstTokenSeconds": 40.45
       },
       "features": {
         "multimodal": true,
@@ -564,8 +564,8 @@
         "coding": 48.2
       },
       "speed": {
-        "tokensPerSecond": 82.671,
-        "firstTokenSeconds": 1.431
+        "tokensPerSecond": 77.857,
+        "firstTokenSeconds": 1.416
       },
       "features": {
         "multimodal": false,

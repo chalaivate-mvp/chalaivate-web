@@ -1,11 +1,43 @@
 {
   "status": "live",
-  "updatedAt": "2026-08-19",
+  "updatedAt": "2026-08-20",
   "items": [
     {
+      "id": "news-2026-08-20--openai-com-index-introducing-ai-futures",
+      "title": "OpenAI เปิดตัวบล็อกใหม่ \"AI Futures\"",
+      "summary": "OpenAI เปิดตัว AI Futures บล็อกใหม่ที่สำรวจว่า AI ซึ่งเปลี่ยนโลกจะส่งผลต่ออำนาจ การกำกับดูแล เศรษฐกิจ และเสรีภาพของปัจเจกบุคคลอย่างไร ถือเป็นช่องทางสื่อสารมุมมองเชิงนโยบายและสังคมของบริษัท",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/introducing-ai-futures",
+      "publishedAt": "2026-08-20",
+      "category": "business",
+      "relatedModels": [
+        "gpt-5-6-sol"
+      ]
+    },
+    {
+      "id": "news-2026-08-20-https-openai-com-index-stampli",
+      "title": "Stampli ลดเวลาเตรียมเปิดตัวลง 68% ด้วย ChatGPT Work",
+      "summary": "Stampli ใช้ Codex และ ChatGPT Work ย่นงานผลิตสำหรับการเปิดตัวที่ปกติใช้เวลาหลายสัปดาห์ให้เหลือเพียงไม่กี่วัน ท่ามกลางเดดไลน์ที่ตายตัวและทีมออกแบบที่ติดงานอื่น",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/stampli",
+      "publishedAt": "2026-08-20",
+      "category": "product",
+      "relatedModels": []
+    },
+    {
+      "id": "news-2026-08-20-uggingface-co-blog-LiquidAI-lfm25-dspark",
+      "title": "LFM2.5-DSpark ทำ Inference เร็วขึ้นสูงสุด 3.2 เท่า",
+      "summary": "มีการเปิดตัว LFM2.5-DSpark ที่ให้ความเร็วในการทำ inference เพิ่มขึ้นสูงสุดถึง 3.2 เท่า ซึ่งช่วยลดต้นทุนและเวลาในการรันโมเดล",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/LiquidAI/lfm25-dspark",
+      "publishedAt": "2026-08-20",
+      "category": "model-release",
+      "relatedModels": []
+    },
+    {
       "id": "news-2026-08-19--zero-data-retention-for-frontier-models",
-      "title": "OpenAI เปิดให้ใช้ Zero Data Retention กับ frontier models",
-      "summary": "OpenAI ยืนยันนโยบาย Zero Data Retention สำหรับลูกค้า API ที่เข้าเกณฑ์ พร้อมเผยตัวอย่าง Private Safety Processing ที่ช่วยตรวจสอบความปลอดภัยของ AI ระดับสูงโดยไม่กระทบความเป็นส่วนตัวของข้อมูล ถือเป็นจุดสำคัญสำหรับองกรค์ที่กังวลเรื่องข้อมูลรั่วไหล",
+      "title": "OpenAI ย้ำนโยบาย Zero Data Retention สำหรับโมเดลระดับ frontier",
+      "summary": "OpenAI ยืนยันการให้บริการ Zero Data Retention กับลูกค้า API ที่เข้าเกณฑ์ พร้อมเผยตัวอย่าง Private Safety Processing ที่ทำงานด้านความปลอดภัยของ AI ได้โดยไม่กระทบความเป็นส่วนตัวของข้อมูล",
       "source": "OpenAI",
       "url": "https://openai.com/index/offering-zero-data-retention-for-frontier-models",
       "publishedAt": "2026-08-19",
@@ -16,8 +48,8 @@
     },
     {
       "id": "news-2026-08-19-https-openai-com-index-replit",
-      "title": "Replit เปิด Free Mode ใช้ GPT-5.6 Luna สร้างซอฟต์แวร์ได้ฟรี",
-      "summary": "Replit เปิดตัว Free Mode ที่ขับเคลื่อนด้วย GPT-5.6 Luna ให้ทุกคนเปลี่ยนไอเดียเป็นซอฟต์แวร์ที่ใช้งานได้จริงโดยไม่ต้องกังวลเรื่องค่า token ช่วยลดกำแพงด้านต้นทุนสำหรับผู้เริ่มเขียนโปรแกรม",
+      "title": "Replit เปิด Free Mode ที่ขับเคลื่อนด้วย GPT-5.6 Luna",
+      "summary": "Replit เปิดตัว Free Mode ซึ่งใช้โมเดล GPT-5.6 Luna ให้ผู้ใช้ทุกคนเปลี่ยนไอเดียเป็นซอฟต์แวร์ที่ใช้งานได้จริงโดยไม่ต้องกังวลเรื่องค่า token",
       "source": "OpenAI",
       "url": "https://openai.com/index/replit",
       "publishedAt": "2026-08-19",
@@ -27,19 +59,9 @@
       ]
     },
     {
-      "id": "news-2026-08-19-https-huggingface-co-blog-LiquidAI-qad",
-      "title": "LFM2.5 ปล่อย Q4_0 Checkpoints จาก Quantization-Aware Distillation",
-      "summary": "มีการเผยแพร่ checkpoints แบบ Q4_0 ของโมเดล LFM2.5 ที่ได้จากเทคนิค Quantization-Aware Distillation บน Hugging Face ซึ่งเป็นแนวทางลดขนาดโมเดลให้ใช้งานได้เบาลง",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/LiquidAI/qad",
-      "publishedAt": "2026-08-19",
-      "category": "model-release",
-      "relatedModels": []
-    },
-    {
       "id": "news-2026-08-18--index-chatgpt-ads-expands-across-europe",
       "title": "ChatGPT Ads ขยายสู่ตลาดยุโรป 31 ประเทศ",
-      "summary": "OpenAI ขยายบริการ ChatGPT Ads ไปยัง 31 ตลาดในยุโรป เปิดโอกาสให้ผู้ลงโฆษณาเข้าถึงผู้ใช้ในระหว่างที่กำลังค้นหาข้อมูล เปรียบเทียบตัวเลือก และตัดสินใจ",
+      "summary": "OpenAI ขยายบริการ ChatGPT Ads ไปยัง 31 ตลาดในยุโรป เปิดโอกาสให้ผู้ลงโฆษณาเข้าถึงผู้ใช้ในจังหวะที่กำลังค้นหา เปรียบเทียบตัวเลือก และตัดสินใจ",
       "source": "OpenAI",
       "url": "https://openai.com/index/chatgpt-ads-expands-across-europe",
       "publishedAt": "2026-08-18",
@@ -48,8 +70,8 @@
     },
     {
       "id": "news-2026-08-18-emocratic-oversight-in-national-security",
-      "title": "OpenAI เดินหน้าเสริมการกำกับดูแลแบบประชาธิปไตยด้านความมั่นคง",
-      "summary": "OpenAI เปิดตัวโครงการเสริมสร้างการกำกับดูแลการใช้ AI ในงานความมั่นคงของชาติตามหลักประชาธิปไตย โดยสนับสนุนหน่วยงานรัฐด้วยเครื่องมือ การฝึกอบรม และความเชี่ยวชาญ",
+      "title": "OpenAI เสริมการกำกับดูแลเชิงประชาธิปไตยด้าน AI ในความมั่นคงแห่งชาติ",
+      "summary": "OpenAI เปิดตัวโครงการเสริมสร้างการกำกับดูแลเชิงประชาธิปไตยต่อการใช้ AI ในงานความมั่นคงแห่งชาติ โดยสนับสนุนหน่วยงานภาครัฐด้วยเครื่องมือ การฝึกอบรม และความเชี่ยวชาญ",
       "source": "OpenAI",
       "url": "https://openai.com/index/strengthening-democratic-oversight-in-national-security",
       "publishedAt": "2026-08-18",
@@ -60,8 +82,8 @@
     },
     {
       "id": "news-2026-08-18--openai-com-index-partnering-with-codeai",
-      "title": "OpenAI จับมือ CodeAI เตรียมความพร้อมเยาวชนรุ่นแรกของยุค AI",
-      "summary": "OpenAI ร่วมมือกับ CodeAI เพื่อช่วยให้นักเรียนมี AI literacy คิดวิเคราะห์เกี่ยวกับ AI อย่างมีวิจารณญาณ และมีทักษะใช้งาน AI อย่างรับผิดชอบ",
+      "title": "OpenAI จับมือ CodeAI เตรียมความพร้อมให้คนรุ่นแรกของยุค AI",
+      "summary": "OpenAI ร่วมมือกับ CodeAI เพื่อช่วยให้นักเรียนมี AI literacy คิดเชิงวิพากษ์เกี่ยวกับ AI และพัฒนาทักษะการใช้งานอย่างรับผิดชอบ",
       "source": "OpenAI",
       "url": "https://openai.com/index/partnering-with-codeai",
       "publishedAt": "2026-08-18",
@@ -72,8 +94,8 @@
     },
     {
       "id": "news-2026-08-18-ing-model-development-cyber-capabilities",
-      "title": "OpenAI คุมจังหวะพัฒนาโมเดลในยุคความสามารถด้าน cyber ระดับวิกฤต",
-      "summary": "OpenAI เพิ่มความเข้มข้นของการ monitoring, alignment และความปลอดภัยสำหรับ frontier AI models โดยใช้มาตรการป้องกันใหม่เป็นตัวกำหนดจังหวะการพัฒนาโมเดล",
+      "title": "OpenAI คุมจังหวะการพัฒนาโมเดลในยุคความสามารถด้านไซเบอร์ขั้นวิกฤต",
+      "summary": "OpenAI เพิ่มความเข้มข้นด้าน monitoring, alignment และ security สำหรับโมเดล frontier พร้อมใช้มาตรการป้องกันใหม่เป็นตัวกำหนดจังหวะการพัฒนาโมเดล",
       "source": "OpenAI",
       "url": "https://openai.com/index/pacing-model-development-cyber-capabilities",
       "publishedAt": "2026-08-18",
@@ -84,8 +106,8 @@
     },
     {
       "id": "news-2026-08-18-https-openai-com-index-chatgpt-for-teens",
-      "title": "เปิดตัว ChatGPT for Teens ออกแบบเพื่อการเรียนรู้พร้อมระบบป้องกัน",
-      "summary": "OpenAI เปิดตัว ChatGPT for Teens ที่ช่วยวัยรุ่นเรียนรู้และคิดวิเคราะห์ พร้อมระบบป้องกันในตัวที่แข็งแรงขึ้น ฟีเจอร์ส่งเสริมการใช้งานอย่างเหมาะสม และการควบคุมเพิ่มเติมสำหรับผู้ปกครอง",
+      "title": "เปิดตัว ChatGPT for Teens สำหรับการเรียนรู้พร้อมระบบป้องกัน",
+      "summary": "OpenAI เปิดตัว ChatGPT for Teens ที่ออกแบบมาเพื่อช่วยวัยรุ่นเรียนรู้และคิดเชิงวิพากษ์ พร้อมระบบป้องกันในตัวที่แข็งแรงขึ้น ฟีเจอร์ส่งเสริมการใช้งานอย่างเหมาะสม และการควบคุมเพิ่มเติมสำหรับผู้ปกครอง",
       "source": "OpenAI",
       "url": "https://openai.com/index/chatgpt-for-teens",
       "publishedAt": "2026-08-18",
@@ -94,45 +116,25 @@
     },
     {
       "id": "news-2026-08-18-tps-openai-com-index-nvidia-chatgpt-work",
-      "title": "NVIDIA ใช้ ChatGPT Work ขยายความเชี่ยวชาญในองค์กร",
-      "summary": "ทีมงานของ NVIDIA ใช้ ChatGPT Work เพื่อลดงานที่ต้องทำด้วยมือ เชื่อมโยงข้อมูลที่เปลี่ยนเร็ว และขยาย workflow ที่ได้ผลไปใช้ทั่วโลก",
+      "title": "NVIDIA ขยายความเชี่ยวชาญทั่วองค์กรด้วย ChatGPT Work",
+      "summary": "ทีมงานของ NVIDIA ใช้ ChatGPT Work เพื่อลดงานที่ต้องทำด้วยมือ เชื่อมโยงสัญญาณข้อมูลที่เปลี่ยนแปลงรวดเร็ว และขยาย workflow ที่ได้ผลไปใช้ทั่วโลก",
       "source": "OpenAI",
       "url": "https://openai.com/index/nvidia/chatgpt-work",
       "publishedAt": "2026-08-18",
-      "category": "business",
+      "category": "product",
       "relatedModels": []
     },
     {
       "id": "news-2026-08-18-https-openai-com-index-asana",
-      "title": "Asana ใช้ Codex ทำงานที่คาดว่าใช้ 5 ปี ให้เสร็จใน 2 สัปดาห์",
-      "summary": "Asana ใช้ OpenAI Codex เปลี่ยนระบบ testing ที่ล้าสมัยได้สำเร็จภายในสองสัปดาห์ ด้วยงบราว 12,000 ดอลลาร์ จากงานที่ประเมินว่าต้องใช้เวลาถึงห้าปี",
+      "title": "Asana ใช้ Codex เคลียร์งานวิศวกรรม 5 ปีได้ใน 2 สัปดาห์",
+      "summary": "Asana ใช้ OpenAI Codex เปลี่ยนระบบ testing ที่ล้าสมัยได้สำเร็จภายในสองสัปดาห์ ด้วยงบราว 12,000 ดอลลาร์ จากงานที่คาดว่าจะใช้เวลาถึงห้าปี",
       "source": "OpenAI",
       "url": "https://openai.com/index/asana",
       "publishedAt": "2026-08-18",
-      "category": "business",
+      "category": "product",
       "relatedModels": [
         "gpt-5-6-sol"
       ]
-    },
-    {
-      "id": "news-2026-08-18-ace-co-blog-ibm-research-altk-evolve-hmm",
-      "title": "AI Agent ต้องการ memory มากแค่ไหนจริง ๆ?",
-      "summary": "บทความบน Hugging Face ตั้งคำถามและสำรวจว่า AI agent จำเป็นต้องมี memory มากเพียงใดในการทำงาน ซึ่งเป็นประเด็นสำคัญต่อการออกแบบ agent ให้มีประสิทธิภาพ",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/ibm-research/altk-evolve-hmm",
-      "publishedAt": "2026-08-18",
-      "category": "research",
-      "relatedModels": []
-    },
-    {
-      "id": "news-2026-08-18-huggingface-co-blog-multi-vector-encoder",
-      "title": "โมเดล Multi-Vector (Late Interaction) Embedding บน Sentence Transformers",
-      "summary": "Hugging Face นำเสนอการใช้โมเดล embedding แบบ multi-vector หรือ late interaction ผ่านไลบรารี Sentence Transformers ซึ่งเป็นแนวทางที่ช่วยยกระดับงานค้นหาและจับคู่ข้อความ",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/blog/multi-vector-encoder",
-      "publishedAt": "2026-08-18",
-      "category": "research",
-      "relatedModels": []
     }
   ]
 }
