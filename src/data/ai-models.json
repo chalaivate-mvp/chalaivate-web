@@ -1,8 +1,8 @@
 {
   "status": "sample",
-  "updatedAt": "2026-08-20",
+  "updatedAt": "2026-08-21",
   "provenance": {
-    "fetchedAt": "2026-08-20T23:54:24.158Z",
+    "fetchedAt": "2026-08-21T23:52:29.350Z",
     "ok": [
       "OpenRouter",
       "Artificial Analysis"
@@ -231,8 +231,8 @@
       "contextWindow": 1050000,
       "maxOutputTokens": 128000,
       "pricing": {
-        "input": 2.5,
-        "output": 15
+        "input": 2,
+        "output": 10
       },
       "benchmarks": {
         "gpqa": 94.1,
